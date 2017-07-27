@@ -15,6 +15,7 @@ const SSRroutes: Routes = [
 // SPA模式路由，适合客户端打包
 import { HomePageComponent } from '../pages/home/home-page/home-page.component';
 import { AboutPageComponent } from '../pages/about/about-page/about-page.component';
+import { LoginPageComponent } from '../pages/user/login-page/login-page.component';
 const SPAroutes: Routes = [
   {
     path: '',
@@ -22,10 +23,11 @@ const SPAroutes: Routes = [
   },
   { path: 'home', component: HomePageComponent },
   { path: 'about', component: AboutPageComponent },
+  { path: 'login', component: LoginPageComponent },
 ];
 
 // 配置路由模式
-const routes = SSRroutes;
+const routes = SPAroutes;
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

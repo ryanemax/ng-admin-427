@@ -13,7 +13,7 @@ export class AboutPageComponent implements OnInit {
 
     meta.addTags([ 
       {
-        name: 'author', content: 'anasit.com'
+        name: 'author', content: 'eddic'
       },
       {
         name: 'keywords', content: 'angular 4 tutorial, angular seo'

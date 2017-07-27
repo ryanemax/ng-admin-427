@@ -1,49 +1,31 @@
-<table>  
- <tbody><tr> 
-  <th> </th> 
-  <th>细则 </th> 
-  <th>总分 </th> 
- </tr>  
- </tbody><tbody> 
-  <tr> 
-   <td>加分项 </td> 
-   <td>按时完成并提交练习 </td> 
-   <td>10分 </td> 
-  </tr> 
-  <tr> 
-   <td> </td> 
-   <td>项目可正常运行 </td> 
-   <td>10分 </td> 
-  </tr> 
-  <tr> 
-   <td> </td> 
-   <td>列表页面美观程度 </td> 
-   <td>20分 </td> 
-  </tr> 
-  <tr> 
-   <td> </td> 
-   <td>原始数据设计合理 </td> 
-   <td>20分 </td> 
-  </tr> 
-  <tr> 
-   <td> </td> 
-   <td>函数功能正常 </td> 
-   <td>20分 </td> 
-  </tr> 
-  <tr> 
-   <td> </td> 
-   <td>选题新颖 </td> 
-   <td>20分 </td> 
-  </tr> 
-  <tr> 
-   <td>扣分项 </td> 
-   <td>作品严重重复 </td> 
-   <td>50分 </td> 
-  </tr> 
-  <tr> 
-   <td>总评 </td> 
-   <td>60分及格 </td> 
-   <td>80分优秀 </td> 
-  </tr> 
- </tbody> 
+<button (click)="sortByAsccending()">正序排列</button>
+<button (click)="sortByDesccending()">倒序排列</button>
+<button (click)="sortByRadom()">随机打乱</button>
+<button (click)="deleteLast()">删除最后一个</button>
+<button (click)="saveNewUser()">新增一个</button>
+<table>
+  <tbody>
+    <tr>
+      <th>ID </th>
+      <th>姓名 </th>
+      <th>性别 </th>
+      <th>Name </th>
+      <th>github </th>
+      <th>exam1 </th>
+      <th>exam2 </th>
+      <th>exam3 </th>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.index}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.sex}}</td>
+      <td>{{user.name_en}} </td>
+      <td><a target="_blank" href="http://github.com/{{user.github}}">{{user.github}}</a></td>
+      <td>{{user.exam1}}</td>
+      <td>{{user.exam2}}</td>
+      <td>{{user.exam3}}</td>
+    </tr>
+  </tbody>
 </table>
