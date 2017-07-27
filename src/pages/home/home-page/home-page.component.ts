@@ -57,7 +57,7 @@ saveNewUser(){
   }
   sortByRadom(){
     // 参考MDN Array操作的API文档 Math相关方法
-    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
   }
   constructor(meta: Meta, title: Title) {
     title.setTitle('My Home Page');
