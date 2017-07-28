@@ -1,10 +1,17 @@
-<app-user-item></app-user-item>
+<p>已选择用户:{{selectUser.name}}</p>
+<div class="table-controls">
+    <div class="search-area" style="height:60px;">
+<input style="float:left;margin-top:14px;" 
+  [(ngModel)]="searchText"/>
+<p style="float:left;">搜索内容:{{searchText}}</p>
 
+</div>
 <button (click)="sortByAsccending()">正序</button>
 <button (click)="sortByDesccending()">倒序</button>
 <button (click)="sortByRadom()">随机</button>
 <button (click)="deleteLast()">删除</button>
 <button (click)="saveNewUser()">新增</button>
+</div>
 <table>
   <tbody>
     <tr>
@@ -19,6 +26,12 @@
   </tbody>
   <tbody>
     <tr *ngFor="let user of users">
+    <app-user-item [user]="user" (userClick)="selectUser = $event"></app-user-item>
+    </tr>
+    
+    <tr *ngFor="let user of users">
+      <app-user-item [user]="user"></app-user-item>
+      
       <td>{{user.index}}</td>
       <td>{{user.name | uppercase | lowercase}}</td>
       <td>{{user.sex | sexName}}</td>

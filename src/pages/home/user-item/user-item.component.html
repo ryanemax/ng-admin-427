@@ -1,3 +1,7 @@
-<p>
-  user-item works!
-</p>
+      <td (click)="onUserClick()">{{user.index}}</td>
+      <td>{{user.name | uppercase | lowercase}}</td>
+      <td>{{user.sex | sexName}}</td>
+      <td><a target="_blank" href="http://github.com/{{user.project}}">{{user.project}}</a></td>
+      <td>{{user.exam1}}</td>
+      <td>{{user.exam2}}</td>
+      <td>{{user.exam3}}</td>

@@ -13,6 +13,8 @@ import {
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+  searchText: string = "default";
+
   users: Array < any > = [{
       'index': 1,
      'name':'chenlu',
@@ -132,6 +134,13 @@ export class HomePageComponent implements OnInit {
   ];
   deleteLast() {
     this.users.pop();
+  }
+  selectUser:any={
+    name:"未选择"
+};
+  getUserClick(ev){
+    this.selectUser = ev
+    console.log(ev);
   }
   saveNewUser() {
     this.users.push({
