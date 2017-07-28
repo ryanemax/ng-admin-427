@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AboutPageComponent } from './about-page/about-page.component';
-import { UserService } from '../home/user.service'
+import { StudentService } from '../student/student.service'
 
 @NgModule({
   imports: [
@@ -12,6 +12,6 @@ import { UserService } from '../home/user.service'
     ])
   ],
   declarations: [AboutPageComponent],
-  providers:[UserService]
+  providers:[StudentService]
 })
 export class AboutModule { }

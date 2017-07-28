@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { LoginPageComponent } from './login-page/login-page.component';
 
-import { UserService } from '../home/user.service'
+import { StudentService } from '../student/student.service'
 
 @NgModule({
   imports: [
@@ -13,6 +13,6 @@ import { UserService } from '../home/user.service'
     ])
   ],
   declarations: [LoginPageComponent],
-  providers:[UserService]
+  providers:[StudentService]
 })
 export class UserModule { }

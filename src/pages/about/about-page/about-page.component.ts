@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
-import { UserService } from '../../home/user.service'
+import { StudentService } from '../../student/student.service'
 
 
 @Component({
@@ -12,7 +12,7 @@ import { UserService } from '../../home/user.service'
 export class AboutPageComponent implements OnInit {
 
     users:Array<any> = [];
-    constructor(meta: Meta, title: Title, private userServ:UserService) {
+    constructor(meta: Meta, title: Title, private userServ:StudentService) {
       this.users = this.userServ.getUsers()
 
     title.setTitle('My About Page');
