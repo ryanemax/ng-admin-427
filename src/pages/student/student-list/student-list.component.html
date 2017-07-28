@@ -1,4 +1,4 @@
-<p>已选择用户:{{selectUser.name}}</p>
+<p>已选择用户:{{selectStudent.name}}</p>
 <div class="table-controls">
     <div class="search-area" style="height:60px;">
       <select [(ngModel)]="searchType" style="float:left;">
@@ -29,8 +29,8 @@
       <div class="col-2">操作 </div>
 </div>
 <div class="row table-row" *ngFor="let student of searchResult">
-  <app-student-item [student]="student" (userClick)="selectStudent = $event"></app-student-item>
+  <app-student-item [student]="student" (studentClick)="selectStudent = $event"></app-student-item>
 </div>
 <div class="row table-row" *ngFor="let student of student">
-  <app-student-item [student]="student" (userClick)="selectStudent = $event"></app-student-item>
+  <app-student-item [student]="student" (studentClick)="selectStudent = $event"></app-student-item>
 </div>

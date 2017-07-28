@@ -35,7 +35,7 @@ export class StudentListComponent implements OnInit {
     })
   }
   getUserClick(ev){
-    this.selectUser = ev
+    this.selectStudent = ev
     console.log(ev);
   }
  
