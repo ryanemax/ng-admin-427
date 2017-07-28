@@ -7,6 +7,8 @@ import { UserItemComponent } from './user-item/user-item.component';
 
 import { FormsModule } from '@angular/forms';
 
+import { UserService } from './user.service'
+
 @NgModule({
   declarations:   [
     HomePageComponent,
@@ -20,5 +22,6 @@ import { FormsModule } from '@angular/forms';
       { path: '', component: HomePageComponent, pathMatch: 'full' }
     ])
   ],
+  providers:[UserService]
 })
 export class HomeModule { }
