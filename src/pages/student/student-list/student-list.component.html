@@ -1,9 +1,11 @@
-<p appHighlight>已选择用户:{{selectUser.name}}</p>
-
 <p>已选择用户:{{selectUser.name}}</p>
 <div class="table-controls">
     <div class="search-area" style="height:60px;">
-<input style="float:left;margin-top:14px;" 
+      <select [(ngModel)]="searchType" style="float:left;">
+        <option value="name">姓名</option>
+        <option value="project">项目</option>
+      </select>
+<input style="float:left;" 
   [(ngModel)]="searchText"/>
 <button style="float:left;" (click)="search()">搜索</button>
 
@@ -17,7 +19,7 @@
 </div>
 <div class="row table-header">
       <div class="col-1">选择 </div>
-      <div class="col-1" (click)="sortByAsccending('index')">ID </div>
+      <div class="col-1" (click)="sortByAsccending('id')">ID </div>
       <div class="col-2" (click)="sortByAsccending('name')">姓名 </div>
       <div class="col-1" (click)="sortByAsccending('sex')">性别 </div>
       <div class="col-2" (click)="sortByAsccending('project')">project </div>

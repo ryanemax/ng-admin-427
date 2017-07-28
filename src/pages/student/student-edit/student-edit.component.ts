@@ -26,14 +26,14 @@ export class StudentEditComponent implements OnInit,OnDestroy {
     this.location.back();
   }
   save(){
-    this.studentServ.users.push(this.student)
+    this.studentServ.students.push(this.student)
     this.location.back();
   }
   ngOnInit() {
     this.getUserSubscribe = this.route.params.subscribe(params=>{
       this.getStudent(params['sid']).then(student=>{
       console.log(student)
-      this.studentId = student.index;
+      this.studentId = student.id;
       this.student = student
     }).catch(err=>{
       console.log(err)
@@ -52,7 +52,7 @@ export class StudentEditComponent implements OnInit,OnDestroy {
         this.isNew = true;
         resolve(student)
       }
-      let student = this.studentServ.users.find(item=>item.index == id)
+      let student = this.studentServ.students.find(item=>item.id == id)
       if(student){
         resolve(student)
       }else{

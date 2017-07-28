@@ -12,8 +12,8 @@ import { StudentService } from '../../student/student.service'
 export class AboutPageComponent implements OnInit {
 
     users:Array<any> = [];
-    constructor(meta: Meta, title: Title, private userServ:StudentService) {
-      this.users = this.userServ.getUsers()
+    constructor(meta: Meta, title: Title, private studentServ:StudentService) {
+      this.users = this.studentServ.getUsers()
 
     title.setTitle('My About Page');
 

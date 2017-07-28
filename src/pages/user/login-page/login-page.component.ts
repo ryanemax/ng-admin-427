@@ -24,8 +24,8 @@ export class LoginPageComponent implements OnInit {
     this.isLogined = true;
   };
   isLogined:boolean = false;
-  constructor(meta: Meta, title: Title, private userServ:StudentService) {
-    this.isLogined = this.userServ.isLogined;
+  constructor(meta: Meta, title: Title, private studentServ:StudentService) {
+    this.isLogined = this.studentServ.isLogined;
     
     title.setTitle('Login Page');
 

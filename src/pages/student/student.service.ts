@@ -3,8 +3,8 @@ import { Injectable } from "@angular/core";
 @Injectable()
 export class StudentService{
     isLogined:boolean = false;
-    users: Array < any > = [{
-      'index': 1,
+    students: Array < any > = [{
+      'id': 1,
      'name':'chenlu',
      'sex':'M',
      'project':'chenlu28/chenlu-exam',
@@ -14,7 +14,7 @@ export class StudentService{
      'exam3': 0
     },
     {
-     'index': 2,
+     'id': 2,
      'name':'f58xxy',
      'sex':'F',
      'project':'f58xxy/ng-admin',
@@ -24,7 +24,7 @@ export class StudentService{
      'exam3': 0
     },
     {
-     'index': 19,
+     'id': 19,
      'name':'文化利',
      'sex':'M',
      'project':'whl1979/wenhuali-admin',
@@ -34,7 +34,7 @@ export class StudentService{
      'exam3': 0
     },
     {
-     'index': 3,
+     'id': 3,
      'name':'kalezhang',
      'sex':'M',
      'project':'kalezhang/ng-admin',
@@ -43,7 +43,7 @@ export class StudentService{
      'exam3': 0
     },
     {
-     'index': 4,
+     'id': 4,
      'name':'JansenGao',
      'sex':'M',
      'project':'JansenGao/angular',
@@ -52,7 +52,7 @@ export class StudentService{
      'exam3': 0
     },
     {
-     'index': 5,
+     'id': 5,
      'name':'ChengJiqiang',
      'sex':'M',
      'project':'ChengJiqiang/ChengJiQiang-ng-app',
@@ -62,7 +62,7 @@ export class StudentService{
      'exam3': 0
     },
     {
-     'index': 6,
+     'id': 6,
      'name':'Serenashan',
      'sex':'M',
      'project':'Serenashan/serena-admin',
@@ -72,7 +72,7 @@ export class StudentService{
      'exam3': 0
     },
     {
-     'index': 7,
+     'id': 7,
      'name':'gudeyi',
      'sex':'M',
      'project':'gudeyi/admin',
@@ -82,7 +82,7 @@ export class StudentService{
     }
     ,
     {
-     'index': 8,
+     'id': 8,
      'name':'willwangyue',
      'sex':'M',
      'project':'willwangyue/will-ng-admin',
@@ -92,7 +92,7 @@ export class StudentService{
      'exam3': 0
     },
     {
-     'index': 9,
+     'id': 9,
      'name':'郭兆青',
      'desc':'游戏管理系统',
      'sex':'M',
@@ -102,7 +102,7 @@ export class StudentService{
      'exam3': 0
     },
     {
-     'index': 10,
+     'id': 10,
      'name':'willwangyue',
      'sex':'M',
      'project':'willwangyue/will-ng-admin',
@@ -111,7 +111,7 @@ export class StudentService{
      'exam3': 0
     },
     {
-     'index': 11,
+     'id': 11,
      'name':'willwangyue',
      'sex':'M',
      'project':'willwangyue/will-ng-admin',
@@ -126,7 +126,7 @@ export class StudentService{
     }
 
     getUsers(){
-        return this.users;
+        return this.students;
     }
 
 }

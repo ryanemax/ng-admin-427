@@ -14,7 +14,8 @@ import {StudentService} from "../student.service";
   styleUrls: ['./student-list.component.scss']
 })
 export class StudentListComponent implements OnInit {
-  searchText: string = "default";
+  searchText: string = "";
+  searchType: string = "name";
   selectUser:any={
     name:"未选择"
   };
@@ -23,43 +24,28 @@ export class StudentListComponent implements OnInit {
   deleteLast() {
     this.users.pop();
   }
-  search(type="name",limit?:number){
+  search(){
     this.searchResult = this.users.filter(item=>{
-      let result = String(item[type]).match(this.searchText)
+      let result = String(item[this.searchType]).match(this.searchText)
       if(result){
         return true
       }else{
         return false
       }
     })
-    
-    if(limit){
-      this.searchResult.splice(0,limit)
-    }
   }
   getUserClick(ev){
     this.selectUser = ev
     console.log(ev);
   }
-  saveNewUser() {
-    this.users.push({
-     'index': 666,
-     'name':'New User',
-     'sex':'M',
-     'name_en':'new_user',
-     'github':'new_user',
-     'exam1': 76,
-     'exam2': 76,
-     'exam3': 76
-    });
-  }
-  sortByAsccending(type="index") {
+ 
+  sortByAsccending(type="id") {
     // 参考MDN Array操作的API文档 Array相关方法方法
     this.users.sort((a,b)=>{
       return a[type] - b[type];
     });
   }
-  sortByDesccending(type="index") {
+  sortByDesccending(type="id") {
     // 参考MDN Array操作的API文档 Array相关方法
     // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array
     this.users.sort((a,b)=>{
@@ -74,8 +60,8 @@ export class StudentListComponent implements OnInit {
      [this.users[index - 1], this.users[j]] = [this.users[j], this.users[index - 1]];
   })
   }
-  constructor(meta: Meta, title: Title, private userServ:StudentService) {
-    this.users = this.userServ.getUsers()
+  constructor(meta: Meta, title: Title, private studentServ:StudentService) {
+    this.users = this.studentServ.getUsers()
  
     // Set SEO
     title.setTitle('My Home Page');
