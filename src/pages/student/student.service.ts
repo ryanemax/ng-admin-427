@@ -124,7 +124,28 @@ export class StudentService{
     constructor(){
 
     }
+    delete(obj){
+        let id = obj.id
+        this.students.forEach((item,index,array)=>{
+        if(item.id == id){
+            array.splice(index,1)
+        }
+        })
+    }
+    search(type,value){
+        this.students.sort((a,b)=>{
+        let result1 = String(a[type]).match(value)
+        let result2 = String(b[type]).match(value)
 
+        return Number(result2)-Number(result1);
+        });
+    }
+    deleteChecked(){
+        let checkList = this.students.filter(item=>item.check==true)
+        checkList.forEach(item=>{
+            this.delete(item)
+        })
+    }
     getStudents(){
         return this.students;
     }

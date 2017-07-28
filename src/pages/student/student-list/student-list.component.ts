@@ -21,19 +21,7 @@ export class StudentListComponent implements OnInit {
   };
   searchResult:Array<any>;
   students:Array<any>=[];
-  deleteLast() {
-    this.students.pop();
-  }
-  search(){
-    this.searchResult = this.students.filter(item=>{
-      let result = String(item[this.searchType]).match(this.searchText)
-      if(result){
-        return true
-      }else{
-        return false
-      }
-    })
-  }
+
   getUserClick(ev){
     this.selectStudent = ev
     console.log(ev);

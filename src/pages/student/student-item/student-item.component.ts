@@ -17,7 +17,11 @@ export class StudentItemComponent implements OnInit {
     this.studentClick.emit(this.student)
   }
   check(){
-    this.student.check = true;
+    if(this.student.check&&this.student.check==true){
+      this.student.check = false;
+    }else{
+      this.student.check = true
+    }
   }
   isChecked(){
     if(this.student.check&&this.student.check==true){
@@ -25,14 +29,6 @@ export class StudentItemComponent implements OnInit {
     }else{
       return false
     }
-  }
-  delete(){
-    let id = this.student.id
-    this.studentServ.students.forEach((item,index,array)=>{
-      if(item.id == id){
-        array.splice(index,1)
-      }
-    })
   }
   ngOnInit() {
   }
