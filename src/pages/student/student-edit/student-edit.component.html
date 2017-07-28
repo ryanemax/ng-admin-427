@@ -1,5 +1,30 @@
-<button routerLink="/student">返回</button>
 <p>
-  student-edit works!
-  ID:{{studentId}}
+  <span *ngIf="isNew">新增用户</span>
+  <span *ngIf="!isNew">编辑用户:{{this.studentId}}</span>
+  <button (click)="back()">返回</button>
 </p>
+
+<div>
+姓名：
+<input type="text" [(ngModel)]="student.name"/>
+</div>
+
+<div>
+性别：
+<select [(ngModel)]="student.sex">
+  <option value="M">男</option>
+  <option value="F">女</option>
+</select>
+</div>
+
+<div>
+项目地址：
+<input type="text" [(ngModel)]="student.project"/>
+</div>
+
+<div>
+Exam1分数：
+<input type="text" [(ngModel)]="student.exam1"/>
+</div>
+
+<button routerLink="/student" (click)="save()">提交</button>
