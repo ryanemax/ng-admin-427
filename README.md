@@ -1,11 +1,20 @@
-# Ng LazyLoad Starter
+# Cloud Admin Exam Project
 
-本项目通过最新版 [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1 创建。
+本项目通过最新版 [ng-lazyload-starter](https://github.com/ryanemax/ng-lazyload-starter)创建。
+
+本项目配合最新版[《Angular大前端基础与实战》](http://book-angular.mydoc.io/)教材使用
+
 
 项目目标
-- 提供**LazyLoad**机制，匹配最新版本Angular的初始化项目包
-- 提供**SSR服务端渲染**、SPA静态打包两种运行模式
-- **提高首页加载效率**，将模块分组打包
+- 使用最新版Angular实现后台管理示例项目
+- 基于Git及组件式开发规范实现Angular项目最佳实践
+- 兼容性优先原则实现最通用Angular组件库集合
+
+项目分支
+- static 静态分支【纯静态页面】
+    - 1.0 包含一个完整的规范的特性模块 student
+- live 动态分支【整合Parse后端】
+    - 1.0 包含一个后端数据逻辑完整的特性模块 student
 
 SSR模式注意
 - 不可以使用直接操作DOM的第三方组件
