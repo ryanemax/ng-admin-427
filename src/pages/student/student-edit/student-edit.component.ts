@@ -26,7 +26,9 @@ export class StudentEditComponent implements OnInit,OnDestroy {
     this.location.back();
   }
   save(){
-    this.studentServ.students.push(this.student)
+    if(this.isNew){
+      this.studentServ.students.push(this.student)
+    }
     this.location.back();
   }
   ngOnInit() {
