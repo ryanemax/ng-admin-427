@@ -31,6 +31,6 @@
 <div class="row table-row" *ngFor="let student of searchResult">
   <app-student-item [student]="student" (studentClick)="selectStudent = $event"></app-student-item>
 </div>
-<div class="row table-row" *ngFor="let student of student">
+<div class="row table-row" *ngFor="let student of students">
   <app-student-item [student]="student" (studentClick)="selectStudent = $event"></app-student-item>
 </div>

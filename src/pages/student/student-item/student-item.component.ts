@@ -13,7 +13,7 @@ export class StudentItemComponent implements OnInit {
   @Output() studentClick = new EventEmitter<any>();
   constructor(private studentServ:StudentService) { 
   }
-  onUserClick(){
+  onStudentClick(){
     this.studentClick.emit(this.student)
   }
   check(){
