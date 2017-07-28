@@ -16,7 +16,7 @@ export class StudentEditComponent implements OnInit,OnDestroy {
   isNew:boolean = false;
 
   // Subscribe Declaration
-  getUserSubscribe:any;
+  getStudentSubscribe:any;
   
   constructor(private route: ActivatedRoute,
   private studentServ:StudentService,
@@ -30,7 +30,7 @@ export class StudentEditComponent implements OnInit,OnDestroy {
     this.location.back();
   }
   ngOnInit() {
-    this.getUserSubscribe = this.route.params.subscribe(params=>{
+    this.getStudentSubscribe = this.route.params.subscribe(params=>{
       this.getStudent(params['sid']).then(student=>{
       console.log(student)
       this.studentId = student.id;
@@ -41,7 +41,7 @@ export class StudentEditComponent implements OnInit,OnDestroy {
     })
   }
   ngOnDestroy(){
-    this.getUserSubscribe.unsubscribe();
+    this.getStudentSubscribe.unsubscribe();
   }
 
   getStudent(id: any): Promise<any> {
