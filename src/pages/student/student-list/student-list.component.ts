@@ -55,10 +55,10 @@ export class StudentListComponent implements OnInit {
   sortByRadom() {
     // 参考MDN Array操作的API文档 Math相关方法
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
- this.students.forEach((user,index)=>{
-    let j = Math.floor(Math.random() * index);
-     [this.students[index - 1], this.students[j]] = [this.students[j], this.students[index - 1]];
+  this.students.forEach((student,index)=>{
+    student.tempIndex = Math.random();
   })
+    this.sortByAsccending("tempIndex");
   }
   constructor(meta: Meta, title: Title, private studentServ:StudentService) {
     this.students = this.studentServ.getStudents()
@@ -80,20 +80,6 @@ export class StudentListComponent implements OnInit {
       },
     ]);
     // end of SEO
-  }
-
-  testTempstudents(){
-    console.log(this.students.length);
-    let tempstudents:Array<any> = []
-    this.students.forEach(item=>{
-      tempstudents.push(item)
-    })
-    tempstudents.pop()
-    tempstudents.pop()
-    tempstudents.pop()
-    tempstudents.pop()
-    tempstudents.pop()
-    console.log(tempstudents.length);
   }
 
   ngOnInit() {}
