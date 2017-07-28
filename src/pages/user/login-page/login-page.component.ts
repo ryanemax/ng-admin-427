@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
+import { UserService } from '../../home/user.service'
+
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -18,10 +21,12 @@ export class LoginPageComponent implements OnInit {
   login(){
     this.user.username = "Ryane";
     this.user.password = "666";
-    this.user.state = true;
+    this.isLogined = true;
   };
-
-  constructor(meta: Meta, title: Title) {
+  isLogined:boolean = false;
+  constructor(meta: Meta, title: Title, private userServ:UserService) {
+    this.isLogined = this.userServ.isLogined;
+    
     title.setTitle('Login Page');
 
     meta.addTags([ 

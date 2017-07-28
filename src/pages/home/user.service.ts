@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class UserService{
-
+    isLogined:boolean = false;
     users: Array < any > = [{
       'index': 1,
      'name':'chenlu',

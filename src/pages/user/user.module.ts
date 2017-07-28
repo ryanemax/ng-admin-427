@@ -3,6 +3,8 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { LoginPageComponent } from './login-page/login-page.component';
 
+import { UserService } from '../home/user.service'
+
 @NgModule({
   imports: [
     CommonModule,
@@ -10,6 +12,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
       { path: '', component: LoginPageComponent, pathMatch: 'full' }
     ])
   ],
-  declarations: [LoginPageComponent]
+  declarations: [LoginPageComponent],
+  providers:[UserService]
 })
 export class UserModule { }
