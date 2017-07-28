@@ -6,10 +6,14 @@ import { AppComponent } from './app.component';
 
 // 当打包部署静态包时，需要加载本Module，当使用服务端渲染时，请注释
 import { SPAModule } from '../pages/spa.module';
+// import { UserItemComponent } from './user-item/user-item.component';
+// import { SexNamePipe } from './sex-name.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // UserItemComponent,
+    // SexNamePipe
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'ng-lazyload-starter'}),
@@ -19,5 +23,8 @@ import { SPAModule } from '../pages/spa.module';
   providers: [],
   exports: [AppComponent],
   bootstrap: [AppComponent]
+  // 近似的根模块，界面渲染逻辑
+  // var app-root = document.getbyTagName("app-root")
+  // app-root.innerHtml = Template<>
 })
 export class AppModule { }
