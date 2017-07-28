@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,9 @@ import { SPAModule } from '../pages/spa.module';
 // import { HighlightDirective } from './highlight.directive';
 // import { UserItemComponent } from './user-item/user-item.component';
 
+import { Parse } from '../cloud/parse'
+    
+Parse.initialize("dev.cloud","http://host.cloud.anasit.com:8000/parse")
 
 @NgModule({
   declarations: [
@@ -19,6 +23,7 @@ import { SPAModule } from '../pages/spa.module';
   imports: [
     BrowserModule.withServerTransition({appId: 'ng-lazyload-starter'}),
     AppRoutingModule,
+    HttpModule,
     SPAModule, // 静态打包时加载
   ],
   providers: [],

@@ -7,6 +7,9 @@ import {
   Title
 } from '@angular/platform-browser';
 
+import { Parse } from '../../../cloud/parse'
+import { Http } from '@angular/http'
+
 import {StudentService} from "../student.service";
 @Component({
   selector: 'app-student-list',
@@ -48,7 +51,8 @@ export class StudentListComponent implements OnInit {
   })
     this.sortByAsccending("tempIndex");
   }
-  constructor(meta: Meta, title: Title, private studentServ:StudentService) {
+  constructor(meta: Meta, title: Title,private http:Http, private studentServ:StudentService) {
+
     this.students = this.studentServ.getStudents()
  
     // Set SEO
