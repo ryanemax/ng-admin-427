@@ -7,7 +7,6 @@ import {
   Title
 } from '@angular/platform-browser';
 
-import { Parse } from '../../../cloud/parse'
 import { Http } from '@angular/http'
 
 import {StudentService} from "../student.service";

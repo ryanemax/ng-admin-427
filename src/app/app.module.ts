@@ -12,9 +12,9 @@ import { SPAModule } from '../pages/spa.module';
 // import { HighlightDirective } from './highlight.directive';
 // import { UserItemComponent } from './user-item/user-item.component';
 
+// 加及初始化 数据接口封装库
 import { Parse } from '../cloud/parse'
-    
-Parse.initialize("dev.cloud","http://host.cloud.anasit.com:8000/parse")
+Parse.initialize("dev","http://host.qh-class.com:2337/parse")
 
 @NgModule({
   declarations: [
