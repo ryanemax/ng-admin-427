@@ -3,7 +3,7 @@
     <div class="search-area" style="height:60px;">
 <input style="float:left;margin-top:14px;" 
   [(ngModel)]="searchText"/>
-<p style="float:left;">搜索内容:{{searchText}}</p>
+<button style="float:left;" (click)="search()">搜索</button>
 
 </div>
 <button (click)="sortByAsccending()">正序</button>
@@ -12,33 +12,20 @@
 <button (click)="deleteLast()">删除</button>
 <button (click)="saveNewUser()">新增</button>
 </div>
-<table>
-  <tbody>
-    <tr>
-      <th (click)="sortByAsccending('index')">ID </th>
-      <th (click)="sortByAsccending('name')">姓名 </th>
-      <th (click)="sortByAsccending('sex')">性别 </th>
-      <th (click)="sortByAsccending('project')">project </th>
-      <th (click)="sortByDesccending('exam1')">exam1 </th>
-      <th (click)="sortByDesccending('exam2')">exam2 </th>
-      <th (click)="sortByDesccending('exam3')">exam3 </th>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr *ngFor="let user of users">
-    <app-user-item [user]="user" (userClick)="selectUser = $event"></app-user-item>
-    </tr>
-    
-    <tr *ngFor="let user of users">
-      <app-user-item [user]="user"></app-user-item>
-      
-      <td>{{user.index}}</td>
-      <td>{{user.name | uppercase | lowercase}}</td>
-      <td>{{user.sex | sexName}}</td>
-      <td><a target="_blank" href="http://github.com/{{user.project}}">{{user.project}}</a></td>
-      <td>{{user.exam1}}</td>
-      <td>{{user.exam2}}</td>
-      <td>{{user.exam3}}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="row table-header">
+      <div class="col-1">选择 </div>
+      <div class="col-1" (click)="sortByAsccending('index')">ID </div>
+      <div class="col-2" (click)="sortByAsccending('name')">姓名 </div>
+      <div class="col-1" (click)="sortByAsccending('sex')">性别 </div>
+      <div class="col-2" (click)="sortByAsccending('project')">project </div>
+      <div class="col-1" (click)="sortByDesccending('exam1')">exam1 </div>
+      <div class="col-1" (click)="sortByDesccending('exam2')">exam2 </div>
+      <div class="col-1" (click)="sortByDesccending('exam3')">exam3 </div>
+      <div class="col-2">操作 </div>
+</div>
+<div class="row table-row" *ngFor="let user of searchResult">
+  <app-user-item [user]="user" (userClick)="selectUser = $event"></app-user-item>
+</div>
+<div class="row table-row" *ngFor="let user of users">
+  <app-user-item [user]="user" (userClick)="selectUser = $event"></app-user-item>
+</div>

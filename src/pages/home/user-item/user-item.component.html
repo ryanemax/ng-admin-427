@@ -1,7 +1,9 @@
-      <td (click)="onUserClick()">{{user.index}}</td>
-      <td>{{user.name | uppercase | lowercase}}</td>
-      <td>{{user.sex | sexName}}</td>
-      <td><a target="_blank" href="http://github.com/{{user.project}}">{{user.project}}</a></td>
-      <td>{{user.exam1}}</td>
-      <td>{{user.exam2}}</td>
-      <td>{{user.exam3}}</td>
+      <div class="col-1" (click)="onUserClick()">[ ]</div>
+      <div class="col-1" (click)="onUserClick()">{{user.index}}</div>
+      <div class="col-2">{{user.name | uppercase | lowercase}}</div>
+      <div class="col-1">{{user.sex | sexName}}</div>
+      <div class="col-2"><a target="_blank" href="http://github.com/{{user.project}}">{{user.project}}</a></div>
+      <div class="col-1">{{user.exam1}}</div>
+      <div class="col-1">{{user.exam2}}</div>
+      <div class="col-1">{{user.exam3}}</div>
+      <div class="col-2">编辑 删除</div>

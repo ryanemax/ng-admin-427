@@ -14,7 +14,10 @@ import {
 })
 export class HomePageComponent implements OnInit {
   searchText: string = "default";
-
+  selectUser:any={
+    name:"未选择"
+  };
+  searchResult:Array<any>;
   users: Array < any > = [{
       'index': 1,
      'name':'chenlu',
@@ -135,9 +138,16 @@ export class HomePageComponent implements OnInit {
   deleteLast() {
     this.users.pop();
   }
-  selectUser:any={
-    name:"未选择"
-};
+  search(type="name"){
+    this.searchResult = this.users.filter(item=>{
+      let result = String(item[type]).match(this.searchText)
+      if(result){
+        return true
+      }else{
+        return false
+      }
+    })
+  }
   getUserClick(ev){
     this.selectUser = ev
     console.log(ev);
