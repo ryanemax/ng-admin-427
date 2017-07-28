@@ -16,16 +16,16 @@ import {StudentService} from "../student.service";
 export class StudentListComponent implements OnInit {
   searchText: string = "";
   searchType: string = "name";
-  selectUser:any={
+  selectStudent:any={
     name:"未选择"
   };
   searchResult:Array<any>;
-  users:Array<any>=[];
+  students:Array<any>=[];
   deleteLast() {
-    this.users.pop();
+    this.students.pop();
   }
   search(){
-    this.searchResult = this.users.filter(item=>{
+    this.searchResult = this.students.filter(item=>{
       let result = String(item[this.searchType]).match(this.searchText)
       if(result){
         return true
@@ -41,27 +41,27 @@ export class StudentListComponent implements OnInit {
  
   sortByAsccending(type="id") {
     // 参考MDN Array操作的API文档 Array相关方法方法
-    this.users.sort((a,b)=>{
+    this.students.sort((a,b)=>{
       return a[type] - b[type];
     });
   }
   sortByDesccending(type="id") {
     // 参考MDN Array操作的API文档 Array相关方法
     // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array
-    this.users.sort((a,b)=>{
+    this.students.sort((a,b)=>{
       return b[type] - a[type];
     });
   }
   sortByRadom() {
     // 参考MDN Array操作的API文档 Math相关方法
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
- this.users.forEach((user,index)=>{
+ this.students.forEach((user,index)=>{
     let j = Math.floor(Math.random() * index);
-     [this.users[index - 1], this.users[j]] = [this.users[j], this.users[index - 1]];
+     [this.students[index - 1], this.students[j]] = [this.students[j], this.students[index - 1]];
   })
   }
   constructor(meta: Meta, title: Title, private studentServ:StudentService) {
-    this.users = this.studentServ.getUsers()
+    this.students = this.studentServ.getStudents()
  
     // Set SEO
     title.setTitle('My Home Page');
@@ -82,18 +82,18 @@ export class StudentListComponent implements OnInit {
     // end of SEO
   }
 
-  testTempUsers(){
-    console.log(this.users.length);
-    let tempUsers:Array<any> = []
-    this.users.forEach(item=>{
-      tempUsers.push(item)
+  testTempstudents(){
+    console.log(this.students.length);
+    let tempstudents:Array<any> = []
+    this.students.forEach(item=>{
+      tempstudents.push(item)
     })
-    tempUsers.pop()
-    tempUsers.pop()
-    tempUsers.pop()
-    tempUsers.pop()
-    tempUsers.pop()
-    console.log(tempUsers.length);
+    tempstudents.pop()
+    tempstudents.pop()
+    tempstudents.pop()
+    tempstudents.pop()
+    tempstudents.pop()
+    console.log(tempstudents.length);
   }
 
   ngOnInit() {}

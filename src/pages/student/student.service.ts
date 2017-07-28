@@ -125,7 +125,7 @@ export class StudentService{
 
     }
 
-    getUsers(){
+    getStudents(){
         return this.students;
     }
 

@@ -28,9 +28,9 @@
       <div class="col-1" (click)="sortByDesccending('exam3')">exam3 </div>
       <div class="col-2">操作 </div>
 </div>
-<div class="row table-row" *ngFor="let user of searchResult">
-  <app-student-item [user]="user" (userClick)="selectUser = $event"></app-student-item>
+<div class="row table-row" *ngFor="let student of searchResult">
+  <app-student-item [student]="student" (userClick)="selectStudent = $event"></app-student-item>
 </div>
-<div class="row table-row" *ngFor="let user of users">
-  <app-student-item [user]="user" (userClick)="selectUser = $event"></app-student-item>
+<div class="row table-row" *ngFor="let student of student">
+  <app-student-item [student]="student" (userClick)="selectStudent = $event"></app-student-item>
 </div>
