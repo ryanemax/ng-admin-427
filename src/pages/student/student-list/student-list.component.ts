@@ -57,6 +57,7 @@ export class StudentListComponent implements OnInit {
 
     let query = new Parse.Query("Student",http)
     query.limit(2);
+    query.equalTo("sex","M");
     query.find().subscribe(data=>{
       console.log(data)
       this.students = data
