@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 
 // Providers
 import { GoodsService } from './goods.service';
+// Import Shared Module
+import { PipesModule } from '../../pipes/pipes.module';
 
 import { GoodListComponent } from './good-list/good-list.component';
 import { GoodEditComponent } from './good-edit/good-edit.component';
@@ -15,6 +17,7 @@ import { GoodEditComponent } from './good-edit/good-edit.component';
     CommonModule,
     FormsModule,
     // Import Custom Shared Module
+    PipesModule,
     // Config Router
     RouterModule.forChild([
       { path: '', component: GoodListComponent, pathMatch: 'full' },  

@@ -41,10 +41,10 @@
       <td>{{good.prodname}}</td>
       <td>{{good.price}} </td>
       <td><a target="_blank" href="http://github.com/{{good.github}}">{{good.brand}}</a></td>
-      <td>{{good.zhishu}</td>
+      <td>{{good.zhishu | starCnt}}</td>
       <td>{{good.pinglun}}</td>
       <td>{{good.monthcnt}}</td>
-      <td><button routerLink="/goods/edit/{{good.objectId}}">编辑</button> <button (click)="goodServ.delete(good)">删除</button></td>
+      <td><button routerLink="/goods/edit/{{good.objectId}}">编辑</button></td>
     </tr>
   </tbody>
 </table>

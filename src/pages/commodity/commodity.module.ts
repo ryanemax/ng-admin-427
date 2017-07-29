@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
     // Config Router
     RouterModule.forChild([
       { path: '', component: CommodityListComponent, pathMatch: 'full' },
-      { path: 'commodity/edit/:id', component: CommodityEditComponent, pathMatch: 'full' }
+      { path: 'edit/:id', component: CommodityEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [
