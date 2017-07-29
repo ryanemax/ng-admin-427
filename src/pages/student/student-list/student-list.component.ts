@@ -10,6 +10,9 @@ import {
 import { Http } from '@angular/http'
 
 import {StudentService} from "../student.service";
+
+import {Parse} from "../../../cloud/parse"
+
 @Component({
   selector: 'app-student-list',
   templateUrl: './student-list.component.html',
@@ -52,7 +55,16 @@ export class StudentListComponent implements OnInit {
   }
   constructor(meta: Meta, title: Title,private http:Http, private studentServ:StudentService) {
 
-    this.students = this.studentServ.getStudents()
+    let query = new Parse.Query("Student",http)
+    query.find().subscribe(data=>{
+      console.log(data)
+      this.students = data
+    })
+
+    // this.studentServ.getStudents().subscribe(data=>{
+    //   console.log(data)
+    // })
+    
  
     // Set SEO
     title.setTitle('My Home Page');

@@ -1,4 +1,14 @@
 import { Injectable } from "@angular/core";
+import { Http, Response, Headers } from "@angular/http"
+
+
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {Observable} from 'rxjs/Observable';
+// import 'rxjs/add/observable/merge';
+import 'rxjs/add/observable/zip';
+import 'rxjs/add/observable/fromPromise';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/startWith';
 
 @Injectable()
 export class StudentService{
@@ -120,9 +130,9 @@ export class StudentService{
      'exam3': 0
     }
   ];
-
-    constructor(){
-
+    http:Http
+    constructor(http:Http){
+        this.http = http
     }
     delete(obj){
         let id = obj.id
@@ -146,8 +156,32 @@ export class StudentService{
             this.delete(item)
         })
     }
-    getStudents(){
-        return this.students;
+
+    getStudents():Observable<any[]>{
+        let serverURL = "http://host.qh-class.com:2337/parse"
+        let path = "/classes/"
+        let className = "Student"
+        let url = serverURL+path+className
+
+        let headers:Headers = new Headers({
+            "X-Parse-Application-Id":"dev",
+            "X-Parse-Master-Key":"angulardev",
+            // "X-Parse-Session-Token":"r:059bbbebdc201de090f16fe9716b43bf",
+            "Content-Type":"application/json; charset=utf-8"
+        })
+
+        return this.http.get(url,{ headers:headers })
+        .map(data=>data.json())
+        .map(data=>data.results)
+        // let p = new Promise((resolve,reject)=>{
+        //     let data:any;
+        //     data = this.students
+        //     if(data){
+        //         resolve(this.students)
+        //     }else{
+        //         reject("Not found");
+        //     }
+        // })
     }
 
 }

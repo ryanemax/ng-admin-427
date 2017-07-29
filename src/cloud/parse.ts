@@ -7,7 +7,7 @@ var ParseConfig = {
     applicationId:"",
     serverURL: "",
     headers:new Headers({
-        "X-Parse-Application-Id":"anas.cloud",
+        "X-Parse-Application-Id":"dev",
         "X-Parse-Master-Key":"angulardev",
         // "X-Parse-Session-Token":"r:059bbbebdc201de090f16fe9716b43bf",
         "Content-Type":"application/json; charset=utf-8"
@@ -69,7 +69,7 @@ export namespace Parse {
             this.headers = ParseConfig.headers;
             console.log("serverURL:",this.serverURL)
         }
-        find(){
+        find():Observable<any[]>{
             let url = this.serverURL+"/classes/"+this.className
             return this.http.get(url,{
                 headers: this.headers
@@ -78,7 +78,6 @@ export namespace Parse {
             .catch(super.handleHttpError)
         }
 }
-
 
     export function initialize(appId: string, sURL: string, javaScriptKey?: string, masterKey?: string): void{
         // this.CoreManager.APPLICATION_ID = applicationId
@@ -94,15 +93,15 @@ export namespace Parse {
         return
     };
 
-
-    
-
     interface IBaseObject {
         toJSON(): any;
         toPointer(): any;
     }
 
     class BaseObject implements IBaseObject {
+        objectId:string
+        createdAt:Date
+        updateAt:Date
         public toJSON(){
             
         };

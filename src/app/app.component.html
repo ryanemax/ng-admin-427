@@ -1,11 +1,120 @@
+<div class="layout-main" [attr.state]="sidenavState">
+  <!-- 页面头部布局 -->
+<section class="app-header">
+  <div class="app-header-inner">
+    <div class="hidden-lg-up float-left">
+      <button (click)="sidenav.toggle()" md-button class="md-button header-icon toggle-sidebar-btn">
+                <i class="material-icons">menu</i>
+            </button>
+    </div>
+    <div class="brand hidden-md-down float-left">
+      <h2><a>Cloud Admin</a></h2>
+    </div>
+    <div class="top-nav-right">
+      <button md-button class="md-button header-btn" [mdMenuTriggerFor]="appNotification">
+          <i class="material-icons">notifications_none</i>
+          <span class="badge">0</span>
+      </button>
+      <md-menu #appNotification="mdMenu" x-position="after" y-position="below" overlapTrigger="false">
+        <md-list dense>
+          <md-list-item>
+            <md-icon md-list-icon>mail_outline</md-icon>
+            <h4 md-line>暂无新消息</h4>
+            <p md-line class="text-muted">5 minutes ago</p>
+          </md-list-item>
+        </md-list>
+      </md-menu>
+
+      <button md-button class="md-button header-btn" [mdMenuTriggerFor]="appMore">
+        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=" alt="" style="width:30px;height:30px;">
+      </button>
+
+      <button md-button class="md-button header-btn" [mdMenuTriggerFor]="appMore">
+          <i class="material-icons">more_vert</i>
+          <span class="badge">2</span>
+      </button>
+      <md-menu #appMore="mdMenu" x-position="after" y-position="below" overlapTrigger="false">
+        <md-list dense>
+          <md-list-item>
+            <md-icon md-list-icon>swap_horiz</md-icon>
+            <h2 md-line>切换公司</h2>
+            <p md-line>埃森哲大连</p>
+          </md-list-item>
+          <md-list-item>
+            <md-icon md-list-icon>swap_horiz</md-icon>
+            <h2 md-line>切换部门</h2>
+            <p md-line>Angular大前端</p>
+          </md-list-item>
+
+          <md-list-item (click)="layoutServ.logout()">
+            <md-icon md-list-icon>power_settings_new</md-icon>
+            <h2 md-line>注销账号</h2>
+            <p md-line>稍作休息</p>
+          </md-list-item>
+        </md-list>
+      </md-menu>
+    </div>
+  </div>
+</section>
+
+<md-sidenav-container class="pc-sidenav-container">
+  <!-- 菜单侧栏导航 -->
+  <md-sidenav #sidenav mode="side" opened="true" mode="side">
+    <!--<pc-sidenav-menu></pc-sidenav-menu>-->
+
+<ul>
+            <div>
+            <li><a routerLink="rxjs" md-button class="md-button prepend-icon"><i class="material-icons nav-icon">keyboard_arrow_right</i><span class="nav-text">RXJS</span></a></li>
+            </div>
+            <div>
+            <li><a routerLink="home" md-button class="md-button prepend-icon"><i class="material-icons nav-icon">keyboard_arrow_right</i><span class="nav-text">HOME</span></a></li>
+            </div>
+            <div>
+            <li><a routerLink="about" md-button class="md-button prepend-icon"><i class="material-icons nav-icon">keyboard_arrow_right</i><span class="nav-text">ABOUT</span></a></li>
+            </div>
+            <div>
+            <li><a routerLink="student" md-button class="md-button prepend-icon"><i class="material-icons nav-icon">keyboard_arrow_right</i><span class="nav-text">学员管理</span></a></li>
+            </div>
+            <!--带badge数字提示菜单示例-->
+            <!--<li><a md-button class="md-button prepend-icon"><i class="material-icons nav-icon">keyboard_arrow_right</i><span class="nav-text">Icons</span><span class="badge badge-pill badge-info">2</span></a></li>
+            <li><a md-button class="md-button prepend-icon"><i class="material-icons nav-icon">keyboard_arrow_right</i><span class="nav-text">Components</span><span class="badge badge-pill badge-danger">12</span></a></li>-->
+        </ul>
+
+  </md-sidenav>
+   <!--菜单切换按钮 -->
+  <!--<button md-mini-fab class="pc-menu-fab" (click)="sidenav.toggle()">
+    <md-icon>Menu</md-icon>
+  </button>-->
+  <!--<button (click)="sidenav.toggle()" md-button myToggleOffcanvasNav class="md-button header-icon toggle-sidebar-btn">
+                <i class="material-icons">menu</i>
+  </button>-->
+
+  <!-- 页面加载区域 -->
+  <div class="pc-main-container">
+    <router-outlet></router-outlet>
+  </div>
+  <!-- 页面尾部布局 -->
+  <div class="footer">
+    <p>Copyright Ryane(Liu Yuyang) 2017</p>
+    </div>
+</md-sidenav-container>
+<div>
+
+
+
+
+
+
+
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="header">
+<!--<div class="header">
 <h1><a routerLink="login">登陆</a>{{now | date:"yyyy-MM-dd"}} Welcome to {{title}}!</h1>
 </div>
 
 <div class="row">
 <div class="col-2 col-m-2 menu">
 <ul>
+<li><a routerLink="rxjs">RXJS</a></li>    
 <li><a routerLink="home">Home</a></li>
 <li><a routerLink="about">About</a></li>
 <li><a routerLink="student">学员管理</a></li>
@@ -22,5 +131,5 @@
 </div>
 <div class="footer">
 <p>Copyright Ryane(Liu Yuyang) 2017</p>
-</div>
+</div>-->
 

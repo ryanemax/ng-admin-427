@@ -1,0 +1,205 @@
+.pc-sidenav-container,.pc-main-container,.layout-main{
+    width:100%;
+    height:100%;
+}
+.footer{
+    width:100%;
+    height:60px;    
+}
+// layout
+.app-header{
+    background-color:#2196f3;
+    color:#fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    display: block;
+  position: relative;
+
+    // position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+
+  z-index: 1000;
+  height: 60px;
+  width: 100%;
+
+
+  .toggle-sidebar{
+    display: block;
+  }
+}
+
+.fixed-header {
+  .app-header {
+    
+  }
+}
+
+
+
+// theme
+.app-header {
+  padding: 0;
+  border: 0; // no border, otherwise other elements' height can only be (60px -1)
+  text-align: center;
+
+  .app-header-inner {
+    height: 60px;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+  }
+
+  &.bg-transparent {
+    background-color: transparent !important;
+  }
+
+  .brand {
+    display: inline-block;
+    text-align: center;
+    h2 {
+      font-size: 30px;
+      margin: 0;
+      line-height: 60px;
+    }
+  }
+
+  .header-icon {
+    display: inline-block;
+    height: 60px;
+    padding: 0 14px;
+
+    .material-icons {
+      font-size: 24px;
+    }
+  }
+}
+
+.top-nav-left button,.top-nav-right button{
+line-height: 60px;
+}
+
+.top-nav-left {
+  float: left;
+  
+  display: inline-block;
+
+}
+
+.top-nav-right {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 60px;
+  float: right;
+
+}
+
+
+// .nav
+.nav {
+    // General
+    list-style: none;
+    padding-left:0px;
+    .nav-text {
+
+    }
+    .nav-icon {
+        transition: padding 0.35s cubic-bezier(0, 0, 0.2, 1), margin 0.35s cubic-bezier(0, 0, 0.2, 1);
+        margin-right: 18px;
+    }
+    a {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    > div{
+        margin-left:-40px!important;
+    }
+    li {
+        position: relative;
+        .badge {
+            position: absolute;
+            padding: 3px 6px;
+
+                display: inherit;
+            top: 21px;
+            right: 35px;
+        }
+    }
+    .nav-header {
+        margin: 15px 15px 5px;
+        font-size: 20px;
+    }
+    .nav-divider + .nav-header {
+        margin-top: 5px;
+    }
+
+    // first level li 
+    > div > li,> li {
+        > a {
+            line-height: 24px;
+            text-align: left;
+            padding: 10px 16px;
+        }
+    }
+    .nav-icon {
+        display: inline-block;
+
+        &.material-icons {
+            width: 24px;
+            height: 24px; // with font-size 20px, material-icons will be at least 25px high
+            font-size: 18px;
+            line-height: 24px;
+            text-align: center;
+
+            &.nav-dot {
+                font-size: 16px;
+            }
+        }
+    }
+
+    // sub ul
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            > a {
+                line-height: 24px;
+                text-align: left;
+                padding: 10px 18px; // Align with 1st level: 18px = 16px (1st level) + 2px ()
+
+                .material-icons {
+                    width: 20px;
+                    height: 20px; // with font-size 20px, material-icons will be at least 25px high
+                    font-size: 16px;
+                    line-height: 1;
+                    text-align: left;
+                    vertical-align: middle;
+                    margin-bottom: -2px;
+                }
+            }
+        }
+    }
+
+    // sub2 ul 
+    ul ul {
+        li {
+            > a {
+                line-height: 24px;
+                text-align: left;
+                padding: 10px 15px 10px 56px; // With icon, padding-left: 18(a padding-left)+20(icon width)+18(nav-icon margin-right)
+            }
+        }
+    }
+
+    // sub3 ul 
+    ul ul ul {
+        li {
+            > a {
+                padding-left: 74px;
+            }
+        }
+    }
+}

@@ -2,7 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
-import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { AppRoutingModule } from './app-routing.module';  
 import { AppComponent } from './app.component';
 
 // 当打包部署静态包时，需要加载本Module，当使用服务端渲染时，请注释
@@ -24,7 +27,11 @@ Parse.initialize("dev","http://host.qh-class.com:2337/parse")
     BrowserModule.withServerTransition({appId: 'ng-lazyload-starter'}),
     AppRoutingModule,
     HttpModule,
-    SPAModule, // 静态打包时加载
+    // Material及动画库
+    MaterialModule,
+    BrowserAnimationsModule,
+    // 静态打包时加载
+    SPAModule,
   ],
   providers: [],
   exports: [AppComponent],

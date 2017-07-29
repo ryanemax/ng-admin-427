@@ -1,17 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 
 // Global Style
+html,body{
+            height:100%;
+            width:100%;
+}
 body{
             background-image: url(./assets/bg.svg);
 }
 a{
-    color:#FFF;
+    color:#000;
     text-decoration:none;    
 }
 a:visited{
-    color:#FFF;
+    color:#000;
 }
-
+li{
+    list-style-type:none;
+}
 .header {
     background-color: #00bcd4;
     height:70px;
