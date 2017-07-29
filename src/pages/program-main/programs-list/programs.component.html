@@ -1,0 +1,13 @@
+<div>
+  <span *ngIf="isChecked()" (click)="check()">[x]</span>
+  <span *ngIf="!isChecked()" (click)="check()">[&nbsp;&nbsp;]</span>
+  <span>{{program.id}}</span>
+  <span>{{program.name}}</span>
+  <span>{{program.member}}</span>
+  <span>{{program.number}}</span>
+  <span>{{program.time}} </span>
+  <span><a routerLink="/programs-detail/{{program.id}}">{{program.grade}}</a></span>
+  <span><img src="../../assets/heart.png" alt="heart" class="heart"><span>{{program.zan}}</span></span>
+</div>
+
+

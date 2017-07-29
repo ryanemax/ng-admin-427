@@ -25,21 +25,21 @@ export class PokemonEditComponent implements OnInit {
 
   attribute:any;
 
-  getPokemon(id: any): Promise<any> {      
-      let p = new Promise((resolve,reject)=>{ 
-       this.infoPokemon = id;
-       let pokemon = this.poService.pokemonList.find(item=>item.id == id) 
-       if(pokemon){ 
-         resolve(pokemon) 
-       }else{ 
-         reject("student not found") 
-       } 
-     }) 
+//   getPokemon(id: any): Promise<any> {      
+//       let p = new Promise((resolve,reject)=>{ 
+//        this.infoPokemon = id;
+//        let pokemon = this.poService.pokemonList.find(item=>item.id == id) 
+//        if(pokemon){ 
+//          resolve(pokemon) 
+//        }else{ 
+//          reject("student not found") 
+//        } 
+//      }) 
 
-     console.log(p);
-     return p 
+//      console.log(p);
+//      return p 
 
- }
+//  }
 
  updatePokemon(){
    console.log("updatePokemon")
