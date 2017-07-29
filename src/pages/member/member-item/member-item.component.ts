@@ -11,11 +11,17 @@ import {MemberService} from "../member.service";
 export class MemberItemComponent implements OnInit {
   @Input() user:any
   @Output() userClick = new EventEmitter<any>();
-  constructor() { 
+  constructor( private memberServ:MemberService) { 
   }
   onUserClick(){
-    this.userClick.emit(this.user)
-  }
+    this.userClick.emit(this.user)}
+
   ngOnInit() {
+  }
+
+  delete(obj){
+    this.memberServ.deleteMembertById(obj.objectId).subscribe((data)=>{
+      console.log(data);
+    })
   }
 }
