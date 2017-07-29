@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MaterialModule } from '@angular/material';
 
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -14,20 +15,21 @@ import { PipesModule } from '../../pipes/pipes.module'
 import { DirectivesModule } from '../../directives/directives.module'
 
 // Providers
-import { customerService } from './customer.service'
+import { CustomerService } from './customer.service'
 
 @NgModule({
   imports: [
      // Import Official Shared Module
     CommonModule,
     FormsModule,
+    MaterialModule,
     // Import Custom Shared Module
     PipesModule,
     DirectivesModule,
     // Config Router
     RouterModule.forChild([
       { path: '', component: customerListComponent, pathMatch: 'full' },
-      { path: 'customer/edit/:sid', component: customerEditComponent, pathMatch: 'full' }
+      { path: 'edit/:sid', component: customerEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [
@@ -35,6 +37,6 @@ import { customerService } from './customer.service'
    customerItemComponent, 
    customerEditComponent
    ],
-   providers:[customerService]
+   providers:[CustomerService]
 })
-export class customerModule { }
+export class CustomerModule { }

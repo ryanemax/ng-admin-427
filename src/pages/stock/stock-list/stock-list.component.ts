@@ -56,7 +56,6 @@ export class StockListComponent implements OnInit {
   constructor(meta: Meta, title: Title, private http:Http, private stockServ:StockService) {
     let query = new Parse.Query("Stock",http)
     query.find().subscribe(data=>{
-      console.log(data)
       this.stocks = data
     })
     // Set SEO

@@ -53,6 +53,7 @@ getGoodSubscribe:any;
     this.goodServ.saveGood(this.good).subscribe(data=>{
       console.log(data)
       this.location.back();
+      alert("保存成功。");
     })
   }
 

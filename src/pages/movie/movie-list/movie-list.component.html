@@ -1,0 +1,33 @@
+<p>已选择导演:{{selectMovie.name}}</p>
+<div class="table-controls">
+    <div class="search-area" style="height:60px;">
+      <select [(ngModel)]="searchType" style="float:left;">
+        <option value="name">导演</option>
+        <option value="project">影片名</option>
+      </select>
+<input style="float:left;" 
+  [(ngModel)]="searchText"/>
+<button style="float:left;" (click)="movieServ.search(searchType,searchText)">搜索</button>
+
+<button routerLink="/movie/edit/new">新增影片</button>
+<button (click)="movieServ.deleteChecked()">批量删除</button>
+<button (click)="sortByAsccending()">正序</button>
+<button (click)="sortByDesccending()">倒序</button>
+<button (click)="sortByRadom()">随机</button>
+</div>
+<div class="row table-header">
+      <div class="col-1">选择 </div>
+      <div class="col-1" (click)="sortByAsccending('id')">ID </div>
+      <div class="col-2" (click)="sortByAsccending('name')">影片名</div>
+      <div class="col-1" (click)="sortByAsccending('categor')">类型</div>
+      <div class="col-2" (click)="sortByAsccending('countryRegion')">国家地区</div>
+      <div class="col-2" (click)="sortByDesccending('frequency')">重刷次数</div>
+      <div class="col-1" (click)="sortByDesccending('degree')">热爱度</div>
+      <div class="col-2">操作 </div>
+</div>
+<div class="row table-row" *ngFor="let movie of searchResult">
+  <app-movie-item [movie]="movie" (movieClick)="selectMovie = $event"></app-movie-item>
+</div>
+<div class="row table-row" *ngFor="let movie of movies">
+  <app-movie-item [movie]="movie" (movieClick)="selectMovie = $event"></app-movie-item>
+</div>

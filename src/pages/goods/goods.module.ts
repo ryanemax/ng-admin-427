@@ -18,7 +18,7 @@ import { GoodEditComponent } from './good-edit/good-edit.component';
     // Config Router
     RouterModule.forChild([
       { path: '', component: GoodListComponent, pathMatch: 'full' },  
-      { path: 'goods/edit/:gid', component: GoodEditComponent, pathMatch: 'full' }
+      { path: 'edit/:gid', component: GoodEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [GoodListComponent, GoodEditComponent],

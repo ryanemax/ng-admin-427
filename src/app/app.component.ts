@@ -17,6 +17,7 @@ export class AppComponent {
     {"path":"student","icon":"people","name":"学生管理"},
     {"path":"rxjs","icon":"android","name":"RXJS"},
     {"path":"werewolves","icon":"people","name":"狼人杀"},
+    {"path":"player","icon":"people","name":"球员管理"},
     {"path":"park","icon":"people","name":"介里有车位"},
     {"path":"stock","icon":"people","name":"股票管理"},
     {"path":"product","icon":"people","name":"销售系统"},
@@ -27,6 +28,7 @@ export class AppComponent {
     {"path":"goods","icon":"store","name":"淘淘杂货铺"},
     {"path":"program-main","icon":"people","name":"埃森哲之夜"},
     {"path":"goods","icon":"android","name":"淘淘杂货铺"},
+    {"path":"movie ","icon":"flare","name":"SC的松鼠躁狂小屋"},
     {"path":"pokemon","icon":"people","name":"Pokemon"},
     {"path":"commodity","icon":"people","name":"商品管理"},
   ]
