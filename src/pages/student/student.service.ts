@@ -132,9 +132,7 @@ export class StudentService{
      'exam3': 0
     }
   ];
-    http:Http
-    constructor(http:Http,private location:Location){
-        this.http = http
+    constructor(private http:Http,private location:Location){
     }
     delete(obj){
         this.deleteStudentById(obj.objectId).subscribe(data=>{

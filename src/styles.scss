@@ -4,6 +4,8 @@
 html,body{
             height:100%;
             width:100%;
+            margin:0px;
+            overflow-x: hidden;
 }
 body{
             background-image: url(./assets/bg.svg);
@@ -57,4 +59,31 @@ li{
     text-align: center;
     font-size: 12px;
     padding: 15px;
+}
+
+// Components
+.shadowbar{
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)!important;
+    margin-bottom:10px;
+}
+.float-left{
+    float:left;
+}
+
+
+// Table Style
+.table-controls{
+    display: inline;
+    .search-area{
+        float:left
+    }
+    button,input,select {
+        border: 1px solid #fff;
+        border-radius: 5px;
+        padding: 8px 10px;
+        opacity: 0.6;
+        background: #8bc34a;
+        margin-right: 5px;
+        outline: none;
+    }
 }

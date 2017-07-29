@@ -1,11 +1,24 @@
-.pc-sidenav-container,.pc-main-container,.layout-main{
+.layout-main{
+    width:100%;
+    height:100%;
+    position:fixed;
+}
+
+.pc-sidenav-container{
     width:100%;
     height:100%;
 }
+.pc-main-container{
+    width:100%;
+    height:100%;
+    background-color:#FFF;
+}
+
 .footer{
     width:100%;
     height:60px;    
 }
+
 // layout
 .app-header{
     background-color:#2196f3;
@@ -35,27 +48,43 @@
   }
 }
 
+// md-sidenav-container
+md-sidenav-container{
+    // border-radius:5px;
+    // margin:5px;
+}
 
+md-sidenav{
+    width:170px;
+    ul{
+        padding-left:14px;
+    }
+}
 
 // theme
 .app-header {
   padding: 0;
   border: 0; // no border, otherwise other elements' height can only be (60px -1)
   text-align: center;
-
+    
   .app-header-inner {
     height: 60px;
     box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
   }
 
-  &.bg-transparent {
-    background-color: transparent !important;
-  }
+    .toggle-button{
+        height: 60px;
+        float:left;
+        button{
+                line-height: 60px;
+        }
+    }   
 
   .brand {
-    display: inline-block;
     text-align: center;
     h2 {
+      color:#FFF!important;
+        
       font-size: 30px;
       margin: 0;
       line-height: 60px;
@@ -113,9 +142,7 @@ line-height: 60px;
             cursor: pointer;
         }
     }
-    > div{
-        margin-left:-40px!important;
-    }
+
     li {
         position: relative;
         .badge {

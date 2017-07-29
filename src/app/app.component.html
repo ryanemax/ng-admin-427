@@ -2,13 +2,13 @@
   <!-- 页面头部布局 -->
 <section class="app-header">
   <div class="app-header-inner">
-    <div class="hidden-lg-up float-left">
-      <button (click)="sidenav.toggle()" md-button class="md-button header-icon toggle-sidebar-btn">
+    <div class="top-nav-left">
+      <button (click)="sidenav.toggle()" md-button class="md-button">
                 <i class="material-icons">menu</i>
-            </button>
+      </button>
     </div>
-    <div class="brand hidden-md-down float-left">
-      <h2><a>Cloud Admin</a></h2>
+    <div class="brand top-nav-left">
+      <h2>Cloud Admin</h2>
     </div>
     <div class="top-nav-right">
       <button md-button class="md-button header-btn" [mdMenuTriggerFor]="appNotification">
@@ -56,13 +56,13 @@
     </div>
   </div>
 </section>
+<!--  End of 页面头部布局 -->
+
 
 <md-sidenav-container class="pc-sidenav-container">
   <!-- 菜单侧栏导航 -->
   <md-sidenav #sidenav mode="side" opened="true" mode="side">
-    <!--<pc-sidenav-menu></pc-sidenav-menu>-->
-
-<ul>
+          <ul>
             <div>
             <li><a routerLink="rxjs" md-button class="md-button prepend-icon"><i class="material-icons nav-icon">keyboard_arrow_right</i><span class="nav-text">RXJS</span></a></li>
             </div>
@@ -81,22 +81,19 @@
         </ul>
 
   </md-sidenav>
-   <!--菜单切换按钮 -->
-  <!--<button md-mini-fab class="pc-menu-fab" (click)="sidenav.toggle()">
-    <md-icon>Menu</md-icon>
-  </button>-->
-  <!--<button (click)="sidenav.toggle()" md-button myToggleOffcanvasNav class="md-button header-icon toggle-sidebar-btn">
-                <i class="material-icons">menu</i>
-  </button>-->
+  <!-- End of 菜单侧栏导航 -->
 
-  <!-- 页面加载区域 -->
+  <!-- 路由加载区域 -->
   <div class="pc-main-container">
     <router-outlet></router-outlet>
   </div>
+  <!-- End of 路由加载区域 -->]
+
   <!-- 页面尾部布局 -->
   <div class="footer">
     <p>Copyright Ryane(Liu Yuyang) 2017</p>
-    </div>
+  </div>
+  <!-- End of 页面尾部布局 -->
 </md-sidenav-container>
 <div>
 
