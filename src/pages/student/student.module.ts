@@ -27,7 +27,7 @@ import { StudentService } from './student.service'
     // Config Router
     RouterModule.forChild([
       { path: '', component: StudentListComponent, pathMatch: 'full' },
-      { path: 'student/edit/:sid', component: StudentEditComponent, pathMatch: 'full' }
+      { path: 'student/edit/:id', component: StudentEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [

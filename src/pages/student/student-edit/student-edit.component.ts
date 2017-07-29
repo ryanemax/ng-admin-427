@@ -26,42 +26,37 @@ export class StudentEditComponent implements OnInit,OnDestroy {
     this.location.back();
   }
   save(){
-    if(this.isNew){
-      this.studentServ.students.push(this.student)
-    }
-    this.location.back();
+    this.student.exam1 = Number(this.student.exam1)
+    this.student.exam2 = Number(this.student.exam2)
+    this.student.exam3 = Number(this.student.exam3)
+    this.studentServ.saveStudent(this.student).subscribe(data=>{
+      console.log(data)
+      this.location.back();
+    })
+    this.studentServ.saveStudent(this.student).subscribe(data=>{
+      console.log(data)
+      this.location.back();        
+    })
   }
   ngOnInit() {
-    this.getStudentSubscribe = this.route.params.subscribe(params=>{
-      this.getStudent(params['sid']).then(student=>{
-      console.log(student)
-      this.studentId = student.id;
-      this.student = student
-    }).catch(err=>{
-      console.log(err)
-    })
+        this.route.params.subscribe(params=>{
+          let id = params['id']
+          if(id=="new"){
+            let student = {name:""}
+            this.isNew = true;
+            this.student = student
+          }else{
+            this.studentServ.getStudentById(id).subscribe(student=>{
+            console.log(student)
+            // this.studentId = student.objectId;
+            this.student = student
+        })
+      }
+
     })
   }
   ngOnDestroy(){
-    this.getStudentSubscribe.unsubscribe();
   }
 
-  getStudent(id: any): Promise<any> {
-    
-    let p = new Promise((resolve,reject)=>{
-      if(id=="new"){
-        let student = {name:""}
-        this.isNew = true;
-        resolve(student)
-      }
-      let student = this.studentServ.students.find(item=>item.id == id)
-      if(student){
-        resolve(student)
-      }else{
-        reject("student not found")
-      }
-    })
-    return p
-}
 
 }

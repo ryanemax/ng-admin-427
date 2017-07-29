@@ -11,7 +11,7 @@ var ParseConfig = {
         "X-Parse-Master-Key":"angulardev",
         // "X-Parse-Session-Token":"r:059bbbebdc201de090f16fe9716b43bf",
         "Content-Type":"application/json; charset=utf-8"
-    }) 
+    })
 }
 
 export namespace Parse {
@@ -62,6 +62,42 @@ export namespace Parse {
         headers:Headers
         serverURL:string
         className:string
+        constructor(className:string,http:Http){
+            super(http)
+            this.className = className
+            this.serverURL = ParseConfig.serverURL;
+            this.headers = ParseConfig.headers;
+            console.log("serverURL:",this.serverURL)
+        }
+        find():Observable<any[]>{
+            let url = this.serverURL+"/classes/"+this.className
+            return this.http.get(url,{
+                headers: this.headers
+            })
+            .map(super.extractData)
+            .catch(super.handleHttpError)
+        }
+}
+
+
+/*
+    * Parse.Query 查询类，继承自HttpHandler
+    * @params className 对应数据类名 
+    * @params http 传输组件中注入的http方法 
+    * 使用方法参考
+    let query = new Parse.Query("TeacherInfo",http)
+    query.find().subscribe(data=>{
+      console.log(data)
+    })
+*/
+
+    export class Object extends HttpHandler{
+        headers:Headers
+        serverURL:string
+
+        className:string
+        createdAt:Date
+        updatedAt:Date
         constructor(className:string,http:Http){
             super(http)
             this.className = className

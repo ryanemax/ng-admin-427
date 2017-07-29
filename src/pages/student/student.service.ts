@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Http, Response, Headers } from "@angular/http"
 
+import { Location } from '@angular/common';
+
 
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Observable} from 'rxjs/Observable';
@@ -131,16 +133,20 @@ export class StudentService{
     }
   ];
     http:Http
-    constructor(http:Http){
+    constructor(http:Http,private location:Location){
         this.http = http
     }
     delete(obj){
-        let id = obj.id
-        this.students.forEach((item,index,array)=>{
-        if(item.id == id){
-            array.splice(index,1)
-        }
+        this.deleteStudentById(obj.objectId).subscribe(data=>{
+            console.log(data);
+            this.location.go("/student")
         })
+
+        // this.students.forEach((item,index,array)=>{
+        //     if(item.id == id){
+        //         array.splice(index,1)
+        //     }
+        // })
     }
     search(type,value){
         this.students.sort((a,b)=>{
@@ -158,6 +164,7 @@ export class StudentService{
     }
 
     getStudents():Observable<any[]>{
+        // 1. 拼接HTTP请求所需的URL和Headers
         let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "Student"
@@ -170,18 +177,84 @@ export class StudentService{
             "Content-Type":"application/json; charset=utf-8"
         })
 
+        // 2. 发起HTTP GET查询请求
         return this.http.get(url,{ headers:headers })
         .map(data=>data.json())
-        .map(data=>data.results)
-        // let p = new Promise((resolve,reject)=>{
-        //     let data:any;
-        //     data = this.students
-        //     if(data){
-        //         resolve(this.students)
-        //     }else{
-        //         reject("Not found");
-        //     }
-        // })
+        .map(data=>data.results)        
+    }
+    deleteStudentById(objectId):Observable<any>{
+            // 1. 拼接HTTP请求所需的URL和Headers
+            let serverURL = "http://host.qh-class.com:2337/parse"
+            let path = "/classes/"
+            let className = "Student"
+            let url = serverURL+path+className+"/"+objectId
+
+            let headers:Headers = new Headers({
+                "X-Parse-Application-Id":"dev",
+                "X-Parse-Master-Key":"angulardev",
+                // "X-Parse-Session-Token":"r:059bbbebdc201de090f16fe9716b43bf",
+                "Content-Type":"application/json; charset=utf-8"
+            })
+
+            // 2. 发起HTTP DELETE查询请求
+            return this.http.delete(url,{ headers:headers })
+            .map(data=>data.json())
+        }
+    getStudentById(objectId):Observable<any>{
+        // 1. 拼接HTTP请求所需的URL和Headers
+        let serverURL = "http://host.qh-class.com:2337/parse"
+        let path = "/classes/"
+        let className = "Student"
+        let url = serverURL+path+className+"/"+objectId
+
+        let headers:Headers = new Headers({
+            "X-Parse-Application-Id":"dev",
+            "X-Parse-Master-Key":"angulardev",
+            // "X-Parse-Session-Token":"r:059bbbebdc201de090f16fe9716b43bf",
+            "Content-Type":"application/json; charset=utf-8"
+        })
+
+        // 2. 发起HTTP GET查询请求
+        return this.http.get(url,{ headers:headers })
+        .map(data=>data.json())
+    }
+
+    saveStudent(body?):Observable<any[]>{
+        // 1. 拼接HTTP请求所需的URL和Headers
+        let serverURL = "http://host.qh-class.com:2337/parse"
+        let path = "/classes/"
+        let className = "Student"
+        let url = serverURL+path+className
+
+        let headers:Headers = new Headers({
+            "X-Parse-Application-Id":"dev",
+            "X-Parse-Master-Key":"angulardev",
+            // "X-Parse-Session-Token":"r:059bbbebdc201de090f16fe9716b43bf",
+            "Content-Type":"application/json; charset=utf-8"
+        })
+
+        // 2. 发起HTTP POST或PUT提交请求
+        if(!body){
+            body = {name:"666777",project:"ryanemax/ng-admin",exam1:66}
+        }
+
+        if(body.objectId){
+            url += "/"+body.objectId
+            // body.objectId = undefined
+            return this.http.put(url,{
+                name:body.name,
+                exam1:body.exam1,
+                exam2:body.exam2,
+                exam3:body.exam3,
+                project:body.project,
+                sex:body.sex,
+            },{ headers:headers })
+            .map(data=> data.json())
+        }else{
+            return this.http.post(url,body,{ headers:headers })
+            .map(data=> data.json())
+        }
+
     }
 
 }
