@@ -1,0 +1,40 @@
+<p>
+  <span *ngIf="isNew">新增用户</span>
+  <span *ngIf="!isNew">编辑用户:{{this.employeeId}}</span>
+  <button (click)="back()">返回</button>
+</p>
+
+<div>
+姓名：
+<input type="text" [(ngModel)]="employee.name"/>
+</div>
+
+<div>
+性别：
+<select [(ngModel)]="employee.sex">
+  <option value="M">男</option>
+  <option value="F">女</option>
+</select>
+</div>
+
+<div>
+项目：
+<input type="text" [(ngModel)]="employee.project"/>
+</div>
+
+<div>
+部门：
+<input type="text" [(ngModel)]="employee.department"/>
+</div>
+
+<div>
+职位：
+<input type="text" [(ngModel)]="employee.position"/>
+</div>
+
+<div>
+电话：
+<input type="text" [(ngModel)]="employee.telno"/>
+</div>
+
+<button routerLink="/employee" (click)="save()">提交</button>

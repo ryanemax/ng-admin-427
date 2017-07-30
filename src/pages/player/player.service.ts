@@ -12,6 +12,10 @@ import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/startWith';
 
+// 加及初始化 数据接口封装库
+import { Parse } from '../../cloud/parse'
+Parse.initialize("dev","http://host.qh-class.com:2337/parse")
+
 @Injectable()
 export class PlayerService{
     isLogined:boolean = false;
@@ -153,7 +157,7 @@ export class PlayerService{
 
         // 2. 发起HTTP POST或PUT提交请求
         if(!body){
-            body = {name:"wulei01",nationality:"China",match:10}
+            body = {name:"武磊",nationality:"中国",match:10}
         }
 
         if(body.objectId){

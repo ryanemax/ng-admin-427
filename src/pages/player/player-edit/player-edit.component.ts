@@ -27,15 +27,12 @@ export class PlayerEditComponent implements OnInit,OnDestroy {
   }
   save(){
     this.player.match = Number(this.player.match)
-    this.player.goal = Number(this.player.goal)
+    this.player.goal  = Number(this.player.goal)
     this.player.title = Number(this.player.title)
     this.playerServ.savePlayer(this.player).subscribe(data=>{
       console.log(data)
       this.location.back();
-    })
-    this.playerServ.savePlayer(this.player).subscribe(data=>{
-      console.log(data)
-      this.location.back();
+      alert("保存成功。");
     })
   }
   ngOnInit() {

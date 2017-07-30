@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentItemComponent } from './student-item/student-item.component';
 import { StudentEditComponent } from './student-edit/student-edit.component';
+import { StudentAnalysisComponent } from './student-analysis/student-analysis.component'
 
 // Import Shared Module
 import { PipesModule } from '../../pipes/pipes.module'
@@ -29,13 +30,15 @@ import { StudentService } from './student.service'
     // Config Router
     RouterModule.forChild([
       { path: '', component: StudentListComponent, pathMatch: 'full' },
-      { path: 'edit/:id', component: StudentEditComponent, pathMatch: 'full' }
+      { path: 'edit/:id', component: StudentEditComponent, pathMatch: 'full' },
+      { path: 'analysis', component: StudentAnalysisComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [
    StudentListComponent,
    StudentItemComponent, 
-   StudentEditComponent
+   StudentEditComponent,
+   StudentAnalysisComponent,
    ],
    providers:[StudentService]
 })
