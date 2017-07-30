@@ -24,6 +24,11 @@ export class CommodityItemComponent implements OnInit {
       this.commodity.check = true
     }
   }
+  delete(obj){
+    this.commodityServ.deleteCommodityById(obj.objectId).subscribe(data=>{
+      console.log(data);
+    })
+  }
   isChecked(){
     if(this.commodity.check&&this.commodity.check==true){
       return true
