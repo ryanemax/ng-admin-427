@@ -19,5 +19,7 @@ export class AppComponent {
     {"path":"werewolves","icon":"people","name":"狼人杀"},
     {"path":"stock","icon":"people","name":"股票管理"},
     {"path":"wbs","icon":"menu","name":"任务管理"},
+    {"path":"member","icon":"people","name":"程序员信息"},
+    {"path":"pokemon","icon":"people","name":"Pokemon"},
   ]
 }

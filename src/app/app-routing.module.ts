@@ -13,7 +13,10 @@ const SSRroutes: Routes = [
   { path: 'login', loadChildren: '../pages/user/user.module#UserModule' },
   { path: 'student', loadChildren: '../pages/student/student.module#StudentModule' },
   { path: 'werewolves', loadChildren: '../pages/werewolves/werewolves.module#WerewolvesModule' },
+  { path: 'wbs', loadChildren: '../pages/wbs/wbs.module#WBSModule' },
   { path: 'stock', loadChildren: '../pages/stock/stock.module#StockModule' },
+  { path: 'member', loadChildren: '../pages/member/member.module#MemberModule' },
+  { path: 'pokemon', loadChildren: '../pages/pokemon/pokemon.module#PokemonModule' },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
