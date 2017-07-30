@@ -17,11 +17,12 @@ const SSRroutes: Routes = [
   { path: 'wbs', loadChildren: '../pages/wbs/wbs.module#WBSModule' },
   { path: 'stock', loadChildren: '../pages/stock/stock.module#StockModule' },
   { path: 'member', loadChildren: '../pages/member/member.module#MemberModule' },
-<<<<<<< HEAD
+  { path: 'program-main', loadChildren: '../pages/program-main/program-main.module#ProgramMainModule' },
+
   { path: 'goods', loadChildren: '../pages/goods/goods.module#GoodsModule' },
-=======
+
   { path: 'pokemon', loadChildren: '../pages/pokemon/pokemon.module#PokemonModule' },
->>>>>>> 90c6dd2ab59641a8b51d28a69421e27f2217b3af
+
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
