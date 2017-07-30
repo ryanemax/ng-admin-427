@@ -19,6 +19,7 @@ const SSRroutes: Routes = [
   { path: 'product', loadChildren: '../pages/product/product.module#ProductModule' },
   { path: 'customer', loadChildren: '../pages/customer/customer.module#customerModule' },
   { path: 'member', loadChildren: '../pages/member/member.module#MemberModule' },
+  { path: 'appstore', loadChildren: '../pages/appstore/appstore.module#AppstoreModule' },
   { path: 'program-main', loadChildren: '../pages/program-main/program-main.module#ProgramMainModule' },
   { path: 'goods', loadChildren: '../pages/goods/goods.module#GoodsModule' },
   { path: 'pokemon', loadChildren: '../pages/pokemon/pokemon.module#PokemonModule' },
