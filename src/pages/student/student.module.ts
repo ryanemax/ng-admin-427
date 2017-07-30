@@ -18,12 +18,20 @@ import { DirectivesModule } from '../../directives/directives.module'
 // Providers
 import { StudentService } from './student.service'
 
+// DataTable Depand CDK Table
+import {CdkTableModule} from '@angular/cdk';
+import {MdTableModule} from '@angular/material';
+// End of DataTable
+
 @NgModule({
   imports: [
      // Import Official Shared Module
     CommonModule,
     FormsModule,
     MaterialModule,
+    // DataTable
+    CdkTableModule,
+    MdTableModule,
     // Import Custom Shared Module
     PipesModule,
     DirectivesModule,
