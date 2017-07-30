@@ -6,4 +6,4 @@
       <div class="col-1">{{werewolves.responsibility}}</div>
       <div class="col-1">{{werewolves.victory}}</div>
       <div class="col-1">{{werewolves.number | num}}</div>
-      <div class="col-2"><a routerLink="/werewolves/edit/{{werewolves.objectId}}">编辑</a> <span appHighlight (click)="werewolvesServ.delete(werewolves)">删除</span></div>
+      <div class="col-2"><a appHighlight routerLink="/werewolves/edit/{{werewolves.objectId}}">编辑</a> <span appHighlight (click)="werewolvesServ.delete(werewolves)">删除</span></div>

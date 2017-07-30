@@ -1,0 +1,20 @@
+      <!--<div class="col-1" (click)="onInsurantClick()">[ ]</div>
+      <div class="col-1" (click)="onInsurantClick()">{{insurant.planId}}</div>
+      <div class="col-2">{{insurant.planName}}</div>
+      <div class="col-2">{{insurant.name | uppercase | lowercase}}</div>
+      <div class="col-1">{{insurant.sex | sexName}}</div>
+      <div class="col-2">{{insurant.age}}</div>
+      <div class="col-1">{{insurant.period}}</div>
+      <div class="col-2"><a routerLink="/insurant/edit/{{insurant.planId}}">编辑</a> <span appHighlight (click)="delete()">删除</span></div>-->
+
+      <div class="col-1" *ngIf="isChecked()" (click)="check()">[x]</div>
+      <div class="col-1" *ngIf="!isChecked()" (click)="check()">[&nbsp;&nbsp;]</div>
+      <div class="col-2">{{insurant.planName}}</div>
+      <div class="col-2">{{insurant.name | uppercase | lowercase}}</div>
+      <div class="col-1">{{insurant.sex | sexName}}</div>
+      <div class="col-2">{{insurant.age}}</div>
+      <div class="col-1">{{insurant.period}}</div>
+      <div class="col-2"><a id="linkButton1" routerLink="/insurant/edit/{{insurant.objectId}}">编辑</a> 
+      <span id="linkButton1" (click)="delete(insurant)">删除</span></div>
+
+

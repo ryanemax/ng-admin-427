@@ -155,7 +155,6 @@ export class StudentService{
     search(type,value){
         let query = new Parse.Query("Student",this.http)
         query.equalTo(type,value)
-        
     }
     searchInArray(type,value){
         this.students.sort((a,b)=>{

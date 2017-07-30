@@ -28,7 +28,7 @@ import { MemberService } from './member.service'
     // Config Router
     RouterModule.forChild([
       { path: '', component: MemberListComponent, pathMatch: 'full' },
-      { path: 'member/edit/:sid', component: MemberEditComponent, pathMatch: 'full' }
+      { path: 'edit/:sid', component: MemberEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [

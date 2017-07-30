@@ -108,7 +108,7 @@ export namespace Parse {
                         paramString += "&"+p
                     }
                 })
-                url += "?"
+                url += "?" + paramString
             }
             console.log(url)
 

@@ -28,7 +28,7 @@ export class MemberEditComponent implements OnInit,OnDestroy {
 
   save(){
     this.member.name = this.member.name
-    this.member.sex = Number(this.member.sex)
+    this.member.sex = this.member.sex
     this.member.age = this.member.age
     this.member.skill = this.member.skill
     this.member.expect = this.member.expect
