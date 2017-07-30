@@ -12,7 +12,8 @@
         <option value="project">项目</option>
       </select>
       <input [(ngModel)]="searchText" />
-      <button (click)="studentServ.search(searchType,searchText)">搜索</button>
+      <button (click)="search(searchType,searchText)">搜索</button>
+      <!--<button (click)="studentServ.search(searchType,searchText)">搜索</button>-->
     </div>
     
     <button routerLink="/student/edit/new">新增学员</button>
