@@ -27,6 +27,7 @@ const SSRroutes: Routes = [
   { path: 'pokemon', loadChildren: '../pages/pokemon/pokemon.module#PokemonModule' },
   { path: 'commodity', loadChildren: '../pages/commodity/commodity.module#CommodityModule' },
   { path: 'movie', loadChildren: '../pages/movie/movie.module#MovieModule' },
+  { path: 'campus', loadChildren: '../pages/campus/campus.module#CampusModule' },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

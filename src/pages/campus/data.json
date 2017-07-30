@@ -1,0 +1,62 @@
+[
+        {
+            "objectId": "AXq4VSXfD8",
+            "randomindex": 1,
+            "index": 10,
+            "campusId": 1,
+            "name": "80中",
+            "address": "中山区",
+            "avgtotal": 605.5,
+            "rate": "56%",
+            "createdAt": "2017-07-29T11:03:57.088Z",
+            "updatedAt": "2017-07-30T05:02:42.508Z"
+        },
+        {
+            "objectId": "yWAdEsC9bX",
+            "randomindex": 1,
+            "index": 16,
+            "campusId": 2,
+            "name": "育文中学",
+            "address": "甘井子",
+            "avgtotal": 588,
+            "rate": "46%",
+            "createdAt": "2017-07-29T11:04:17.462Z",
+            "updatedAt": "2017-07-29T11:04:17.462Z"
+        },
+        {
+            "objectId": "rTxl4SFfkz",
+            "randomindex": 1,
+            "index": 1,
+            "campusId": 3,
+            "name": "理工附中",
+            "address": "沙河口区",
+            "avgtotal": 615,
+            "rate": "82%",
+            "createdAt": "2017-07-29T11:04:27.552Z",
+            "updatedAt": "2017-07-29T11:04:27.552Z"
+        },
+        {
+            "objectId": "6A9wWIEwOl",
+            "name": "31中",
+            "index": 21,
+            "campusId": 55,
+            "address": "西岗区",
+            "avgtotal": 569,
+            "rate": "36%",
+            "randomindex": null,
+            "createdAt": "2017-07-30T04:01:27.103Z",
+            "updatedAt": "2017-07-30T04:01:27.103Z"
+        },
+        {
+            "objectId": "rXALNCxpWz",
+            "name": "56中",
+            "index": 66,
+            "campusId": 90,
+            "address": "沙河口区",
+            "avgtotal": 523,
+            "rate": "15%",
+            "randomindex": null,
+            "createdAt": "2017-07-30T04:04:21.663Z",
+            "updatedAt": "2017-07-30T04:04:21.663Z"
+        }
+    ]

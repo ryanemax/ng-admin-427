@@ -1,0 +1,45 @@
+<p>
+  <span *ngIf="isNew">学校管理 > 新增学校</span>
+  <span *ngIf="!isNew">学校管理 > 编辑学校:{{this.campusId}}</span>
+  <button (click)="back()">返回</button>
+</p>
+<hr>
+<tr>
+<td>排名：</td>
+<input type="text" [(ngModel)]="campus.index"/>
+</tr>
+
+<tr>
+<td>ID：</td>
+<input type="text" [(ngModel)]="campus.campusId"/>
+</tr>
+
+<tr>
+<td>学校：</td>
+<input type="text" [(ngModel)]="campus.name"/>
+</tr>
+
+<tr>
+<td>所在区：</td>
+<select [(ngModel)]="campus.address">
+  <option value="甘井子区">甘井子区</option>
+  <option value="中山区">中山区</option>
+  <option value="沙河口区">沙河口区</option>
+  <option value="西岗区">西岗区</option>
+</select>
+</tr>
+
+<tr>
+<td>平均分：</td>
+<input type="text" [(ngModel)]="campus.avgtotal"/>
+</tr>
+
+<tr>
+<td>升学率：</td>
+<input type="text" [(ngModel)]="campus.rate"/>
+</tr>
+
+<tr>
+<td><button routerLink="/campus" (click)="save()">提交</button></td>
+<td>&nbsp;</td>
+</tr>
