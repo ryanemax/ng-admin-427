@@ -1,23 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import { Output,EventEmitter } from '@angular/core';
-import {customerService} from "../customer.service";
+import {CustomerService} from "../customer.service";
 
 @Component({
   selector: 'app-customer-item',
   templateUrl: './customer-item.component.html',
   styleUrls: ['./customer-item.component.scss']
 })
-export class customerItemComponent implements OnInit {
+export class CustomerItemComponent implements OnInit {
   @Input() user:any
   @Output() userClick = new EventEmitter<any>();
-  constructor(private customerServ:customerService) { 
+  constructor(private customerServ:CustomerService) { 
   }
   onUserClick(){
     this.userClick.emit(this.user)
   }
   check(){
-    this.user.check = true;
+    if(this.user.check&&this.user.check==true){
+      this.user.check = false;
+    }else{
+      this.user.check = true
+    }
   }
   isChecked(){
     if(this.user.check&&this.user.check==true){

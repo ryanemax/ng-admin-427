@@ -13,7 +13,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/startWith';
 
 @Injectable()
-export class customerService{
+export class CustomerService{
     isLogined:boolean = false;
     users: Array < any > = [{
      'id': 1,
@@ -71,8 +71,8 @@ export class customerService{
     delete(obj){
         this.deleteCustomerById(obj.objectId).subscribe(data=>{
             console.log(data);
+            this.location.go("/customer")
         })
-        this.location.go("/customer")
     }
     deleteCustomerById(objectId):Observable<any>{
         // 1. 拼接HTTP请求所需的URL和Headers
@@ -148,5 +148,14 @@ export class customerService{
         return this.http.get(url,{ headers:headers })
         .map(data=>data.json())
     }
+    search(value){
+        console.log(this.users);
+        this.users.sort((a,b)=>{
+        let result1 = String(a["name"]).match(value)
+        let result2 = String(b["name"]).match(value)
+
+        return Number(result2)-Number(result1);
+    });
+}
 }
 

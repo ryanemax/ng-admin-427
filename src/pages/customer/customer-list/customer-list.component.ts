@@ -10,14 +10,14 @@ import {
 import { Http } from '@angular/http';
 
 import {Parse} from "../../../cloud/parse";
-import {customerService} from "../customer.service";
+import {CustomerService} from "../customer.service";
 
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.scss']
 })
-export class customerListComponent implements OnInit {
+export class CustomerListComponent implements OnInit {
   searchText: string = "default";
   selectUser:any={
     name:"未选择"
@@ -77,7 +77,7 @@ export class customerListComponent implements OnInit {
      [this.users[id - 1], this.users[j]] = [this.users[j], this.users[id - 1]];
   })
   }
-  constructor(meta: Meta, title: Title, private http:Http, private userServ:customerService) {
+  constructor(meta: Meta, title: Title, private http:Http, private userServ:CustomerService) {
     //this.users = this.userServ.getUsers()
     let query = new Parse.Query("Customer",http)
     query.find().subscribe(data=>{

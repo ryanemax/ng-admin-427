@@ -6,6 +6,7 @@
 - 相关依赖
     - UI组件 Material
         - table
+        - StarCntPipe
     - 服务/数据处理
 
 - 目录结构(pages)
