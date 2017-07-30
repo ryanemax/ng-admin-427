@@ -1,0 +1,9 @@
+<div class="col-1" *ngIf="isChecked()" (click)="check()">[x]</div>
+<div class="col-1" *ngIf="!isChecked()" (click)="check()">[&nbsp;&nbsp;]</div>
+<div class="col-2">{{employee.name | uppercase | lowercase}}</div>
+<div class="col-1">{{employee.sex | sexName}}</div>
+<div class="col-2"><a target="_blank" href="http://github.com/{{employee.project}}">{{employee.project}}</a></div>
+<div class="col-1">{{employee.department}}</div>
+<div class="col-1">{{employee.position}}</div>
+<div class="col-1">{{employee.telno}}</div>
+<div class="col-2"><a routerLink="employee/edit/{{employee.objectId}}">编辑</a> <span appHighlight (click)="employeeServ.delete(employee)">删除</span></div>
