@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 // Child Page Components
 import { WerewolvesListComponent } from './werewolves-list/werewolves-list.component';
 import { WerewolvesItemComponent } from './werewolves-item/werewolves-item.component';
-import { WerewolvesEditComponent } from './werewolves-edit/werewolves-edit.component';
+// import { WerewolvesEditComponent } from './werewolves-edit/werewolves-edit.component';
 
 // Import Shared Module
 import { PipesModule } from '../../pipes/pipes.module'
@@ -30,13 +30,13 @@ import { WerewolvesService } from './werewolves.service'
     // Config Router
     RouterModule.forChild([
       { path: '', component: WerewolvesListComponent, pathMatch: 'full' },
-      { path: 'werewolves/edit/:id', component: WerewolvesEditComponent, pathMatch: 'full' }
+      // { path: 'werewolves/edit/:id', component: WerewolvesEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [
    WerewolvesListComponent,
    WerewolvesItemComponent, 
-   WerewolvesEditComponent
+  //  WerewolvesEditComponent
    ],
    providers:[WerewolvesService]
 })
