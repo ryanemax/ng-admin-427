@@ -1,4 +1,5 @@
-<h1><a><font color=blue>品牌电器销售统计表</font></a></h1>
+
+<h1 class="shadowbar" color="secondary" ><a><font color=DeepSkyBlue  >品牌电器销售统计表</font></a></h1>
 <p>已选择产品:{{selectProduct.name}}</p>
 <div class="table-controls">
     <div class="search-area" style="height:60px;">
@@ -17,7 +18,9 @@
 <button (click)="sortByDesccending()">倒序</button>
 <button (click)="sortByRadom()">随机</button>
 </div>
-<div class="row table-header">
+
+
+<div class="table-header">
       <div class="col-1">选择 </div>
       <div class="col-1" (click)="sortByAsccending('name')">产品名称 </div>
       <div class="col-1" (click)="sortByAsccending('protype')">产品型号 </div>

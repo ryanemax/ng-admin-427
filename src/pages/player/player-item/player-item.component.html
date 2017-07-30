@@ -1,0 +1,9 @@
+      <div class="col-1" *ngIf="isChecked()" (click)="check()">[x]</div>
+      <div class="col-1" *ngIf="!isChecked()" (click)="check()">[&nbsp;&nbsp;]</div>
+      <div class="col-2">{{player.name | uppercase | lowercase}}</div>
+      <div class="col-1">{{player.nationality}}</div>
+      <div class="col-2">{{player.match}}</div>
+      <div class="col-1">{{player.goal}}</div>
+      <div class="col-1">{{player.club}}</div>
+      <div class="col-1">{{player.title}}</div>
+      <div class="col-2"><a routerLink="/player/edit/{{player.objectId}}">编辑</a> <span appHighlight (click)="playerServ.delete(player)">删除</span></div>
