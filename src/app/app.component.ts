@@ -22,6 +22,7 @@ export class AppComponent {
     {"path":"park","icon":"people","name":"介里有车位"},
     {"path":"stock","icon":"people","name":"股票管理"},
     {"path":"product","icon":"people","name":"销售系统"},
+    {"path":"employee-info","icon":"people","name":"员工信息管理"},
     {"path":"wbs","icon":"menu","name":"任务管理"},
     {"path":"customer","icon":"menu","name":"汽车保险管理"},
     {"path":"member","icon":"people","name":"程序员信息"},
@@ -31,6 +32,5 @@ export class AppComponent {
     {"path":"goods","icon":"android","name":"淘淘杂货铺"},
     {"path":"pokemon","icon":"people","name":"Pokemon"},
     {"path":"commodity","icon":"people","name":"商品管理"},
-    {"path":"employee-info","icon":"people","name":"员工信息管理"},
   ]
 }
