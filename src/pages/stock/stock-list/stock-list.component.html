@@ -1,0 +1,38 @@
+<p>已选择用户:{{selectStock.name}}</p>
+<div class="table-controls">
+    <div class="search-area" style="height:60px;">
+      <select [(ngModel)]="searchType" style="float:left;">
+        <option value="objectId">股票代码</option>
+        <option value="stockname">股票名称</option>
+      </select>
+<input style="float:left;" 
+  [(ngModel)]="searchText"/>
+<button style="float:left;" (click)="search()">搜索</button>
+
+</div>
+<button (click)="sortByAsccending()">正序</button>
+<button (click)="sortByDesccending()">倒序</button>
+<button (click)="sortByRadom()">随机</button>
+<button (click)="deleteLast()">删除</button>
+<button routerLink="/stock/edit/new">新增</button>
+<button (click)="testTempUsers()">TEST</button>
+</div>
+
+<div class="row table-header">
+      <div class="col-1">选择 </div>
+      <div class="col-2" (click)="sortByAsccending('objectId')">股票代码 </div>
+      <div class="col-2" (click)="sortByAsccending('stockname')">股票名称 </div>
+      <div class="col-1" (click)="sortByAsccending('price')">价格 </div>
+      <div class="col-1" (click)="sortByAsccending('raise')">涨幅 </div>
+      <div class="col-1" (click)="sortByDesccending('zongshou')">手数 </div>
+      <div class="col-2">操作 </div>
+</div>
+<div class="row table-row" *ngFor="let stock of searchResult">
+  <app-stock-item [stock]="stock" (stockClick)="selectStock = $event"></app-stock-item>
+</div>
+<div class="row table-row" *ngFor="let stock of stocks">
+  <app-stock-item [stock]="stock" (stockClick)="selectStock = $event"></app-stock-item>
+</div>
+
+
+
