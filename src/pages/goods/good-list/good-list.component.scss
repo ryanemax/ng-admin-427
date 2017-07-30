@@ -1,0 +1,40 @@
+button {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 8px 10px;
+  opacity: 0.6;
+  background: #b3e5fc;
+  margin-right: 5px;
+  outline: none;
+}
+
+.tGrid{
+  border-collapse: collapse;
+  margin-top: 15px;
+  td {
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    color: #000;
+    flex: 1;
+    text-align: center;
+  }
+  th {
+    padding: 5px;
+    border: 1px solid #fff;
+    color: #000;
+    flex: 1;
+    text-align: center;
+  }
+}
+
+.tSearch {
+  border-collapse: collapse;
+  margin-top: 15px;
+  td {
+    padding: 5px 10px;
+    border: 0px solid #fff;
+    color: #000;
+    flex: 1;
+    text-align: center;
+  }
+}
