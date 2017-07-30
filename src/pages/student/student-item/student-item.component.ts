@@ -11,7 +11,7 @@ import {StudentService} from "../student.service";
 export class StudentItemComponent implements OnInit {
   @Input() student:any
   @Output() studentClick = new EventEmitter<any>();
-  constructor(private studentServ:StudentService) { 
+  constructor(public studentServ:StudentService) { 
   }
   onStudentClick(){
     this.studentClick.emit(this.student)

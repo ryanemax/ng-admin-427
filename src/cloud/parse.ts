@@ -32,6 +32,10 @@ export namespace Parse {
             let body = res.json();
             return body.results || [];
         }
+        extractDataByOne(res: Response) {
+            let body = res.json();
+            return body || {};
+        }
         handleHttpError (error: Response | any) {
         // In a real world app, we might use a remote logging infrastructure
         let errMsg: string;
@@ -59,22 +63,46 @@ export namespace Parse {
 */
 
     export class Query extends HttpHandler{
-        headers:Headers
-        serverURL:string
         className:string
+        _where:any = {}
+        _limit:number
+        _skip:number
         constructor(className:string,http:Http){
             super(http)
             this.className = className
-            this.serverURL = ParseConfig.serverURL;
-            this.headers = ParseConfig.headers;
-            console.log("serverURL:",this.serverURL)
         }
+        // 查询条件
+        equalTo(key,value){
+            this._where[key] = value
+        }
+        limit(num){
+            this._limit = num
+        }
+        skip(num){
+            this._skip = num
+        }
+        // 查询方法
         find():Observable<any[]>{
-            let url = this.serverURL+"/classes/"+this.className
+            let url = ParseConfig.serverURL+"/classes/"+this.className+"?"
+            if(this._where){
+                url += "&where="+this._where.toString()
+            }
+            if(this._limit){
+                url += "&limit="+this._limit
+            }
+            url = encodeURI(url)
             return this.http.get(url,{
-                headers: this.headers
+                headers: ParseConfig.headers
             })
             .map(super.extractData)
+            .catch(super.handleHttpError)
+        }
+        get(id):Observable<any[]>{
+            let url = ParseConfig.serverURL+"/classes/"+this.className+"/"+id
+            return this.http.get(url,{
+                headers: ParseConfig.headers
+            })
+            .map(super.extractDataByOne)
             .catch(super.handleHttpError)
         }
 }

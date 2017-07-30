@@ -7,8 +7,11 @@ const SSRroutes: Routes = [
     path: '',
     children: []
   },
+  { path: 'rxjs', loadChildren: '../pages/rxjs/rxjs.module#RxjsModule' },  
   { path: 'home', loadChildren: '../pages/home/home.module#HomeModule' },
   { path: 'about', loadChildren: '../pages/about/about.module#AboutModule' },
+  { path: 'login', loadChildren: '../pages/user/user.module#UserModule' },
+  { path: 'student', loadChildren: '../pages/student/student.module#StudentModule' },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
@@ -31,7 +34,7 @@ const SPAroutes: Routes = [
 ];
 
 // 配置路由模式
-const routes = SPAroutes;
+const routes = SSRroutes;
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

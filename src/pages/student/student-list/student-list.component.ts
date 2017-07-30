@@ -53,9 +53,10 @@ export class StudentListComponent implements OnInit {
   })
     this.sortByAsccending("tempIndex");
   }
-  constructor(meta: Meta, title: Title,private http:Http, private studentServ:StudentService) {
+  constructor(meta: Meta, title: Title,private http:Http, public studentServ:StudentService) {
 
     let query = new Parse.Query("Student",http)
+    query.limit(2);
     query.find().subscribe(data=>{
       console.log(data)
       this.students = data

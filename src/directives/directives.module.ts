@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 
 import { HighlightDirective } from './highlight.directive';
+import { UnlessDirective } from './unless.directive';
 
 @NgModule({
   imports: [
   ],
   declarations: [
-    HighlightDirective
+    HighlightDirective,
+    UnlessDirective
   ],
   exports:[
-    HighlightDirective
+    HighlightDirective,
+    UnlessDirective
   ]
 })
 export class DirectivesModule { }
