@@ -80,7 +80,7 @@ export class MemberListComponent implements OnInit {
 
   constructor(meta: Meta, title: Title,private http:Http, private userServ:MemberService) {
 
-    let query = new Parse.Query("member",http)
+    let query = new Parse.Query("Member",http)
     query.find().subscribe(data=>{
       console.log(data)
       this.users = data
