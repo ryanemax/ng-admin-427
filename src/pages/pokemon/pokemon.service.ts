@@ -165,7 +165,7 @@ export class PokemonService {
 
 
   getPokemons() {
-    return this.pokemonList;
+    
   }
 
   getattributesList() {
