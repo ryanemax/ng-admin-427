@@ -1,0 +1,43 @@
+ <md-toolbar class="shadowbar" color="secondary">
+  <span>学员管理 > 学员列表</span>
+  <span style="width:10px;"></span>
+  <!--<md-icon class="example-icon">favorite</md-icon>-->
+  <!--<md-icon class="example-icon">delete</md-icon>-->
+
+
+  <div class="table-controls">
+    <div class="search-area">
+      <select [(ngModel)]="searchType">
+        <option value="name">姓名</option>
+        <option value="project">项目</option>
+      </select>
+      <input [(ngModel)]="searchText" />
+      <button (click)="employeeServ.search(searchType,searchText)">搜索</button>
+    </div>
+    
+    <button routerLink="employee/edit/new">新增员工</button>
+    <button (click)="employeeServ.deleteChecked()">批量删除</button>
+    <!--<button (click)="sortByAsccending()">正序</button>
+    <button (click)="sortByDesccending()">倒序</button>
+    <button (click)="sortByRadom()">随机</button>-->
+  </div>
+
+</md-toolbar>
+
+
+<div class="row table-header">
+  <div class="col-1">选择 </div>
+  <div class="col-2" (click)="sortByAsccending('name')">姓名 </div>
+  <div class="col-1" (click)="sortByAsccending('sex')">性别 </div>
+  <div class="col-2" (click)="sortByAsccending('project')">项目 </div>
+  <div class="col-1" (click)="sortByDesccending('department')"> 部门</div>
+  <div class="col-1" (click)="sortByDesccending('position')">职位</div>
+  <div class="col-1" (click)="sortByDesccending('telno')">电话</div>
+  <div class="col-2">操作 </div>
+</div>
+<!-- <div class="row table-row" *ngFor="let employee of searchResult">
+  <app-employee-item [employee]="employee" (employeeClick)="selectStudent = $event"></app-employee-item>
+</div> -->
+ <div class="row table-row" *ngFor="let employee of employees">
+  <app-employee-item [employee]="employee" (employeeClick)="selectEmployee = $event"></app-employee-item>
+</div>  
