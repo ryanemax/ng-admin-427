@@ -1,0 +1,45 @@
+<p>
+  <span *ngIf="isNew">新增商品</span>
+  <span *ngIf="!isNew">编辑商品:{{this.goodId}}</span>
+  <button (click)="back()">返回</button>
+</p>
+
+<div>
+品名：
+<input type="text" [(ngModel)]="good.name"/>
+</div>
+
+<div>
+单位：
+<select [(ngModel)]="good.spec">
+  <option value="kg">千克</option>
+  <option value="g">克</option>
+  <option value="d">顿</option>
+</select>
+</div>
+
+<div>
+单价：
+<input type="text" [(ngModel)]="good.price"/>
+</div>
+
+<div>
+数量：
+<input type="text" [(ngModel)]="good.num"/>
+</div>
+
+<div>
+产地：
+<input type="text" [(ngModel)]="good.Place"/>
+</div>
+
+<div>
+保质期：
+<input type="text" [(ngModel)]="good.timelimit"/>
+</div>
+
+<div>
+生产日期：
+<input type="text" [(ngModel)]="good.P_date"/>
+</div>
+<button routerLink="/good" (click)="save()">提交</button>
