@@ -56,7 +56,7 @@ export class MemberListComponent implements OnInit {
      'exam3': 76
     });
   }
-  sortByAsccending(type="index") {
+  sortByAsccending(type="id") {
     // 参考MDN Array操作的API文档 Array相关方法方法
     this.users.sort((a,b)=>{
       return a[type] - b[type];
