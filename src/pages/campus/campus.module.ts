@@ -1,41 +1,41 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@angular/material';
+
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 // Child Page Components
-import { MemberListComponent } from './member-list/member-list.component';
-import { MemberItemComponent } from './member-item/member-item.component';
-import { MemberEditComponent } from './member-edit/member-edit.component';
+import { CampusListComponent } from './campus-list/campus-list.component';
+import { CampusItemComponent } from './campus-item/campus-item.component';
+import { CampusEditComponent } from './campus-edit/campus-edit.component';
 
 // Import Shared Module
 import { PipesModule } from '../../pipes/pipes.module'
 import { DirectivesModule } from '../../directives/directives.module'
 
 // Providers
-import { MemberService } from './member.service'
+import { CampusService } from './campus.service'
 
 @NgModule({
   imports: [
      // Import Official Shared Module
     CommonModule,
     FormsModule,
-    MaterialModule,
     // Import Custom Shared Module
-    PipesModule,
+    MaterialModule,
     DirectivesModule,
     // Config Router
     RouterModule.forChild([
-      { path: '', component: MemberListComponent, pathMatch: 'full' },
-      { path: 'edit/:sid', component: MemberEditComponent, pathMatch: 'full' }
+      { path: '', component: CampusListComponent, pathMatch: 'full' },
+      { path: 'edit/:id', component: CampusEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [
-   MemberListComponent,
-   MemberItemComponent, 
-   MemberEditComponent
+   CampusListComponent,
+   CampusItemComponent, 
+   CampusEditComponent
    ],
-   providers:[MemberService]
+   providers:[CampusService]
 })
-export class MemberModule { }
+export class CampusModule { }

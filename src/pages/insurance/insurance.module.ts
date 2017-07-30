@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@angular/material';
+
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 // Child Page Components
-import { MemberListComponent } from './member-list/member-list.component';
-import { MemberItemComponent } from './member-item/member-item.component';
-import { MemberEditComponent } from './member-edit/member-edit.component';
+import { InsurantListComponent } from './insurant-list/insurant-list.component';
+import { InsurantItemComponent } from './insurant-item/insurant-item.component';
+import { InsurantEditComponent } from './insurant-edit/insurant-edit.component';
 
 // Import Shared Module
 import { PipesModule } from '../../pipes/pipes.module'
 import { DirectivesModule } from '../../directives/directives.module'
 
 // Providers
-import { MemberService } from './member.service'
+import { InsuranceService } from './insurance.service'
+import { Parse } from '../../cloud/parse'
+Parse.initialize("dev","http://localhost:1337/parse")
 
 @NgModule({
   imports: [
@@ -27,15 +30,15 @@ import { MemberService } from './member.service'
     DirectivesModule,
     // Config Router
     RouterModule.forChild([
-      { path: '', component: MemberListComponent, pathMatch: 'full' },
-      { path: 'edit/:sid', component: MemberEditComponent, pathMatch: 'full' }
+      { path: '', component: InsurantListComponent, pathMatch: 'full' },
+      { path: 'edit/:id', component: InsurantEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [
-   MemberListComponent,
-   MemberItemComponent, 
-   MemberEditComponent
+   InsurantListComponent,
+   InsurantItemComponent, 
+   InsurantEditComponent
    ],
-   providers:[MemberService]
+   providers:[InsuranceService]
 })
-export class MemberModule { }
+export class InsuranceModule { }
