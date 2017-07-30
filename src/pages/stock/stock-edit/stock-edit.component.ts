@@ -26,19 +26,15 @@ export class StockEditComponent implements OnInit,OnDestroy {
     this.location.back();
   }
   save(){
+    this.stock.price = Number(this.stock.price)
     this.stockServ.saveStock(this.stock).subscribe(data=>{
       console.log(data)
-      this.location.back();
     })
-    this.stockServ.saveStock(this.stock).subscribe(data=>{
-      console.log(data)
-      this.location.back();        
-    })
+     this.location.back();
   }
   ngOnInit() {
         this.route.params.subscribe(params=>{
-          let id = params['objectId']
-          console.log("==========="+id);
+          let id = params['sid']
           if(id=="new"){
             let stock = {name:""}
             this.isNew = true;
@@ -47,7 +43,6 @@ export class StockEditComponent implements OnInit,OnDestroy {
             this.isNew = false;
             this.stockServ.getStockById(id).subscribe(stock=>{
             console.log(stock)
-            // this.stockId = stock.objectId;
             this.stock = stock
         })
       }
