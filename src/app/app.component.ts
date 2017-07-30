@@ -17,6 +17,7 @@ export class AppComponent {
     {"path":"student","icon":"people","name":"学生管理"},
     {"path":"rxjs","icon":"android","name":"RXJS"},
     {"path":"werewolves","icon":"people","name":"狼人杀"},
+    {"path":"park","icon":"people","name":"介里有车位"},
     {"path":"stock","icon":"people","name":"股票管理"},
     {"path":"wbs","icon":"menu","name":"任务管理"},
     {"path":"member","icon":"people","name":"程序员信息"},
