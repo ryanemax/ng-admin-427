@@ -27,7 +27,7 @@ import { AppstoreService } from './appstore.service'
     // Config Router
     RouterModule.forChild([
       { path: '', component: AppstoreListComponent, pathMatch: 'full' },
-      { path: 'appstore/edit/:id', component: AppstoreEditComponent, pathMatch: 'full' }
+      { path: 'edit/:id', component: AppstoreEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [

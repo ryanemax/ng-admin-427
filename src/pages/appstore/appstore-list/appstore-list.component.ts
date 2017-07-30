@@ -1,11 +1,5 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-import {
-  Meta,
-  Title
-} from '@angular/platform-browser';
+import {Component,OnInit} from '@angular/core';
+import {Meta,Title} from '@angular/platform-browser';
 
 import { Http } from '@angular/http'
 
@@ -61,9 +55,10 @@ export class AppstoreListComponent implements OnInit {
       this.appstores = data
     })
 
-    // this.appstoreServ.getAppstores().subscribe(data=>{
-    //   console.log(data)
-    // })
+    this.appstoreServ.getAppstores().subscribe(data=>{
+      console.log("data:")
+      console.log(data)
+    })
     
  
     // Set SEO

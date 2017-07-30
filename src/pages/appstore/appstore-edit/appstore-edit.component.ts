@@ -26,15 +26,13 @@ export class AppstoreEditComponent implements OnInit,OnDestroy {
     this.location.back();
   }
   save(){
-    this.appstore.review = Number(this.appstore.review)
-    this.appstore.rating = Number(this.appstore.rating)
+    this.appstore.name = String(this.appstore.name)
+    this.appstore.platform = String(this.appstore.platform)
+    this.appstore.review = String(this.appstore.review)
+    this.appstore.rating = String(this.appstore.rating)
     this.appstoreServ.saveAppstore(this.appstore).subscribe(data=>{
       console.log(data)
       this.location.back();
-    })
-    this.appstoreServ.saveAppstore(this.appstore).subscribe(data=>{
-      console.log(data)
-      this.location.back();        
     })
   }
   ngOnInit() {
