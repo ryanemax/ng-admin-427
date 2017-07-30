@@ -1,0 +1,29 @@
+<p>
+  <span *ngIf="isNew">New Appstore</span>
+  <span *ngIf="!isNew">Edit Appstore:{{this.appstoreId}}</span>
+  <button (click)="back()">Return</button>
+</p>
+
+<div>
+name：
+<input type="text" [(ngModel)]="appstore.name"/>
+</div>
+
+<div>
+platform：
+<select [(ngModel)]="appstore.platform">
+  <option value="IOS">IOS</option>
+  <option value="Android">Android</option>
+</select>
+</div>
+
+<div>
+review：
+<input type="text" [(ngModel)]="appstore.review"/>
+</div>
+<div>
+rating:
+<input type="text" [(ngModel)]="appstore.rating"/>
+</div>
+
+<button routerLink="/appstore" (click)="save()">submit</button>
