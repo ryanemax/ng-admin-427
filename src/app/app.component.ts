@@ -17,5 +17,6 @@ export class AppComponent {
     {"path":"werewolves","icon":"people","name":"狼人杀"},
     {"path":"stock","icon":"people","name":"股票管理"},
     {"path":"wbs","icon":"menu","name":"任务管理"},
+    {"path":"customer","icon":"menu","name":"汽车保险管理"},
   ]
 }
