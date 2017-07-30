@@ -56,7 +56,6 @@ export class PlayerListComponent implements OnInit {
   constructor(meta: Meta, title: Title, private http: Http, private playerServ: PlayerService) {
 
     let query = new Parse.Query("Player", http)
-    query.limit(2);
     query.find().subscribe(data => {
       console.log(data)
       this.players = data
