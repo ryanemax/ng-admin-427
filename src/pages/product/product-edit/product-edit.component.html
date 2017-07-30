@@ -1,0 +1,42 @@
+<p>
+  <span *ngIf="isNew">新增产品</span>
+  <span *ngIf="!isNew">编辑产品:{{this.productId}}</span>
+  <button (click)="back()">返回</button>
+</p>
+
+<div>
+产品名称：
+<input type="text" [(ngModel)]="product.name"/>
+</div>
+
+<div>
+产品型号：
+<select [(ngModel)]="product.protype">
+  <option value="A">AL102</option>
+  <option value="B">BY003</option>
+  <option value="C">CM002</option>
+</select>
+</div>
+
+<div>
+销售人员：
+<input type="text" [(ngModel)]="product.agent"/>
+</div>
+
+<div>
+销售数量：
+<input type="text" [(ngModel)]="product.sumnum"/>
+</div>
+
+<div>
+销售单价：
+<input type="text" [(ngModel)]="product.price"/>
+</div>
+
+
+<div>
+销售总额：
+<input type="text" [(ngModel)]="product.sumacc"/>
+</div>
+
+<button routerLink="/product" (click)="save()">提交</button>
