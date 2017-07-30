@@ -91,6 +91,7 @@ export namespace Parse {
             if(this._limit){
                 url += "&limit="+this._limit
             }
+            console.log(url)
             url = encodeURI(url)
             return this.http.get(url,{
                 headers: ParseConfig.headers
