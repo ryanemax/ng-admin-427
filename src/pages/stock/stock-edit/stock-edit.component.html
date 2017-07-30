@@ -1,0 +1,31 @@
+<p>
+  <span *ngIf="isNew">新增股票</span>
+  <span *ngIf="!isNew">编辑股票:{{this.objectId}}</span>
+  <button (click)="back()">返回</button>
+</p>
+
+<!-- <div>
+股票代码：
+<input type="text" [(ngModel)]="stock.objectId"/>
+</div> -->
+
+<div>
+股票名称：
+<input type="text" [(ngModel)]="stock.stockname"/>
+</div>
+
+<div>
+价格：
+<input type="text" [(ngModel)]="stock.price"/>
+</div>
+
+<div>
+涨幅：
+<input type="text" [(ngModel)]="stock.raise"/>
+</div>
+<div>
+手数：
+<input type="text" [(ngModel)]="stock.zongshou"/>
+</div>
+
+<button routerLink="/stock" (click)="save()">提交</button>
