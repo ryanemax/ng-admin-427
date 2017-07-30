@@ -11,7 +11,7 @@ import 'rxjs/add/observable/zip';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/startWith';
-import {Parse} from "../../cloud/parse"
+// import {Parse} from "../../cloud/parse"
 
 @Injectable()
 export class WerewolvesService{
