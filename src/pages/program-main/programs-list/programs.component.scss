@@ -1,0 +1,20 @@
+div{
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #000;
+    span{
+        flex: 1;
+        height: 40px;
+        line-height: 40px;
+        color:#000;
+        text-align: center;
+        word-break:keep-all;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        .heart{
+            width:20px;
+            margin-top: 10px;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+<p>
+  <span *ngIf="isNew">新增用户</span>
+  <span *ngIf="!isNew">编辑用户:{{this.objectId}}</span>
+  <button (click)="back()">返回</button>
+</p>
+
+<div>
+id：
+<input type="text" readonly=false [(ngModel)]="customer.objectId"/>
+</div>
+
+<div>
+姓名：
+<input type="text" [(ngModel)]="customer.name"/>
+</div>
+
+<div>
+性别：
+<select [(ngModel)]="customer.sex">
+  <option value="M">男</option>
+  <option value="F">女</option>
+</select>
+</div>
+
+<div>
+开始日：
+<input type="date" [(ngModel)]="customer.startDate"/>
+</div>
+
+<div>
+终了日：
+<input type="date" [(ngModel)]="customer.endDate"/>
+</div>
+
+<div>
+保险费用：
+<input type="text" [(ngModel)]="customer.fee"/>
+</div>
+
+<div>
+车号：
+<input type="text" [(ngModel)]="customer.carNo"/>
+</div>
+
+<button routerLink="/customer" (click)="save()">提交</button>

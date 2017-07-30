@@ -18,7 +18,7 @@ import {Parse} from "../../../cloud/parse"
   templateUrl: './werewolves-list.component.html',
   styleUrls: ['./werewolves-list.component.scss']
 })
-export class StudentListComponent implements OnInit {
+export class WerewolvesListComponent implements OnInit {
   searchText: string = "";
   searchType: string = "role";
   selectStudent:any={

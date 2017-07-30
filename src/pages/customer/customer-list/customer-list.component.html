@@ -1,0 +1,36 @@
+<md-toolbar class="shadowbar" color="secondary">
+<p appHighlight>已选择顾客:{{selectUser.name}}</p>
+
+<div class="table-controls">
+    <div class="search-area" style="height:60px;">
+<input style="float:left;margin-top:14px;" 
+  [(ngModel)]="searchText"/>
+<button style="float:left;" (click)="customerServ.search(searchText)">搜索</button>
+
+</div>
+
+<button (click)="sortByAsccending()">正序</button>
+<button (click)="sortByDesccending()">倒序</button>
+<button (click)="sortByRadom()">随机</button>
+<button (click)="deleteLast()">删除</button>
+<button routerLink="/customer/edit/new">新增</button>
+</div>
+</md-toolbar>
+
+<div class="row table-header">
+      <div class="col-1">选择 </div>
+      <div class="col-2" (click)="sortByAsccending('objectId')">ID </div>
+      <div class="col-1" (click)="sortByAsccending('name')">姓名 </div>
+      <div class="col-1" (click)="sortByAsccending('sex')">性别 </div>
+      <div class="col-1" (click)="sortByAsccending('startDate')">开始日 </div>
+      <div class="col-1" (click)="sortByDesccending('endDate')">终了日 </div>
+      <div class="col-1" (click)="sortByDesccending('carNo')">车号 </div>
+      <div class="col-1" (click)="sortByDesccending('fee')">保险费 </div>
+      <div class="col-2">操作 </div>
+</div>
+<div class="row table-row" *ngFor="let user of searchResult">
+  <app-customer-item [user]="user" (userClick)="selectUser = $event"></app-customer-item>
+</div>
+<div class="row table-row" *ngFor="let user of users">
+  <app-customer-item [user]="user" (userClick)="selectUser = $event"></app-customer-item>
+</div>

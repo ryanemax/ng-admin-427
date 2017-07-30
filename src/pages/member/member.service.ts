@@ -50,7 +50,7 @@ export class MemberService{
             // 1. 拼接HTTP请求所需的URL和Headers
             let serverURL = "http://localhost:1337/parse"
             let path = "/classes/"
-            let className = "member"
+            let className = "Member"
             let url = serverURL+path+className+"/"+objectId
 
             let headers:Headers = new Headers({
@@ -69,7 +69,7 @@ export class MemberService{
         // 1. 拼接HTTP请求所需的URL和Headers
         let serverURL = "http://localhost:1337/parse"
         let path = "/classes/"
-        let className = "member"
+        let className = "Member"
         let url = serverURL+path+className+"/"+objectId
         console.log(url)
         let headers:Headers = new Headers({
@@ -88,7 +88,7 @@ export class MemberService{
         // 1. 拼接HTTP请求所需的URL和Headers
         let serverURL = "http://localhost:1337/parse"
         let path = "/classes/"
-        let className = "member"
+        let className = "Member"
         let url = serverURL+path+className
 
         let headers:Headers = new Headers({
