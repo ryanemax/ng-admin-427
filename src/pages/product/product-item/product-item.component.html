@@ -1,0 +1,9 @@
+      <div class="col-1" *ngIf="isChecked()" (click)="check()">[x]</div>
+      <div class="col-1" *ngIf="!isChecked()" (click)="check()">[&nbsp;&nbsp;]</div>
+      <div class="col-1">{{product.name | uppercase | lowercase}}</div>
+      <div class="col-1">{{product.protype | protypeName}}</div>
+      <div class="col-1">{{product.agent}}</div>
+      <div class="col-1">{{product.price}}</div>
+      <div class="col-1">{{product.sumnum}}</div>
+      <div class="col-1">{{product.sumacc}}</div>
+      <div class="col-2"><a routerLink="/product/edit/{{product.objectId}}">编辑</a> <span appHighlight (click)="productServ.delete(product)">删除</span></div>
