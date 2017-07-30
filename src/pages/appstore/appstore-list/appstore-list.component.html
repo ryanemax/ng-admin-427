@@ -1,0 +1,32 @@
+<p>Selected Apps:{{selectAppstore.name}}</p>
+<div class="table-controls">
+    <div class="search-area" style="height:60px;">
+      <select [(ngModel)]="searchType" style="float:left;">
+        <option value="name">Name</option>
+        <option value="platform">Platform</option>
+      </select>
+<input style="float:left;" 
+  [(ngModel)]="searchText"/>
+<button style="float:left;" (click)="appstoreServ.search(searchType,searchText)">Search</button>
+
+</div>
+<button routerLink="/appstore/edit/new">New App</button>
+<button (click)="appstoreServ.deleteChecked()">Delete in batch</button>
+<button (click)="sortByAsccending()">ASC</button>
+<button (click)="sortByDesccending()">Desc</button>
+<button (click)="sortByRadom()">Random</button>
+</div>
+<div class="row table-header">
+      <div class="col-1">select </div>
+      <div class="col-2" (click)="sortByAsccending('name')">name </div>
+      <div class="col-2" (click)="sortByAsccending('platform')">platform </div>
+      <div class="col-1" (click)="sortByAsccending('review')">review </div>
+      <div class="col-1" (click)="sortByDesccending('rating')">rating </div>
+      <div class="col-1">Operation </div>
+</div>
+<div class="row table-row" *ngFor="let appstore of searchResult">
+  <app-appstore-item [appstore]="appstore" (appstoreClick)="selectAppstore = $event"></app-appstore-item>
+</div>
+<div class="row table-row" *ngFor="let appstore of appstores">
+  <app-appstore-item [appstore]="appstore" (appstoreClick)="selectAppstore = $event"></app-appstore-item>
+</div>

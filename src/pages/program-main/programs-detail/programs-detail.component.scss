@@ -1,0 +1,52 @@
+.btn-box{
+    width: 200px;
+    height: 140px;
+    button{
+        width: 400px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+        opacity: 0.6;
+        background: #8bc34a;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+    }
+}
+.input-box{
+    width: 400px;
+    height: 40px;
+    padding: 0px 20px;
+    background: #8bc34a;
+    opacity: 0.6;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+    span{
+        display: inline-block;
+        width: 100px;
+        height: 38px;
+        line-height: 38px;
+        background: #8bc34a;
+        opacity: 0.6;
+        font-size: 14px;
+        color: #666;
+    }
+    input{
+        width: 200px;
+        border: none;
+        outline: none;
+        background: #8bc34a;
+        opacity: 0.6;
+        height: 38px;
+        line-height: 38px;
+    }
+}
+button{
+   width: 400px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    opacity: 0.6;
+    background: #8bc34a;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}

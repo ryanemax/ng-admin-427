@@ -12,6 +12,8 @@ import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/startWith';
 
+import { Parse } from '../../cloud/parse';
+
 @Injectable()
 export class StudentService{
     isLogined:boolean = false;
@@ -140,13 +142,22 @@ export class StudentService{
             this.location.go("/student")
         })
 
-        // this.students.forEach((item,index,array)=>{
-        //     if(item.id == id){
-        //         array.splice(index,1)
-        //     }
-        // })
+        
+    }
+    deleteInArray(obj){
+        let id = obj.id
+        this.students.forEach((item,index,array)=>{
+            if(item.id == id){
+                array.splice(index,1)
+            }
+        })
     }
     search(type,value){
+        let query = new Parse.Query("Student",this.http)
+        query.equalTo(type,value)
+        
+    }
+    searchInArray(type,value){
         this.students.sort((a,b)=>{
         let result1 = String(a[type]).match(value)
         let result2 = String(b[type]).match(value)
