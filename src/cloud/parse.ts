@@ -83,14 +83,36 @@ export namespace Parse {
         }
         // 查询方法
         find():Observable<any[]>{
-            let url = ParseConfig.serverURL+"/classes/"+this.className+"?"
-            let hasWhere = Object.keys(this._where).length
+            let url = ParseConfig.serverURL+"/classes/"+this.className
+            let queryParams:Array<any> = []
+
+            // 设置where
+            let hasWhere = Object.keys(this._where).length            
             if(hasWhere){
-                url += "&where="+this._where.toString()
+                let param = "where="+JSON.stringify(this._where)
+                queryParams.push(param)
             }
+            // 设置limit
             if(this._limit){
-                url += "&limit="+this._limit
+                let param =  "limit="+this._limit
+                queryParams.push(param)
             }
+
+            // 打包查询条件
+            if(queryParams.length>0){
+                let paramString = ""
+                queryParams.forEach((p,index)=>{
+                    if(index==0){
+                        paramString += p
+                    }else{
+                        paramString += "&"+p
+                    }
+                })
+                url += "?" + paramString
+            }
+            console.log(url)
+
+
             url = encodeURI(url)
             return this.http.get(url,{
                 headers: ParseConfig.headers

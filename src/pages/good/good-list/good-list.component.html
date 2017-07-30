@@ -1,0 +1,35 @@
+<p appHighlight>已选择商品:{{selectGood.name}}</p>
+
+<p>已选择商品:{{selectGood.name}}</p>
+<div class="table-controls">
+    <div class="search-area" style="height:60px;">
+<input style="float:left;margin-top:14px;" 
+  [(ngModel)]="searchText"/>
+<button style="float:left;" (click)="search()">搜索</button>
+<button md-raised-button>Raised button</button>
+
+</div>
+<button (click)="sortByAsccending()">正序</button>
+<button (click)="sortByDesccending()">倒序</button>
+<button (click)="sortByRadom()">随机</button>
+<button (click)="deleteLast()">删除</button>
+<button routerLink="/good/edit">新增</button>
+<button (click)="testTempUsers()">TEST</button>
+</div>
+<div class="row table-header">
+      <div class="col-1">选择 </div>
+      <div class="col-1" (click)="sortByAsccending('index')">ID </div>
+      <div class="col-2" (click)="sortByAsccending('name')">品名 </div>
+      <div class="col-1" (click)="sortByAsccending('spec')">单位 </div>
+      <div class="col-2" (click)="sortByAsccending('price')">价格 </div>
+      <div class="col-1" (click)="sortByDesccending('num')">数量 </div>
+      <div class="col-1" (click)="sortByDesccending('Place')">产地 </div>
+      <div class="col-1" (click)="sortByDesccending('timelimit')">保质期 </div>
+      <div class="col-2">操作 </div>
+</div>
+<div class="row table-row" *ngFor="let good of searchResult">
+  <app-good-item [good]="good" (goodClick)="selectGood = $event"></app-good-item>
+</div>
+<div class="row table-row" *ngFor="let good of goods">
+  <app-good-item [good]="good" (goodClick)="selectGood = $event"></app-good-item>
+</div>

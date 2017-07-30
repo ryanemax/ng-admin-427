@@ -8,7 +8,7 @@ import {WerewolvesService} from "../werewolves.service";
   templateUrl: './werewolves-item.component.html',
   styleUrls: ['./werewolves-item.component.scss']
 })
-export class StudentItemComponent implements OnInit {
+export class WerewolvesItemComponent implements OnInit {
   @Input() werewolves:any
   @Output() werewolvesClick = new EventEmitter<any>();
   constructor(private werewolvesServ:WerewolvesService) { 

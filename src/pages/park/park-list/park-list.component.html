@@ -1,0 +1,44 @@
+<div class="col-2 col-m-2"></div>
+<div class="col-7 col-m-7">  
+
+  <p>附近停车场信息</p>
+  <div calss="small-button">
+  <button (click)="testButton()">点我</button>
+  <button (click)="testButton()">点我</button>
+  <button (click)="sortByAsccending()">正序</button>
+  <button (click)="sortByDesccending()">倒序</button>
+  <button (click)="sortByRadom()">随机</button>
+  <!--<button (click)="deleteLast()">删除</button>-->
+  <button routerLink="/park/edit/new">新增</button>
+  <button (click)="testButton()">点我</button>
+  <button (click)="testButton()">点我</button>
+  </div>
+
+<table>
+  <tbody>
+    <tr>
+      <th>ID </th>
+      <th>停车场 </th>
+      <th>距我 </th>
+      <th>可停时长 </th>
+      <th>单价/小时 </th>
+      <th>车主联系方式 </th>
+      <th>你要干嘛</th>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr *ngFor="let park of parks">
+      <td>{{park.index}}</td>
+      <td>{{park.place}}</td>
+      <td>{{park.distant}}</td>
+      <td>{{park.time}} </td>
+      <td>{{park.price}}</td>
+      <td>{{park.telphone}}</td>
+      <td>
+      <button routerLink="/park/edit/{{park.objectId}}">编辑</button>
+      <button (click)="parkServ.delete(park)">删除</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

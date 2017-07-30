@@ -1,0 +1,23 @@
+<h2>埃森哲2018新年之夜</h2>
+
+<div>
+  <button (click)="sortByAsccending()">正序</button>
+  <button (click)="sortByDesccending()">倒序</button>
+  <button (click)="sortByRadom()">随机</button>
+  <button (click)="programsList.deleteChecked()">删除</button>
+  <button routerLink='/program-main/programs-detail/new'>新增</button>
+</div>
+<div class="list-head">
+  <span>选择</span>
+  <span>节目编号</span>
+  <span>年会节目名</span>
+  <span>表演项目组</span>
+  <span>成员人数</span>
+  <span>表演时间</span>
+  <span>评分</span>
+  <span>点赞</span>
+  <span>管理</span>
+</div>
+<div *ngFor="let program of programs">
+  <app-programs [program]="program" class="list-content"></app-programs>
+</div>

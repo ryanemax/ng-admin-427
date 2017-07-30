@@ -1,0 +1,47 @@
+table,th,td{
+    color:#000000; 
+    border: 1px solid #2196f3;
+    
+table{
+    border-collapse: collapse;
+}
+}
+th{
+    text-align: center; 
+}
+td{
+    text-align: left; 
+}
+p{
+    color:#2196f3;
+    font-weight:bold;
+    font-size: 40px;
+    height: 70px;
+    margin-left: 120px;
+    // text-align: center;    
+    text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135
+}
+
+tbody{
+    align-content:center;
+    // background: -webkit-linear-gradient(#03a9f4, green); /* Safari 5.1 - 6.0 */
+    // background: -o-linear-gradient(#03a9f4, green); /* Opera 11.1 - 12.0 */
+    // background: -moz-linear-gradient(#03a9f4, green); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#03a9f4, green); /* 标准的语法（必须放在最后） */
+}
+button{
+    border-radius: 25px;
+    border: 2px solid #2196f3;
+    padding: 2px; 
+    width: 60px;
+    height: 30px; 
+    margin-bottom: 5px;
+}
+button:hover {
+    background-color: #03a9f4;
+}
+button:active {
+  background-color: #03a9f4;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

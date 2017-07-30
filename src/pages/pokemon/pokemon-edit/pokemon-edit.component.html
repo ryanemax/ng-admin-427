@@ -1,0 +1,31 @@
+<!--<p>
+  pokemon-edit works!{{infoPokemon}}
+  {{pokemonInfo.name}}-->
+<br><br><br><br>
+<label>名字</label>
+<input [(ngModel)]="pokemonInfo.name" class="inputMargin"/>
+<br>
+<label>当前属性</label>
+<tr class="trStyle">
+  <td *ngFor="let attributes of pokemonInfo.attributes">
+    {{attributes}}
+  </td>
+</tr>
+<br><br>
+<label>更改主属性</label>
+<select [(ngModel)]="attribute">  
+  <option *ngFor="let attribute of attributesList"
+  [value]="attribute.attribute">{{attribute.attribute}}</option>   
+</select>
+<label>添加附属性</label>
+<select [(ngModel)]="addattribute">  
+  <option *ngFor="let attribute of attachedAttributesList"
+  [value]="attribute.attribute">{{attribute.attribute}}</option>   
+</select>
+
+<br><br><br><br><br>
+
+<button (click)="updatePokemon()">保存</button>
+<button (click)="backPokemon()">取消保存</button>
+
+<!--</p>-->

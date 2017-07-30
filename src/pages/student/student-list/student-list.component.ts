@@ -31,7 +31,15 @@ export class StudentListComponent implements OnInit {
     this.selectStudent = ev
     console.log(ev);
   }
- 
+
+    search(type,value){
+        let query = new Parse.Query("Student",this.http)
+        query.equalTo(type,value)
+        query.find().subscribe(data=>{
+          this.students = data
+        })
+    }
+  
   sortByAsccending(type="id") {
     // 参考MDN Array操作的API文档 Array相关方法方法
     this.students.sort((a,b)=>{
@@ -56,17 +64,11 @@ export class StudentListComponent implements OnInit {
   constructor(meta: Meta, title: Title,private http:Http, public studentServ:StudentService) {
 
     let query = new Parse.Query("Student",http)
-    query.limit(2);
     query.find().subscribe(data=>{
       console.log(data)
       this.students = data
     })
 
-    // this.studentServ.getStudents().subscribe(data=>{
-    //   console.log(data)
-    // })
-    
- 
     // Set SEO
     title.setTitle('My Home Page');
 

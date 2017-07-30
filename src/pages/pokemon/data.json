@@ -1,0 +1,40 @@
+
+//classname:Pokemon
+[
+    {
+      "index": 1,
+      "name": "妙蛙种子",
+      "romIndex": 1,
+      "attributes": ["草", "毒"]
+    },{
+      "index": 2,
+      "name": "妙蛙草",
+      "romIndex": 2,
+      "attributes": ["草", "毒"]
+    },{
+      "index": 3,
+      "name": "妙蛙花",
+      "romIndex": 3,
+      "attributes": ["草", "毒"]
+    },{
+      "index": 4,
+      "name": "小火龙",
+      "romIndex": 4,
+      "attributes": ["火"]
+    },{
+      "index": 5,
+      "name": "喷火龙",
+      "romIndex": 5,
+      "attributes": ["火"]
+    }]
+
+// classname:PokemonAttributesList
+[
+  { "attribute":"草" },
+  { "attribute":"水" },
+  { "attribute":"毒" },
+  { "attribute":"火" },
+  { "attribute":"岩石" },
+  { "attribute":"地" },
+  { "attribute":"鬼" },
+]

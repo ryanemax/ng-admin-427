@@ -1,0 +1,23 @@
+      <div class="col-1" *ngIf="isChecked()" (click)="check()">[x]</div>
+      <div class="col-1" *ngIf="!isChecked()" (click)="check()">[&nbsp;&nbsp;]</div>
+      <div class="col-2" (click)="onUserClick()">{{user.objectId}}</div>
+      <div class="col-1">{{user.name | uppercase | lowercase}}</div>
+      <div class="col-1">{{user.sex | sexName}}</div>
+
+<!--<md-input-container>
+  <input mdInput [mdDatepicker]="picker1" placeholder="Choose a startDate">
+  <button mdSuffix [mdDatepickerToggle]="picker1"></button>
+</md-input-container>
+<md-datepicker #picker1></md-datepicker>
+
+<md-input-container>
+  <input mdInput [mdDatepicker]="picker2" placeholder="Choose a endDate">
+  <button mdSuffix [mdDatepickerToggle]="picker2"></button>
+</md-input-container>
+<md-datepicker #picker2></md-datepicker>-->
+
+      <div class="col-1">{{user.startDate | date:"yyyy-MM-dd"}}</div>
+      <div class="col-1">{{user.endDate | date:"yyyy-MM-dd"}}</div>
+      <div class="col-1">{{user.carNo}}</div>
+      <div class="col-1">{{user.fee}}</div>
+      <div class="col-2"><a routerLink="/customer/edit/{{user.objectId}}">编辑</a> <span appHighlight (click)="customerServ.delete(user)">删除</span></div>
