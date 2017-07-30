@@ -1,17 +1,17 @@
 
-<div>
+<div class = "back-ground">
   <div class="head-button">
-    <button class = "button-style" routerLink="/commodity/edit/new">新增商品</button>
+    <button routerLink="/commodity/edit/new">新增商品</button>
     <button (click)="commodityServ.deleteChecked()">批量删除</button>
     <button (click)="sortByAsccending()">正序</button>
     <button (click)="sortByDesccending()">倒序</button>
     <button (click)="sortByRadom()">随机</button>
   </div>
   <div class="row table-header">
-        <div class="col-1">选择 </div>
-        <div class="col-1" (click)="sortByAsccending('commodityId')">货号 </div>
-        <div class="col-2" (click)="sortByAsccending('name')">商品名 </div>
-        <div class="col-1" (click)="sortByAsccending('price')">价格 </div>
+        <div class="col-1"><b>选择</b> </div>
+        <div class="col-1" (click)="sortByAsccending('commodityId')"><b>货号</b> </div>
+        <div class="col-2" (click)="sortByAsccending('name')"><b>商品名</b> </div>
+        <div class="col-1" (click)="sortByAsccending('price')"><b>价格</b> </div>
   </div>
   <hr class="head-line"/>
   <div class="row table-row" *ngFor="let commodity of searchResult">

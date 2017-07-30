@@ -32,6 +32,7 @@ const SSRroutes: Routes = [
   { path: 'activity', loadChildren: '../pages/activity/activity.module#ActivityModule' },
   { path: 'ballplayer', loadChildren: '../pages/ballplayer/ballplayer.module#BallPlayerModule' },
   { path: 'campus', loadChildren: '../pages/campus/campus.module#CampusModule' },
+  { path: 'insurant', loadChildren: '../pages/insurance/insurance.module#InsuranceModule' },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
