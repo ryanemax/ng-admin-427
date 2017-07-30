@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ProgramsService } from './programs.service';
 
+// import { Http } from '@angular/http';
+// import {Parse} from "../../cloud/parse";
+
 @Component({
   selector: 'app-program-main',
   templateUrl: './program-main.component.html',
@@ -47,6 +50,7 @@ export class ProgramMainComponent implements OnInit {
     }
     shuffle(this.programs);
   }
+  // private http:Http,
   constructor(meta: Meta, title: Title, private programsList: ProgramsService) {
     title.setTitle('My Home Page');
 
@@ -62,7 +66,15 @@ export class ProgramMainComponent implements OnInit {
       },
     ]);
     this.programs = this.programsList.getPrograms();
-  }
+  };
+
+  // let query = new Parse.Query("Student",http);
+  //   query.limit(2);
+  //   query.equalTo("sex","M");
+  //   query.find().subscribe(data=>{
+  //     console.log(data)
+  //     this.students = data
+  //   })
 
   ngOnInit() {
   }

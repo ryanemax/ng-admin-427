@@ -57,8 +57,6 @@ export class PokemonListComponent implements OnInit {
   }
 
   attributesSelect(){
-    console.log(this.attribute);
-    console.log(this.name);
 
     this.pokemonList.forEach(item=>{
       if(item.name == this.name) {
@@ -81,12 +79,10 @@ export class PokemonListComponent implements OnInit {
   constructor(private poService: PokemonService, private http:Http) {
 
     this.poService.getPokemonsbyUrl().subscribe(data=>{
-      console.log('*********');
-      console.log(data);
       this.pokemonList = data;
     });
 
-    this.attributesList = poService.getattributesList();
+    // this.attributesList = poService.getattributesList();
    }
 
   ngOnInit() {

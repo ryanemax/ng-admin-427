@@ -69,9 +69,26 @@ export class PokemonService {
              "Content-Type":"application/json; charset=utf-" 
          }) 
 
-         console.log(this.http.get(url,{ headers:headers }) 
+         // . 发起HTTP GET查询请求 
+         return this.http.get(url,{ headers:headers }) 
          .map(data=>data.json()) 
-         .map(data=>data.results));
+         .map(data=>data.results)       
+     }
+
+     getPokemonAttributesListbyUrl():Observable<any[]>{ 
+         // . 拼接HTTP请求所需的URL和Headers 
+         let serverURL = "http://localhost:1337/parse" 
+         let path = "/classes/" 
+         let className = "PokemonAttributesList" 
+         let url = serverURL+path+className 
+ 
+ 
+         let headers:Headers = new Headers({ 
+             "X-Parse-Application-Id":"dev", 
+             "X-Parse-Master-Key":"angulardev", 
+             // "X-Parse-Session-Token":"r:bbbebdcdeffebbf", 
+             "Content-Type":"application/json; charset=utf-" 
+         }) 
 
          // . 发起HTTP GET查询请求 
          return this.http.get(url,{ headers:headers }) 
@@ -149,7 +166,6 @@ export class PokemonService {
              url += "/"+body.objectId 
              // body.objectId = undefined 
 
-             console.log(body);
              return this.http.put(url,{ 
                  name:body.name, 
                  attributes:body.attributes, 
@@ -166,10 +182,6 @@ export class PokemonService {
 
   getPokemons() {
     
-  }
-
-  getattributesList() {
-    return this.attributesList;
   }
 
 }
