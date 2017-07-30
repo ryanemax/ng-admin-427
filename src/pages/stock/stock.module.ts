@@ -32,7 +32,7 @@ import { StockService } from './stock.service'
     // Config Router
     RouterModule.forChild([
       { path: '', component:StockListComponent, pathMatch: 'full' },
-      { path: 'stock/edit/:sid', component: StockEditComponent, pathMatch: 'full' }
+      { path: 'edit/:sid', component: StockEditComponent, pathMatch: 'full' }
     ])
   ],
    providers:[StockService]
