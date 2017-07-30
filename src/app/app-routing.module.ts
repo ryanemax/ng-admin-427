@@ -13,9 +13,14 @@ const SSRroutes: Routes = [
   { path: 'login', loadChildren: '../pages/user/user.module#UserModule' },
   { path: 'student', loadChildren: '../pages/student/student.module#StudentModule' },
   { path: 'werewolves', loadChildren: '../pages/werewolves/werewolves.module#WerewolvesModule' },
+  { path: 'wbs', loadChildren: '../pages/wbs/wbs.module#WBSModule' },
   { path: 'stock', loadChildren: '../pages/stock/stock.module#StockModule' },
   { path: 'member', loadChildren: '../pages/member/member.module#MemberModule' },
+<<<<<<< HEAD
   { path: 'goods', loadChildren: '../pages/goods/goods.module#GoodsModule' },
+=======
+  { path: 'pokemon', loadChildren: '../pages/pokemon/pokemon.module#PokemonModule' },
+>>>>>>> 90c6dd2ab59641a8b51d28a69421e27f2217b3af
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
