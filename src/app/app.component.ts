@@ -24,10 +24,6 @@ export class AppComponent {
     {"path":"member","icon":"people","name":"程序员信息"},
     {"path":"goods","icon":"android","name":"淘淘杂货铺"},
     {"path":"pokemon","icon":"people","name":"Pokemon"},
-<<<<<<< HEAD
-=======
     {"path":"commodity","icon":"people","name":"商品管理"},
-
->>>>>>> b50f4a8093afbe818b38840526aa8344766b063d
   ]
 }
