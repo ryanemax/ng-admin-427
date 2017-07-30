@@ -21,7 +21,7 @@ import {Parse} from "../../../cloud/parse"
 })
 export class GoodListComponent implements OnInit {
   searchText: string = "";
-  searchType: string = "name";
+  searchType: string = "prodname";
   selectGood:Array<any>;
 
 @Input() good:any
@@ -32,6 +32,16 @@ export class GoodListComponent implements OnInit {
   deleteLast() {
     this.goods.pop()
   }
+
+  search(type,value){
+        let query = new Parse.Query("Good",this.http)
+        if (value !== "") {
+          query.equalTo(type,value)
+        }
+        query.find().subscribe(data=>{
+          this.goods = data
+        })
+    }
 
 getUserClick(ev){
     this.selectGood = ev
