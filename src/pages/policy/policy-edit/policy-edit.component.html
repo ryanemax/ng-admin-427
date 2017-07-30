@@ -1,0 +1,47 @@
+<p>
+  <span *ngIf="isNew">新保单</span>
+  <span *ngIf="!isNew">编辑保单:{{this.policyNo}}</span>
+  <button (click)="back()">返回</button>
+</p>
+
+<div>
+保单号：
+<input type="text" [(ngModel)]="policy.policyNo"/>
+</div>
+
+<div>
+持保人：
+<input type="text" [(ngModel)]="policy.policyOwner"/>
+</div>
+
+<div>
+被保人：
+<input type="text" [(ngModel)]="policy.insuredPerson"/>
+</div>
+
+<div>
+保险产品：
+<input type="text" [(ngModel)]="policy.product"/>
+</div>
+
+<div>
+保费：
+<input type="text" [(ngModel)]="policy.insuredCost"/>
+</div>
+
+<div>
+保额：
+<input type="text" [(ngModel)]="policy.insuredSumValue"/>
+</div>
+
+<div>
+生效日期：
+<input type="text" [(ngModel)]="policy.effectiveDate"/>
+</div>
+
+<div>
+状态：
+<input type="text" [(ngModel)]="policy.policyState"/>
+</div>
+
+<button routerLink="/policy" (click)="save()">提交</button>
