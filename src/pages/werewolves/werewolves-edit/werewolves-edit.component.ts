@@ -8,7 +8,7 @@ import { WerewolvesService } from '../werewolves.service'
   templateUrl: './werewolves-edit.component.html',
   styleUrls: ['./werewolves-edit.component.scss']
 })
-export class StudentEditComponent implements OnInit,OnDestroy {
+export class WerewolvesEditComponent implements OnInit,OnDestroy {
   werewolvesId:string="";
   werewolves:any={
     name:""
