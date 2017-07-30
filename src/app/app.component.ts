@@ -36,6 +36,7 @@ export class AppComponent {
     {"path":"pokemon","icon":"people","name":"Pokemon"},
     {"path":"commodity","icon":"people","name":"商品管理"},
     {"path":"campus","icon":"people","name":"学校管理"},
+    {"path":"insurant","icon":"menu","name":"生命保险管理"},
      
 
   ]
