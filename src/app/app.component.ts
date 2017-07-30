@@ -6,7 +6,7 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    @ViewChild("sidenav") sidenav: any;
+  @ViewChild("sidenav") sidenav: any;
   title = 'Cloud Admin';
   now = new Date();
 
