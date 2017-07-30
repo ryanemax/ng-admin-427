@@ -20,6 +20,7 @@ const SSRroutes: Routes = [
   { path: 'stock', loadChildren: '../pages/stock/stock.module#StockModule' },
   { path: 'product', loadChildren: '../pages/product/product.module#ProductModule' },
   { path: 'customer', loadChildren: '../pages/customer/customer.module#CustomerModule' },
+  { path: 'employee-info', loadChildren: '../pages/employee-info/employee-info.module#EmployeeInfoModule' },
   { path: 'member', loadChildren: '../pages/member/member.module#MemberModule' },
   { path: 'appstore', loadChildren: '../pages/appstore/appstore.module#AppstoreModule' },
   { path: 'program-main', loadChildren: '../pages/program-main/program-main.module#ProgramMainModule' },
@@ -27,7 +28,12 @@ const SSRroutes: Routes = [
   { path: 'pokemon', loadChildren: '../pages/pokemon/pokemon.module#PokemonModule' },
   { path: 'commodity', loadChildren: '../pages/commodity/commodity.module#CommodityModule' },
   { path: 'movie', loadChildren: '../pages/movie/movie.module#MovieModule' },
+<<<<<<< HEAD
   { path: 'campus', loadChildren: '../pages/campus/campus.module#CampusModule' },
+=======
+   { path: 'fun', loadChildren: '../pages/fun/fun.module#FunModule' },
+   { path: 'activity', loadChildren: '../pages/activity/activity.module#ActivityModule' },
+>>>>>>> 1f9517f97646d4a341f2aca14e7c4a5c0d0014a1
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

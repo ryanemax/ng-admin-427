@@ -29,7 +29,7 @@ import { PlayerService } from './player.service'
     // Config Router
     RouterModule.forChild([
       { path: '', component: PlayerListComponent, pathMatch: 'full' },
-      { path: 'player/edit/:id', component: PlayerEditComponent, pathMatch: 'full' }
+      { path: 'edit/:id', component: PlayerEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [

@@ -1,38 +1,40 @@
 
-<h1 class="shadowbar" color="secondary" ><a><font color=DeepSkyBlue  >品牌电器销售统计表</font></a></h1>
-<p>已选择产品:{{selectProduct.name}}</p>
-<div class="table-controls">
+<h1 class="shadowbar" color="secondary" ><a><font color=DeepBlue face="楷体" >品牌电器销售统计表</font></a></h1>
+<p style="background-image:url(/assets/back.jpg)">已选择产品:{{selectProduct.name}}</p>
+<div class="table-pro">
     <div class="search-area" style="height:60px;">
       <select [(ngModel)]="searchType" style="float:left;">
         <option value="name">产品名称</option>
         <option value="agent">销售人员</option>
       </select>
-<input style="float:left;" 
-  [(ngModel)]="searchText"/>
-<button style="float:left;" (click)="productServ.search(searchType,searchText)">搜索</button>
-
-</div>
-<button routerLink="/product/edit/new">新增产品</button>
-<button (click)="productServ.deleteChecked()">批量删除</button>
-<button (click)="sortByAsccending()">正序</button>
-<button (click)="sortByDesccending()">倒序</button>
-<button (click)="sortByRadom()">随机</button>
-</div>
+        <input style="float:left;" 
+              [(ngModel)]="searchText"/>
+      <button style="float:left;" (click)="productServ.search(searchType,searchText)">搜索</button>
 
 
-<div class="table-header">
-      <div class="col-1">选择 </div>
-      <div class="col-1" (click)="sortByAsccending('name')">产品名称 </div>
-      <div class="col-1" (click)="sortByAsccending('protype')">产品型号 </div>
-      <div class="col-1" (click)="sortByAsccending('agent')">销售人员 </div>
-      <div class="col-1" (click)="sortByDesccending('price')">销售单价 </div>
-      <div class="col-1" (click)="sortByDesccending('sumnum')">销售数量 </div>
-      <div class="col-1" (click)="sortByDesccending('sumacc')">销售总额 </div>
-      <div class="col-2">操作 </div>
+      </div > 
+      <button routerLink="/product/edit/new">新增产品</button>
+      <button (click)="productServ.deleteChecked()">批量删除</button>
+      <button (click)="sortByAsccending()">正序</button>
+      <button (click)="sortByDesccending()">倒序</button>
+      <button (click)="sortByRadom()">随机</button>
+    </div>
+
+<div class="row table-header">
+  <div class="col-1" >选择 </div>
+  <div class="col-1" (click)="sortByAsccending('name')">产品名称 </div>
+  <div class="col-1" (click)="sortByAsccending('protype')">产品型号 </div>
+  <div class="col-1" (click)="sortByAsccending('agent')">销售人员 </div>
+  <div class="col-1" (click)="sortByDesccending('price')">销售单价 </div>
+  <div class="col-1" (click)="sortByDesccending('sumnum')">销售数量 </div>
+  <div class="col-1" (click)="sortByDesccending('sumacc')">销售总额 </div>
+  <div class="col-2">操作 </div>
 </div>
+<div class="table_background">
 <div class="row table-row" *ngFor="let product of searchResult">
   <app-product-item [product]="product" (productClick)="selectProduct = $event"></app-product-item>
 </div>
 <div class="row table-row" *ngFor="let product of products">
   <app-product-item [product]="product" (productClick)="selectProduct = $event"></app-product-item>
+</div>
 </div>
