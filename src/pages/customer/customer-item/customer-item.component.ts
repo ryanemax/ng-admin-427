@@ -8,7 +8,7 @@ import {CustomerService} from "../customer.service";
   templateUrl: './customer-item.component.html',
   styleUrls: ['./customer-item.component.scss']
 })
-export class customerItemComponent implements OnInit {
+export class CustomerItemComponent implements OnInit {
   @Input() user:any
   @Output() userClick = new EventEmitter<any>();
   constructor(private customerServ:CustomerService) { 
@@ -17,7 +17,11 @@ export class customerItemComponent implements OnInit {
     this.userClick.emit(this.user)
   }
   check(){
-    this.user.check = true;
+    if(this.user.check&&this.user.check==true){
+      this.user.check = false;
+    }else{
+      this.user.check = true
+    }
   }
   isChecked(){
     if(this.user.check&&this.user.check==true){
