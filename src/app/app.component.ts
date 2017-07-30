@@ -14,6 +14,7 @@ export class AppComponent {
   routes:Array<any>=[
     {"path":"home","icon":"home","name":"后台首页"},
     {"path":"about","icon":"home","name":"关于我们"},
+    {"path":"activity","icon":"people","name":"活动管理"},
     {"path":"student","icon":"people","name":"学生管理"},
     {"path":"rxjs","icon":"android","name":"RXJS"},
     {"path":"werewolves","icon":"people","name":"狼人杀"},
@@ -30,11 +31,11 @@ export class AppComponent {
     {"path":"appstore","icon":"menu","name":"appstore"},
     {"path":"goods","icon":"store","name":"淘淘杂货铺"},
     {"path":"program-main","icon":"people","name":"埃森哲之夜"},
+    {"path":"fun","icon":"people","name":"基金管理"},
     {"path":"goods","icon":"android","name":"淘淘杂货铺"},
     {"path":"pokemon","icon":"people","name":"Pokemon"},
     {"path":"commodity","icon":"people","name":"商品管理"},
-    {"path":"home","icon":"home","name":"待添加"},
-    {"path":"home","icon":"home","name":"待添加"},
-    {"path":"home","icon":"home","name":"待添加"},
+     
+
   ]
 }
