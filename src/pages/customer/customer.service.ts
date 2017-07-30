@@ -13,7 +13,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/startWith';
 
 @Injectable()
-export class customerService{
+export class CustomerService{
     isLogined:boolean = false;
     users: Array < any > = [{
      'id': 1,
