@@ -84,12 +84,14 @@ export namespace Parse {
         // 查询方法
         find():Observable<any[]>{
             let url = ParseConfig.serverURL+"/classes/"+this.className+"?"
-            if(this._where){
+            let hasWhere = Object.keys(this._where).length
+            if(hasWhere){
                 url += "&where="+this._where.toString()
             }
             if(this._limit){
                 url += "&limit="+this._limit
             }
+            console.log(url)
             url = encodeURI(url)
             return this.http.get(url,{
                 headers: ParseConfig.headers
@@ -119,7 +121,7 @@ export namespace Parse {
     })
 */
 
-    export class Object extends HttpHandler{
+    export class ParseObject extends HttpHandler{
         headers:Headers
         serverURL:string
 

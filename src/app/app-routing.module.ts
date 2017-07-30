@@ -14,6 +14,10 @@ const SSRroutes: Routes = [
   { path: 'student', loadChildren: '../pages/student/student.module#StudentModule' },
   { path: 'werewolves', loadChildren: '../pages/werewolves/werewolves.module#WerewolvesModule' },
   { path: 'park', loadChildren: '../pages/park/park.module#ParkModule' },
+  { path: 'wbs', loadChildren: '../pages/wbs/wbs.module#WBSModule' },
+  { path: 'stock', loadChildren: '../pages/stock/stock.module#StockModule' },
+  { path: 'member', loadChildren: '../pages/member/member.module#MemberModule' },
+  { path: 'pokemon', loadChildren: '../pages/pokemon/pokemon.module#PokemonModule' },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
