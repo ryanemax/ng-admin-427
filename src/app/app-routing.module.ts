@@ -16,13 +16,18 @@ const SSRroutes: Routes = [
   { path: 'park', loadChildren: '../pages/park/park.module#ParkModule' },
   { path: 'wbs', loadChildren: '../pages/wbs/wbs.module#WBSModule' },
   { path: 'stock', loadChildren: '../pages/stock/stock.module#StockModule' },
+  { path: 'customer', loadChildren: '../pages/customer/customer.module#customerModule' },
   { path: 'member', loadChildren: '../pages/member/member.module#MemberModule' },
   { path: 'program-main', loadChildren: '../pages/program-main/program-main.module#ProgramMainModule' },
 
   { path: 'goods', loadChildren: '../pages/goods/goods.module#GoodsModule' },
+<<<<<<< .mine
 
+=======
+
+>>>>>>> .theirs
   { path: 'pokemon', loadChildren: '../pages/pokemon/pokemon.module#PokemonModule' },
-
+  { path: 'commodity', loadChildren: '../pages/commodity/commodity.module#CommodityModule' },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
