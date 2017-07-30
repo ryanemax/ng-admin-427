@@ -33,5 +33,8 @@ export class AppComponent {
     {"path":"goods","icon":"android","name":"淘淘杂货铺"},
     {"path":"pokemon","icon":"people","name":"Pokemon"},
     {"path":"commodity","icon":"people","name":"商品管理"},
+    {"path":"home","icon":"home","name":"待添加"},
+    {"path":"home","icon":"home","name":"待添加"},
+    {"path":"home","icon":"home","name":"待添加"},
   ]
 }
