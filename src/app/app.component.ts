@@ -20,10 +20,7 @@ export class AppComponent {
     {"path":"stock","icon":"people","name":"股票管理"},
     {"path":"wbs","icon":"menu","name":"任务管理"},
     {"path":"member","icon":"people","name":"程序员信息"},
-<<<<<<< HEAD
-    {"path":"goods","icon":"android","name":"淘淘杂货铺"},
-=======
+    {"path":"goods","icon":"store","name":"淘淘杂货铺"},
     {"path":"pokemon","icon":"people","name":"Pokemon"},
->>>>>>> 90c6dd2ab59641a8b51d28a69421e27f2217b3af
   ]
 }
