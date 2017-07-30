@@ -56,7 +56,11 @@ export class ParkListComponent implements OnInit {
       return 0;
     });
   }
-
+  testButton(){
+    alert("是不是傻！");  
+    alert("逗你玩呢！");  
+    alert("来打我呀！"); 
+  }
 //  delete(park){
 //     let parkIndex = park.index;
 //     this.parkServ.park.forEach((item,index,array)=>{

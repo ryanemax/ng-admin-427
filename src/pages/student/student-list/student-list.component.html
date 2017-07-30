@@ -12,11 +12,13 @@
         <option value="project">项目</option>
       </select>
       <input [(ngModel)]="searchText" />
-      <button (click)="studentServ.search(searchType,searchText)">搜索</button>
+      <button (click)="search(searchType,searchText)">搜索</button>
+      <!--<button (click)="studentServ.search(searchType,searchText)">搜索</button>-->
     </div>
     
     <button routerLink="/student/edit/new">新增学员</button>
     <button (click)="studentServ.deleteChecked()">批量删除</button>
+    <button routerLink="/student/analysis">统计</button>
     <!--<button (click)="sortByAsccending()">正序</button>
     <button (click)="sortByDesccending()">倒序</button>
     <button (click)="sortByRadom()">随机</button>-->

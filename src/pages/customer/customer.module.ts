@@ -6,9 +6,9 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 // Child Page Components
-import { customerListComponent } from './customer-list/customer-list.component';
-import { customerItemComponent } from './customer-item/customer-item.component';
-import { customerEditComponent } from './customer-edit/customer-edit.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { CustomerItemComponent } from './customer-item/customer-item.component';
+import { CustomerEditComponent } from './customer-edit/customer-edit.component';
 
 // Import Shared Module
 import { PipesModule } from '../../pipes/pipes.module'
@@ -28,14 +28,14 @@ import { CustomerService } from './customer.service'
     DirectivesModule,
     // Config Router
     RouterModule.forChild([
-      { path: '', component: customerListComponent, pathMatch: 'full' },
-      { path: 'edit/:sid', component: customerEditComponent, pathMatch: 'full' }
+      { path: '', component: CustomerListComponent, pathMatch: 'full' },
+      { path: 'edit/:sid', component: CustomerEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [
-   customerListComponent,
-   customerItemComponent, 
-   customerEditComponent
+   CustomerListComponent,
+   CustomerItemComponent, 
+   CustomerEditComponent
    ],
    providers:[CustomerService]
 })

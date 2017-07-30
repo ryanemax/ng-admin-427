@@ -1,4 +1,5 @@
-      <div class="col-1" (click)="onUserClick()">[ ]</div>
+      <div class="col-1" *ngIf="isChecked()" (click)="check()">[x]</div>
+      <div class="col-1" *ngIf="!isChecked()" (click)="check()">[&nbsp;&nbsp;]</div>
       <div class="col-2" (click)="onUserClick()">{{user.objectId}}</div>
       <div class="col-1">{{user.name | uppercase | lowercase}}</div>
       <div class="col-1">{{user.sex | sexName}}</div>

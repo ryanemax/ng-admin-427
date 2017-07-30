@@ -17,7 +17,7 @@ import {CustomerService} from "../customer.service";
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.scss']
 })
-export class customerListComponent implements OnInit {
+export class CustomerListComponent implements OnInit {
   searchText: string = "default";
   selectUser:any={
     name:"未选择"

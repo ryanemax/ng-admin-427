@@ -2,7 +2,7 @@
 <button (click)="sortByDesccending()">倒序排列</button>
 <button (click)="sortByRadom()">随机打乱</button>
 <!--<button (click)="deleteLast()">删除最后一个</button>-->
-<button routerLink="/pokemonedit/new">新增</button>
+<button routerLink="pokemonedit/new">新增</button>
 <br>
 <br>
 <!--双向绑定：输入是[]输出是（）字符串自带search方法 -->
@@ -40,10 +40,10 @@
         <button (click)="deletePokemon(pokemon)">删除</button>
       </td>
       <td>
-        <a routerLink="/pokemoninfo/{{pokemon.objectId}}">宝贝详情</a>
+        <a routerLink="pokemoninfo/{{pokemon.objectId}}">宝贝详情</a>
       </td>
       <td>
-        <a routerLink="/pokemonedit/{{pokemon.objectId}}">编辑</a>
+        <a routerLink="pokemonedit/{{pokemon.objectId}}">编辑</a>
       </td>
     </tr>
   </tbody>

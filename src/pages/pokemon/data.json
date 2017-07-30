@@ -1,3 +1,5 @@
+
+//classname:Pokemon
 [
     {
       "index": 1,
@@ -25,3 +27,14 @@
       "romIndex": 5,
       "attributes": ["火"]
     }]
+
+// classname:PokemonAttributesList
+[
+  { "attribute":"草" },
+  { "attribute":"水" },
+  { "attribute":"毒" },
+  { "attribute":"火" },
+  { "attribute":"岩石" },
+  { "attribute":"地" },
+  { "attribute":"鬼" },
+]

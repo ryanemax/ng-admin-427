@@ -27,7 +27,7 @@ import { ProductService } from './product.service'
     // Config Router
     RouterModule.forChild([
       { path: '', component: ProductListComponent, pathMatch: 'full' },
-      { path: 'product/edit/:id', component: ProductEditComponent, pathMatch: 'full' }
+      { path: 'edit/:id', component: ProductEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [
