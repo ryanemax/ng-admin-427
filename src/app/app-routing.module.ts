@@ -20,6 +20,7 @@ const SSRroutes: Routes = [
   { path: 'stock', loadChildren: '../pages/stock/stock.module#StockModule' },
   { path: 'product', loadChildren: '../pages/product/product.module#ProductModule' },
   { path: 'customer', loadChildren: '../pages/customer/customer.module#CustomerModule' },
+  { path: 'employee-info', loadChildren: '../pages/employee-info/employee-info.module#EmployeeInfoModule' },
   { path: 'member', loadChildren: '../pages/member/member.module#MemberModule' },
   { path: 'appstore', loadChildren: '../pages/appstore/appstore.module#AppstoreModule' },
   { path: 'program-main', loadChildren: '../pages/program-main/program-main.module#ProgramMainModule' },
