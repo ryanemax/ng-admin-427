@@ -63,17 +63,14 @@
   <!-- 菜单侧栏导航 -->
   <md-sidenav #sidenav mode="side" opened="true" mode="side">
           <ul>
-            <div>
-            <li><a routerLink="rxjs" md-button class="md-button prepend-icon"><i class="material-icons nav-icon">keyboard_arrow_right</i><span class="nav-text">RXJS</span></a></li>
-            </div>
-            <div>
-            <li><a routerLink="home" md-button class="md-button prepend-icon"><i class="material-icons nav-icon">keyboard_arrow_right</i><span class="nav-text">HOME</span></a></li>
-            </div>
-            <div>
-            <li><a routerLink="about" md-button class="md-button prepend-icon"><i class="material-icons nav-icon">keyboard_arrow_right</i><span class="nav-text">ABOUT</span></a></li>
-            </div>
-            <div>
-            <li><a routerLink="student" md-button class="md-button prepend-icon"><i class="material-icons nav-icon">keyboard_arrow_right</i><span class="nav-text">学员管理</span></a></li>
+            <div *ngFor="let nav of routes">
+              <li>
+              <a routerLink="{{nav.path}}" md-button 
+              class="md-button prepend-icon">
+              <i class="material-icons nav-icon">{{nav.icon}}</i>
+              <span class="nav-text">{{nav.name}}</span>
+              </a>
+              </li>
             </div>
             <!--带badge数字提示菜单示例-->
             <!--<li><a md-button class="md-button prepend-icon"><i class="material-icons nav-icon">keyboard_arrow_right</i><span class="nav-text">Icons</span><span class="badge badge-pill badge-info">2</span></a></li>
