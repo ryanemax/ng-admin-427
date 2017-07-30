@@ -1,0 +1,40 @@
+<p>
+  <span *ngIf="isNew">新增用户</span>
+  <span *ngIf="!isNew">编辑用户:{{this.memberId}}</span>
+  <button (click)="back()">返回</button>
+</p>
+
+<div>
+姓名：
+<input type="text" [(ngModel)]="member.name"/>
+</div>
+
+<div>
+性别：
+<select [(ngModel)]="member.sex">
+  <option value="1">男</option>
+  <option value="2">女</option>
+</select>
+</div>
+
+<div>
+年龄：
+<input type="text" [(ngModel)]="member.age"/>
+</div>
+
+<div>
+加分点：
+<input type="text" [(ngModel)]="member.skill"/>
+</div>
+
+<div>
+对另一半的期待：
+<input type="text" [(ngModel)]="member.expect"/>
+</div>
+
+<div>
+个人首页：
+<input type="text" [(ngModel)]="member.homepage"/>
+</div>
+
+<button routerLink="/member" (click)="save()">提交</button>
