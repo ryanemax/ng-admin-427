@@ -1,0 +1,9 @@
+      <div class="col-1" *ngIf="isChecked()" (click)="check()">[x]</div>
+      <div class="col-1" *ngIf="!isChecked()" (click)="check()">[&nbsp;&nbsp;]</div>
+      <div class="col-2">{{activity.name | uppercase | lowercase}}</div>
+      <div class="col-1">{{activity.place}}</div>
+      <div class="col-2"><a target="_blank" href="http://github.com/{{activity.project}}">{{activity.project}}</a></div>
+      <div class="col-1">{{activity.time}}</div>
+      <div class="col-1">{{activity.population}}</div>
+      <div class="col-1">{{activity.organizer}}</div>
+      <div class="col-2"><a routerLink="/activity/edit/{{activity.objectId}}">编辑</a> <span appHighlight (click)="activityServ.delete(activity)">删除</span></div>

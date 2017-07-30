@@ -99,7 +99,7 @@ export class GoodsService{
     delete(obj){
         this.deleteGoodById(obj.objectId).subscribe(data=>{
             console.log(data);
-            this.location.go("/goods")
+            // this.location.go("/goods")
         })
 
         // this.goods.forEach((item,index,array)=>{
