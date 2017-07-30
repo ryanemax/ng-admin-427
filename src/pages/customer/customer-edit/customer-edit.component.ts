@@ -1,7 +1,7 @@
 import { Component, OnInit,OnDestroy } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
-import { customerService } from '../customer.service'
+import { CustomerService } from '../customer.service'
 
 @Component({
   selector: 'app-customer-edit',
@@ -19,7 +19,7 @@ export class customerEditComponent implements OnInit,OnDestroy {
   getUserSubscribe:any;
   
   constructor(private route: ActivatedRoute,
-  private customerServ:customerService,
+  private customerServ:CustomerService,
   private location: Location) {
   }
   back(){

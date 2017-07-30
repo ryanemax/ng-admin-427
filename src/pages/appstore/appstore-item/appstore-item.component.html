@@ -1,0 +1,7 @@
+      <div class="col-1" *ngIf="isChecked()" (click)="check()">[x]</div>
+      <div class="col-1" *ngIf="!isChecked()" (click)="check()">[&nbsp;&nbsp;]</div>
+      <div class="col-2">{{appstore.name}}</div>
+      <div class="col-2">{{appstore.platform}}</div>
+      <div class="col-1">{{appstore.review}}</div>
+      <div class="col-1">{{appstore.rating}}</div>
+      <div class="col-1"><a routerLink="/appstore/edit/{{appstore.objectId}}">edit</a> <span appHighlight (click)="appstoreServ.delete(appstore)">delete</span></div>
