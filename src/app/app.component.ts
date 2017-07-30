@@ -19,5 +19,6 @@ export class AppComponent {
     {"path":"wbs","icon":"menu","name":"任务管理"},
     {"path":"member","icon":"people","name":"程序员信息"},
     {"path":"pokemon","icon":"people","name":"Pokemon"},
+    {"path":"commodity","icon":"people","name":"商品管理"},
   ]
 }
