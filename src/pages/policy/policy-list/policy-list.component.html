@@ -1,0 +1,40 @@
+<!--test policy model!!!-->
+
+<md-toolbar class="shadowbar" color="secondary">
+  <span>policy > 保单列表</span>
+  <span style="width:10px;"></span>
+
+
+
+  <div class="table-controls">
+    <div class="search-area">
+      <select [(ngModel)]="searchType">
+        <option value="policyNo">保单号</option>
+        <option value="policyOwner">保单持有人</option>
+      </select>
+      <input [(ngModel)]="searchText" />
+      <button (click)="policyServ.search(searchType,searchText)">搜索</button>
+    </div>
+    <button routerLink="/policy/edit/new">新保单</button>
+  </div>
+
+</md-toolbar>
+
+
+<div class="row table-header">
+  <div class="col-1">保单号 </div>
+  <div class="col-1">持保人 </div>
+  <div class="col-1">被保人 </div>
+  <div class="col-1">产品 </div>
+  <div class="col-1">保费 </div>
+  <div class="col-1">保额 </div>
+  <div class="col-1">生效日 </div>
+  <div class="col-1">状态 </div>
+</div>
+<!--<div class="row table-row" *ngFor="let policy of searchResult">
+  <app-policy-item [policy]="policy" (policyClick)="selectPolicy = $event"></app-policy-item>
+</div>-->
+<div class="row table-row" *ngFor="let policy of policies">
+  <app-policy-item [policy]="policy" (policyClick)="selectPolicy = $event"></app-policy-item>
+  <!--<app-policy-item [policy]="policy"></app-policy-item>-->
+</div>
