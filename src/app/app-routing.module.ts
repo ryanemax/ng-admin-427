@@ -28,12 +28,9 @@ const SSRroutes: Routes = [
   { path: 'pokemon', loadChildren: '../pages/pokemon/pokemon.module#PokemonModule' },
   { path: 'commodity', loadChildren: '../pages/commodity/commodity.module#CommodityModule' },
   { path: 'movie', loadChildren: '../pages/movie/movie.module#MovieModule' },
-<<<<<<< HEAD
   { path: 'campus', loadChildren: '../pages/campus/campus.module#CampusModule' },
-=======
    { path: 'fun', loadChildren: '../pages/fun/fun.module#FunModule' },
    { path: 'activity', loadChildren: '../pages/activity/activity.module#ActivityModule' },
->>>>>>> 1f9517f97646d4a341f2aca14e7c4a5c0d0014a1
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
