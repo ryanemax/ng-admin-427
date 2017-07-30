@@ -44,8 +44,6 @@ export class PokemonInfoComponent implements OnInit {
        this.infoPokemon = params['id'];
 
        this.poService.getPokemonbyIndex(this.infoPokemon).subscribe(data=>{
-          console.log('*********');
-          console.log(data);
           this.pokemonInfo = data;
         });
      })

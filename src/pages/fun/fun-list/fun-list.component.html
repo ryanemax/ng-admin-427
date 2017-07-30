@@ -1,0 +1,39 @@
+<p>已选择用户:{{selectFun.name}}</p>
+<div class="table-controls">
+    <div class="search-area" style="height:60px;">
+      <select [(ngModel)]="searchType" style="float:left;">
+        <option value="objectId">基金代码</option>
+        <option value="funname">基金名称</option>
+      </select>
+<input style="float:left;" 
+  [(ngModel)]="searchText"/>
+<button style="float:left;" (click)="search()">搜索</button>
+
+</div>
+<button (click)="sortByAsccending()">正序</button>
+<button (click)="sortByDesccending()">倒序</button>
+<button (click)="sortByRadom()">随机</button>
+<button (click)="deleteLast()">删除</button>
+<button routerLink="/fun/edit/new">新增</button>
+<button (click)="testTempUsers()">TEST</button>
+</div>
+
+<div >
+      <div class="col-1">选择 </div>
+      <div class="col-1" (click)="sortByAsccending('objectId')">ID  </div>
+      <div class="col-1" (click)="sortByAsccending('objectId')">基金代码 </div>
+      <div class="col-1" (click)="sortByAsccending('funname')">基金名称 </div>
+      <div class="col-1" (click)="sortByAsccending('price')">价格 </div>
+      <div class="col-1" (click)="sortByAsccending('raise')">涨幅 </div>
+      <div class="col-1" (click)="sortByDesccending('zongshou')">手数 </div>
+      <div class="col-1">操作 </div>
+</div>
+<div class="row table-row" *ngFor="let fun of searchResult">
+  <app-fun-item [fun]="fun" (funClick)="selectFun = $event"></app-fun-item>
+</div>
+<div class="row table-row" *ngFor="let fun of funs">
+  <app-fun-item [fun]="fun" (funClick)="selectFun = $event"></app-fun-item>
+</div>
+
+
+

@@ -30,11 +30,10 @@ export class AppComponent {
     {"path":"appstore","icon":"menu","name":"appstore"},
     {"path":"goods","icon":"store","name":"淘淘杂货铺"},
     {"path":"program-main","icon":"people","name":"埃森哲之夜"},
+    {"path":"fun","icon":"people","name":"基金管理"},
     {"path":"goods","icon":"android","name":"淘淘杂货铺"},
     {"path":"pokemon","icon":"people","name":"Pokemon"},
     {"path":"commodity","icon":"people","name":"商品管理"},
-    {"path":"home","icon":"home","name":"待添加"},
-    {"path":"home","icon":"home","name":"待添加"},
-    {"path":"home","icon":"home","name":"待添加"},
+
   ]
 }
