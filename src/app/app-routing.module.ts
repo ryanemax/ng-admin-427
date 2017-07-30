@@ -17,7 +17,7 @@ const SSRroutes: Routes = [
   { path: 'wbs', loadChildren: '../pages/wbs/wbs.module#WBSModule' },
   { path: 'stock', loadChildren: '../pages/stock/stock.module#StockModule' },
   { path: 'product', loadChildren: '../pages/product/product.module#ProductModule' },
-  { path: 'customer', loadChildren: '../pages/customer/customer.module#customerModule' },
+  { path: 'customer', loadChildren: '../pages/customer/customer.module#CustomerModule' },
   { path: 'member', loadChildren: '../pages/member/member.module#MemberModule' },
   { path: 'appstore', loadChildren: '../pages/appstore/appstore.module#AppstoreModule' },
   { path: 'program-main', loadChildren: '../pages/program-main/program-main.module#ProgramMainModule' },

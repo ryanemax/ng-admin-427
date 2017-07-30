@@ -1,3 +1,4 @@
+<md-toolbar class="shadowbar" color="secondary">
 <p appHighlight>已选择顾客:{{selectUser.name}}</p>
 
 <p>已选择顾客:{{selectUser.name}}</p>
@@ -14,6 +15,8 @@
 <button (click)="deleteLast()">删除</button>
 <button routerLink="/customer/edit/new">新增</button>
 </div>
+</md-toolbar>
+
 <div class="row table-header">
       <div class="col-1">选择 </div>
       <div class="col-2" (click)="sortByAsccending('objectId')">ID </div>
