@@ -1,0 +1,9 @@
+      <div class="col-1" (click)="onUserClick()">[ ]</div>
+      <!--<div class="col-1" (click)="onUserClick()">{{user.objectId}}</div>-->
+      <div class="col-1">{{user.name}}</div>
+      <div class="col-1">{{user.sex | sexName}}</div>
+      <div class="col-1">{{user.skill}}</div>
+      <div class="col-1">{{user.age}}</div>
+      <div class="col-2">{{user.expect}}</div>
+      <div class="col-2"><a target="_blank" href="http://github.com/{{user.homepage}">{{user.homepage}}</a></div>
+      <div class="col-2"><a routerLink="/member/edit/{{user.objectId}}">编辑</a> <span (click)="memberServ.delete(user)">删除</span></div>

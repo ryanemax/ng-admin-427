@@ -3,19 +3,23 @@ import { NgModule } from '@angular/core';
 import { SexNamePipe } from './sex-name.pipe';
 import { TokPipe } from './tok.pipe';
 import { ProtypeNamePipe } from './protype-name.pipe';
+import { NumPipe } from './num.pipe';
+
 
 @NgModule({
   imports: [
   ],
   declarations: [
     SexNamePipe,
+    TokPipe,
     ProtypeNamePipe,
-    TokPipe
+    NumPipe
   ],
   exports:[
     SexNamePipe,
+    TokPipe,
     ProtypeNamePipe,
-    TokPipe
+    NumPipe
   ]
 })
 export class PipesModule { }

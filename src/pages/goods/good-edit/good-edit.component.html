@@ -1,0 +1,49 @@
+
+<table>
+
+  <tr>
+    <td><button (click)="back()">返回</button></td>
+    <td><button (click)="save()">提交</button></td>
+  </tr>
+  <tr item-height="20px"><td>&nbsp;</td></tr>
+  <tr>
+    <td>ID</td>
+    <td><input type="text" [(ngModel)]="good.index" /></td>
+  </tr>
+  <tr>
+    <td>商品种类</td>
+    <td><select [(ngModel)]="good.prodtype">
+  <option value="家电">家电</option>
+  <option value="零食">零食</option>
+  <option value="日用品">日用品</option>
+</select></td>
+  </tr>
+
+  <tr>
+    <td>商品名称</td>
+    <td><input type="text" [(ngModel)]="good.prodname" /></td>
+  </tr>
+
+  <tr>
+    <td>单价</td>
+    <td><input type="text" [(ngModel)]="good.price" /></td>
+  </tr>
+
+  <tr>
+    <td>品牌</td>
+    <td><input type="text" [(ngModel)]="good.brand" /></td>
+  </tr>
+
+<!--
+  <tr>
+    <td>推荐购买指数</td>
+    <td><input type="text" [(ngModel)]="good.zhishu" /></td>
+  </tr>
+-->
+  <tr>
+    <td>月销售量</td>
+    <td><input type="text" [(ngModel)]="good.monthcnt" /></td>
+  </tr>
+
+
+</table>
