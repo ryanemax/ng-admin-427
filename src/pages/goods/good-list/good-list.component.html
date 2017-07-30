@@ -1,0 +1,44 @@
+<table class="tSearch">
+  <tr>
+    <td>
+      <select [(ngModel)]="searchType" style="float:left;">
+        <option value="name">ID</option>
+        <option value="商品名称">商品名称</option>
+      </select></td>
+    <td><input style="float:left;" [(ngModel)]="searchText" /></td>
+    <td><button style="float:left;" (click)="goodServ.search(searchType,searchText)">搜索</button></td>
+    <td><button (click)="sortByAsccending()">正序</button>
+      <button (click)="sortByDesccending()">倒序</button>
+      <button (click)="sortByRadom()">随机</button>
+      <button routerLink="/goods/edit/new">新增</button>
+    </td>
+  </tr>
+</table>
+<table class="tGrid">
+  <tbody>
+    <tr style="background-color:blue;">
+      <th>ID </th>
+      <th style="width:100px;">商品种类 </th>
+      <th>商品名称 </th>
+      <th>单价 </th>
+      <th>品牌 </th>
+      <!--<th>推荐购买指数 </th>-->
+      <th>评论数 </th>
+      <th>月销售量 </th>
+      <th></th>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr *ngFor="let good of goods">
+      <td>{{good.index}}</td>
+      <td>{{good.prodtype}}</td>
+      <td>{{good.prodname}}</td>
+      <td>{{good.price}} </td>
+      <td><a target="_blank" href="http://github.com/{{good.github}}">{{good.brand}}</a></td>
+      <!--<td>{{good.zhishu}}</td>-->
+      <td>{{good.pinglun}}</td>
+      <td>{{good.monthcnt}}</td>
+      <td><button routerLink="/goods/edit/{{good.objectId}}">编辑</button> <button (click)="goodServ.delete(good)">删除</button></td>
+    </tr>
+  </tbody>
+</table>
