@@ -16,5 +16,6 @@ export class AppComponent {
     {"path":"rxjs","icon":"android","name":"RXJS"},
     {"path":"werewolves","icon":"people","name":"狼人杀"},
     {"path":"stock","icon":"people","name":"股票管理"},
+    {"path":"wbs","icon":"menu","name":"任务管理"},
   ]
 }

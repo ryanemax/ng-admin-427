@@ -1,0 +1,49 @@
+<p>
+  <span *ngIf="isNew">新增WBS</span>
+  <span *ngIf="!isNew">编辑WBS:</span>
+  <button routerLink="/wbs">返回</button>
+  <!--<button (click)="back()">返回</button>-->
+</p>
+
+<div>
+Eid：
+<input type="text" [(ngModel)]="wbs.id"/>
+</div>
+
+<div>
+Name：
+<input type="text "[(ngModel)]="wbs.name"/>
+</div>
+
+<div>
+TaskId：
+<input type="text" [(ngModel)]="wbs.taskId"/>
+</div>
+
+<div>
+StDay(Ex)：
+<input type="Date" [(ngModel)]="wbs.startDay"/>
+</div>
+
+<div>
+EdDay(Ex)：
+<input type="Date" [(ngModel)]="wbs.endDayAc"/>
+</div>
+
+<div>
+StDay(Ac)：
+<input type="Date" [(ngModel)]="wbs.startDayAc"/>
+</div>
+
+<div>
+EdDay(Ac)：
+<input type="Date" [(ngModel)]="wbs.endDayAc"/>
+</div>
+
+<div>
+Rate(%)：
+<input type="integer" [(ngModel)]="wbs.percent"/>
+</div>
+
+<button (click)="save()">提交</button>
+<!--<button routerLink="/wbs" (click)="save()">提交</button>-->
