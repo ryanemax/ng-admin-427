@@ -1,6 +1,5 @@
 [{
     "id": 1,
-    "description": "",
     "name": "演唱《青花瓷》",
     "member": "Hybris",
     "number": "1",
@@ -9,7 +8,6 @@
 },
 {
     "id": 2,
-    "description": "",
     "name": "相声《大话西游》",
     "member": "UIUX",
     "number": "7",
@@ -18,7 +16,6 @@
 },
 {
     "id": 3,
-    "description": "",
     "name": "舞蹈《Worthit》",
     "member": "DW",
     "number": "4",
@@ -27,7 +24,6 @@
 },
 {
     "id": 4,
-    "description": "",
     "name": "流行歌曲串烧",
     "member": "Testing",
     "number": "3",
@@ -36,7 +32,6 @@
 },
 {
     "id": 5,
-    "description": "",
     "name": "演唱《someonelikeyou》",
     "member": "AEM",
     "number": "1",

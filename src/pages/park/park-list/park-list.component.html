@@ -1,19 +1,25 @@
 <div class="col-2 col-m-2"></div>
-<div class="col-7 col-m-7">
-<table>
+<div class="col-7 col-m-7">  
+
   <p>附近停车场信息</p>
+  <div calss="small-button">
+  <button (click)="testButton()">点我</button>
+  <button (click)="testButton()">点我</button>
   <button (click)="sortByAsccending()">正序</button>
   <button (click)="sortByDesccending()">倒序</button>
   <button (click)="sortByRadom()">随机</button>
   <!--<button (click)="deleteLast()">删除</button>-->
   <button routerLink="/park/edit/new">新增</button>
-</table>
+  <button (click)="testButton()">点我</button>
+  <button (click)="testButton()">点我</button>
+  </div>
+
 <table>
   <tbody>
     <tr>
       <th>ID </th>
       <th>停车场 </th>
-      <th>距我多远 </th>
+      <th>距我 </th>
       <th>可停时长 </th>
       <th>单价/小时 </th>
       <th>车主联系方式 </th>

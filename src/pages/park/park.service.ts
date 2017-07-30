@@ -11,7 +11,10 @@ import 'rxjs/add/observable/zip';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/startWith';
-
+// 加及初始化 数据接口封装库
+import { Parse } from '../../cloud/parse'
+Parse.initialize("dev","http://host.qh-class.com:2337/parse")
+// Parse.initialize("dev","http://localhost:1337/parse")
 @Injectable()
 export class ParkService{
     isLogined:boolean = false;
