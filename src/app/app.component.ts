@@ -18,5 +18,6 @@ export class AppComponent {
     {"path":"stock","icon":"people","name":"股票管理"},
     {"path":"wbs","icon":"menu","name":"任务管理"},
     {"path":"member","icon":"people","name":"程序员信息"},
+    {"path":"appstore","icon":"menu","name":"appstore"},
   ]
 }
