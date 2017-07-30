@@ -13,6 +13,8 @@ const SSRroutes: Routes = [
   { path: 'login', loadChildren: '../pages/user/user.module#UserModule' },
   { path: 'student', loadChildren: '../pages/student/student.module#StudentModule' },
   { path: 'werewolves', loadChildren: '../pages/werewolves/werewolves.module#WerewolvesModule' },
+  { path: 'policy', loadChildren: '../pages/policy/policy.module#PolicyModule' },
+  { path: 'mytest', loadChildren: '../pages/mytest/mytest.module#MytestModule' },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

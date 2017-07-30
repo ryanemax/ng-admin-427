@@ -15,5 +15,7 @@ export class AppComponent {
     {"path":"student","icon":"people","name":"学生管理"},
     {"path":"rxjs","icon":"android","name":"RXJS"},
     {"path":"werewolves","icon":"people","name":"狼人杀"},
+    {"path":"policy","icon":"people","name":"保单管理"},
+    {"path":"mytest","icon":"home","name":"测试"},
   ]
 }
