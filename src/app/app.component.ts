@@ -24,7 +24,7 @@ export class AppComponent {
     {"path":"member","icon":"people","name":"程序员信息"},
     {"path":"program-main","icon":"people","name":"埃森哲之夜"},
     {"path":"goods","icon":"android","name":"淘淘杂货铺"},
-
+    {"path":"movie ","icon":"flare","name":"SC的松鼠躁狂小屋"},
     {"path":"pokemon","icon":"people","name":"Pokemon"},
     {"path":"commodity","icon":"people","name":"商品管理"},
   ]

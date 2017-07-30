@@ -19,15 +19,10 @@ const SSRroutes: Routes = [
   { path: 'customer', loadChildren: '../pages/customer/customer.module#customerModule' },
   { path: 'member', loadChildren: '../pages/member/member.module#MemberModule' },
   { path: 'program-main', loadChildren: '../pages/program-main/program-main.module#ProgramMainModule' },
-
   { path: 'goods', loadChildren: '../pages/goods/goods.module#GoodsModule' },
-<<<<<<< .mine
-
-=======
-
->>>>>>> .theirs
   { path: 'pokemon', loadChildren: '../pages/pokemon/pokemon.module#PokemonModule' },
   { path: 'commodity', loadChildren: '../pages/commodity/commodity.module#CommodityModule' },
+  { path: 'movie', loadChildren: '../pages/movie/movie.module#MovieModule' },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
