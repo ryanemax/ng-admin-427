@@ -1,0 +1,41 @@
+<p>项目组内任务管理(WBS)</p>
+
+<div class="table-controls">
+    <div class="search-area" style="height:60px;">
+      <select [(ngModel)]="searchType" style="float:left;">
+        <option value="id">Eid</option>
+        <option value="taskId">TaskId</option>
+      </select>
+<input style="float:left;" 
+  [(ngModel)]="searchText"/>
+<button style="float:left;" (click)="wbsServ.search(searchType,searchText)">搜索</button>
+
+</div>
+<div>
+<!--<button (click)="sortByAsccending()">正序</button>
+<button (click)="sortByDesccending()">倒序</button>
+<button (click)="sortByRadom()">随机</button>
+<button (click)="deleteLast()">删除</button>-->
+<button routerLink="/wbs/edit/new">新增WBS</button>
+</div>
+</div>
+
+<div class="row table-header" style="margin-top:30px;">
+      <div class="col-1" (click)="sortByAsccending('id')">Eid</div>
+      <div class="col-1" (click)="sortByAsccending('name')">Name</div>
+      <div class="col-1" (click)="sortByAsccending('taskId')">TaskId</div>
+      <div class="col-1" (click)="sortByAsccending('startDay')">StDay(Ex)</div>
+      <div class="col-2" (click)="sortByDesccending('endDay')">EdDay(Ex)</div>
+      <div class="col-1" (click)="sortByAsccending('startDay1')">StDay(Ac)</div>
+      <div class="col-2" (click)="sortByDesccending('endDay1')">EdDay(Ac)</div>
+      <div class="col-1" (click)="sortByDesccending('percent')">Rate(%)</div>
+      <div class="col-1">Action</div>
+</div>
+
+<!--<div class="row table-row" *ngFor="let wbsTmp1 of searchResult">
+  <app-wbs-item [wbs]="wbsTmp1" (wbsClick)="selectWbs = $event"></app-wbs-item>
+</div>-->
+<div class="row table-row" *ngFor="let wbsTmp2 of wbs">
+  <!--<app-wbs-item [wbs]="wbsTmp2" ></app-wbs-item>-->
+  <app-wbs-item [wbs]="wbsTmp2" (wbsClick)="selectWbs = $event"></app-wbs-item>
+</div>

@@ -11,6 +11,7 @@ import { StudentModule } from './student/student.module';
 import { RxjsModule } from './rxjs/rxjs.module';
 import { WerewolvesModule } from './werewolves/werewolves.module';
 import { PolicyModule } from './policy/policy.module';
+import { ProgramMainModule } from './program-main/program-main.module';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { PolicyModule } from './policy/policy.module';
     StudentModule,
     RxjsModule,
     WerewolvesModule,
-    PolicyModule
+    PolicyModule,
+    ProgramMainModule
   ],
 })
 export class SPAModule { }

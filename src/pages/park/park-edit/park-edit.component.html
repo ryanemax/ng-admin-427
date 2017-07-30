@@ -1,0 +1,41 @@
+<div class="col-2 col-m-2"></div>
+<div class="col-7 col-m-7">
+<p>
+  <span *ngIf="isNew">新增车位</span>
+  <span *ngIf="!isNew">编辑车位:{{parkId}}</span>
+
+</p>
+
+<div>
+<table>ID：</table>
+<input type="text" [(ngModel)]="park.index"/>
+</div>
+
+<div>
+<table>停车场：</table>
+<input type="text" [(ngModel)]="park.place"/>
+</div>
+
+<div>
+<table>距我多远：</table>
+<input type="text" [(ngModel)]="park.distant"/>
+</div>
+
+<div>
+<table>可停时长：</table>
+<input type="text" [(ngModel)]="park.time"/>
+</div>
+
+<div>
+<table>单价/小时：</table>
+<input type="text" [(ngModel)]="park.price"/>
+</div>
+
+<div>
+<table>车主联系方式：</table>
+<input type="text" [(ngModel)]="park.telphone"/>
+</div>
+
+<button (click)="back()">返回</button>
+<button routerLink="/park" (click)="save()">提交</button>
+</div>

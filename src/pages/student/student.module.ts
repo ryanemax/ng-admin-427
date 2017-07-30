@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentItemComponent } from './student-item/student-item.component';
 import { StudentEditComponent } from './student-edit/student-edit.component';
+import { StudentAnalysisComponent } from './student-analysis/student-analysis.component'
 
 // Import Shared Module
 import { PipesModule } from '../../pipes/pipes.module'
@@ -17,25 +18,35 @@ import { DirectivesModule } from '../../directives/directives.module'
 // Providers
 import { StudentService } from './student.service'
 
+// DataTable Depand CDK Table
+import {CdkTableModule} from '@angular/cdk';
+import {MdTableModule} from '@angular/material';
+// End of DataTable
+
 @NgModule({
   imports: [
      // Import Official Shared Module
     CommonModule,
     FormsModule,
     MaterialModule,
+    // DataTable
+    CdkTableModule,
+    MdTableModule,
     // Import Custom Shared Module
     PipesModule,
     DirectivesModule,
     // Config Router
     RouterModule.forChild([
       { path: '', component: StudentListComponent, pathMatch: 'full' },
-      { path: 'student/edit/:id', component: StudentEditComponent, pathMatch: 'full' }
+      { path: 'edit/:id', component: StudentEditComponent, pathMatch: 'full' },
+      { path: 'analysis', component: StudentAnalysisComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [
    StudentListComponent,
    StudentItemComponent, 
-   StudentEditComponent
+   StudentEditComponent,
+   StudentAnalysisComponent,
    ],
    providers:[StudentService]
 })

@@ -1,0 +1,28 @@
+button{
+    border-radius: 25px;
+    border: 2px solid #2196f3;
+    padding: 2px; 
+    width: 60px;
+    height: 30px; 
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+button:hover {
+    background-color: #03a9f4;
+}
+button:active {
+  background-color: #03a9f4;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+span{
+    font-size: 30px;
+    text-shadow: 3px 3px 3px #03a9f4;
+    margin-left: 120px;
+}
+table{
+    width: 120px;
+    text-align: right;
+    float: left;
+    clear: both;
+}

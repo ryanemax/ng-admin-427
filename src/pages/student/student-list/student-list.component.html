@@ -3,26 +3,86 @@
   <span style="width:10px;"></span>
   <!--<md-icon class="example-icon">favorite</md-icon>-->
   <!--<md-icon class="example-icon">delete</md-icon>-->
-
-
   <div class="table-controls">
     <div class="search-area">
+    <button (click)="refresh()">刷新</button>
+      
       <select [(ngModel)]="searchType">
         <option value="name">姓名</option>
         <option value="project">项目</option>
       </select>
       <input [(ngModel)]="searchText" />
-      <button (click)="studentServ.search(searchType,searchText)">搜索</button>
+      <button (click)="search(searchType,searchText)">搜索</button>
     </div>
     
     <button routerLink="/student/edit/new">新增学员</button>
     <button (click)="studentServ.deleteChecked()">批量删除</button>
-    <!--<button (click)="sortByAsccending()">正序</button>
+    <button routerLink="/student/analysis">统计</button>
+    <button (click)="sortByAsccending()">正序</button>
     <button (click)="sortByDesccending()">倒序</button>
-    <button (click)="sortByRadom()">随机</button>-->
+    <button (click)="sortByRadom()">随机</button>
   </div>
 
 </md-toolbar>
+
+
+
+<div class="datatable-container">
+  <md-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <ng-container cdkColumnDef="name">
+      <md-header-cell *cdkHeaderCellDef> Name </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.name}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="sex">
+      <md-header-cell *cdkHeaderCellDef> Sex </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.sex | sexName}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="project">
+      <md-header-cell *cdkHeaderCellDef> Project </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.project}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="exam1">
+      <md-header-cell *cdkHeaderCellDef>Exam1</md-header-cell>
+      <md-cell *cdkCellDef="let row" [style.color]="'red'"> {{row.exam1}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="exam2">
+      <md-header-cell *cdkHeaderCellDef>Exam2</md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.exam2}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="exam3">
+      <md-header-cell *cdkHeaderCellDef>Exam3</md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.exam3}} </md-cell>
+    </ng-container>
+
+    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 原生Table示例
+
 
 
 <div class="row table-header">
@@ -40,4 +100,4 @@
 </div>
 <div class="row table-row" *ngFor="let student of students">
   <app-student-item [student]="student" (studentClick)="selectStudent = $event"></app-student-item>
-</div>
+</div>-->

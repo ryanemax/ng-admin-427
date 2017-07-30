@@ -1,0 +1,50 @@
+<button (click)="sortByAsccending()">正序排列</button>
+<button (click)="sortByDesccending()">倒序排列</button>
+<button (click)="sortByRadom()">随机打乱</button>
+<!--<button (click)="deleteLast()">删除最后一个</button>-->
+<button routerLink="pokemonedit/new">新增</button>
+<br>
+<br>
+<!--双向绑定：输入是[]输出是（）字符串自带search方法 -->
+
+<select [(ngModel)]="attribute">  
+  <option *ngFor="let attribute of attributesList"
+  [value]="attribute">{{attribute}}</option>   
+</select> 
+<input [(ngModel)]="name" class="inputMargin"/>
+<button (click)="attributesSelect()">搜索</button>
+<br>
+<br>
+<table>
+  <!--[收] = “出”-->
+  <!--（传出方法）= “geifunction（参数）”-->
+  <tbody>
+    <tr>
+      <th>编号 </th>
+      <th>名字 </th>
+      <th>属性 </th>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr class="trStyle" *ngFor="let pokemon of pokemonList">
+      <td>{{pokemon.index}}</td>
+      <td>{{pokemon.name}}</td>
+      <td>
+        <tr class="trStyle">
+          <td *ngFor="let attributes of pokemon.attributes">
+            {{attributes}}
+          </td>
+        </tr>
+      </td>
+      <td>
+        <button (click)="deletePokemon(pokemon)">删除</button>
+      </td>
+      <td>
+        <a routerLink="pokemoninfo/{{pokemon.objectId}}">宝贝详情</a>
+      </td>
+      <td>
+        <a routerLink="pokemonedit/{{pokemon.objectId}}">编辑</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
