@@ -17,6 +17,7 @@ export class AppComponent {
     {"path":"student","icon":"people","name":"学生管理"},
     {"path":"rxjs","icon":"android","name":"RXJS"},
     {"path":"werewolves","icon":"people","name":"狼人杀"},
+    {"path":"park","icon":"local_parking","name":"介里有车位"},
     {"path":"good","icon":"thumb_up","name":"库存管理"},
     {"path":"player","icon":"people","name":"球员管理"},
     {"path":"park","icon":"people","name":"介里有车位"},
