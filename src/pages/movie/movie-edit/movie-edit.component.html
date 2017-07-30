@@ -1,0 +1,33 @@
+<p>
+  <span *ngIf="isNew">新增用户</span>
+  <span *ngIf="!isNew">编辑用户:{{this.movieId}}</span>
+  <button (click)="back()">返回</button>
+</p>
+
+<div>
+影片名：
+<input type="text" [(ngModel)]="movie.name"/>
+</div>
+
+<div>
+类型：
+<select [(ngModel)]="movie.categor">
+  <option value="Drama">剧情</option>
+  <option value="Comedy">喜剧</option>
+  <option value="Romance">爱情</option>
+  <option value="Action">动作</option>
+  <option value="Thriller">惊悚</option>
+</select>
+</div>
+
+<div>
+国家地区：
+<input type="text" [(ngModel)]="movie.countryRegion"/>
+</div>
+
+<div>
+frequency：
+<input type="text" [(ngModel)]="movie.frequency"/>
+</div>
+
+<button routerLink="/movie" (click)="save()">提交</button>

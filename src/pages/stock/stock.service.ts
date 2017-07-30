@@ -11,44 +11,24 @@ import 'rxjs/add/operator/startWith';
 @Injectable()
 export class StockService{
     isLogined:boolean = false;
-    stocks: Array < any > = [
-    { "index":"002714",
-      "stockname":"牧原股份",
-      "price":27.82,
-      "raise":"0.07%",
-      "zongshou":57269},
-     {"index":"002456",
-      "stockname":"欧菲光",
-      "price":18.93,
-      "raise":"-0.05%",
-      "zongshou":312100},
-      {"index":"601186",
-      "stockname":"中国铁建",
-      "price":12.94,
-      "raise":"-1.15%",
-      "zongshou":536141},
-      {"index":"600519",
-      "stockname":"贵州茅台",
-      "price":473.87,
-      "raise":"0.47%",
-      "zongshou":19595},
-      {"index":"000680",
-      "stockname":"三推股份",
-      "price":5.83,
-      "raise":"-0.68%",
-      "zongshou":69857}
-  ];
+    stocks: Array < any > = [];
 
  http:Http
     constructor(http:Http,private location:Location){
         this.http = http
     }
     delete(obj){
-    console.log(obj +"====================")
-        this.deleteStockById(obj.objectId).subscribe(data=>{
-            console.log(data);
+        this.deleteStockById(obj.objectId).subscribe(
+             (value:any)=>{
+                alert("success");
+            },
+            (error:any)=>{
+                alert("error");
+            },
+            ()=>{
             this.location.go("/stock")
-        })
+            }
+        )
     }
     search(type,value){
         this.stocks.sort((a,b)=>{
@@ -90,7 +70,6 @@ export class StockService{
             let path = "/classes/"
             let className = "Stock"
             let url = serverURL+path+className+"/"+objectId
-
             let headers:Headers = new Headers({
                 "X-Parse-Application-Id":"dev",
                 "X-Parse-Master-Key":"angulardev",
@@ -115,7 +94,6 @@ export class StockService{
             // "X-Parse-Session-Token":"r:059bbbebdc201de090f16fe9716b43bf",
             "Content-Type":"application/json; charset=utf-8"
         })
-        console.log("+++++++++++++++++++++"+url);
         // 2. 发起HTTP GET查询请求
         return this.http.get(url,{ headers:headers })
         .map(data=>data.json())
@@ -136,20 +114,17 @@ export class StockService{
         })
 
         // 2. 发起HTTP POST或PUT提交请求
-        if(!body){
-            body = {name:"666777",project:"ryanemax/ng-admin",exam1:66}
-        }
-
+        // if(!body){
+        //     body = {name:"666777",project:"ryanemax/ng-admin",exam1:66}
+        // }
         if(body.objectId){
             url += "/"+body.objectId
             // body.objectId = undefined
             return this.http.put(url,{
-                name:body.name,
-                exam1:body.exam1,
-                exam2:body.exam2,
-                exam3:body.exam3,
-                project:body.project,
-                sex:body.sex,
+                stockname:body.stockname,
+                price:body.price,
+                raise:body.raise,
+                zongshou:body.zongshou,
             },{ headers:headers })
             .map(data=> data.json())
         }else{

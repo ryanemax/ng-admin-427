@@ -4,6 +4,7 @@ import { SexNamePipe } from './sex-name.pipe';
 import { TokPipe } from './tok.pipe';
 import { ProtypeNamePipe } from './protype-name.pipe';
 import { NumPipe } from './num.pipe';
+import { MovieCategoryPipe } from './movie-category.pipe';
 
 
 @NgModule({
@@ -12,12 +13,16 @@ import { NumPipe } from './num.pipe';
   declarations: [
     SexNamePipe,
     TokPipe,
+    NumPipe,
+    MovieCategoryPipe,
     ProtypeNamePipe,
     NumPipe
   ],
   exports:[
     SexNamePipe,
     TokPipe,
+    NumPipe,
+    MovieCategoryPipe,
     ProtypeNamePipe,
     NumPipe
   ]
