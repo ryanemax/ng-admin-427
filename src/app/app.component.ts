@@ -9,6 +9,8 @@ export class AppComponent {
     @ViewChild("sidenav") sidenav: any;
   title = 'Cloud Admin';
   now = new Date();
+
+  // 路由列表设置，icon名称参考地址：https://material.io/icons/
   routes:Array<any>=[
     {"path":"home","icon":"home","name":"后台首页"},
     {"path":"about","icon":"home","name":"关于我们"},
