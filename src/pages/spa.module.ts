@@ -9,6 +9,7 @@ import { UserModule } from './user/user.module';
 import { AboutModule } from './about/about.module';
 import { StudentModule } from './student/student.module';
 import { RxjsModule } from './rxjs/rxjs.module';
+import { WerewolvesModule } from './werewolves/werewolves.module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { RxjsModule } from './rxjs/rxjs.module';
     UserModule,
     AboutModule,
     StudentModule,
-    RxjsModule
+    RxjsModule,
+    WerewolvesModule
   ],
 })
 export class SPAModule { }

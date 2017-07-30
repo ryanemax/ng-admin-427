@@ -12,6 +12,7 @@ const SSRroutes: Routes = [
   { path: 'about', loadChildren: '../pages/about/about.module#AboutModule' },
   { path: 'login', loadChildren: '../pages/user/user.module#UserModule' },
   { path: 'student', loadChildren: '../pages/student/student.module#StudentModule' },
+  { path: 'werewolves', loadChildren: '../pages/werewolves/werewolves.module#WerewolvesModule' },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

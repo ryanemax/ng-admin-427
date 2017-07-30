@@ -1,0 +1,40 @@
+<p>
+  <span *ngIf="isNew">新增角色</span>
+  <span *ngIf="!isNew">编辑角色:{{this.werewolvesId}}</span>
+  <button (click)="back()">返回</button>
+</p>
+
+<div>
+角色：
+<input type="text" [(ngModel)]="werewolves.role"/>
+</div>
+
+<div>
+角色英文名：
+<input type="text" [(ngModel)]="werewolves.role_en"/>
+</div>
+
+<div>
+角色数量：
+<select [(ngModel)]="werewolves.number">
+  <option value="1">1</option>
+  <option value="4">4</option>
+</select>
+</div>
+
+<div>
+网页描述地址：
+<input type="text" [(ngModel)]="werewolves.describe"/>
+</div>
+
+<div>
+角色特点：
+<input type="text" [(ngModel)]="werewolves.responsibility"/>
+</div>
+
+<div>
+胜利条件：
+<input type="text" [(ngModel)]="werewolves.victory"/>
+</div>
+
+<button routerLink="/werewolves" (click)="save()">提交</button>
