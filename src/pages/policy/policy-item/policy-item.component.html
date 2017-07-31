@@ -1,0 +1,9 @@
+      <div class="col-1">{{policy.policyNo}}</div>
+      <div class="col-1">{{policy.policyOwner}}</div>
+      <div class="col-1">{{policy.insuredPerson}}</div>
+      <div class="col-1">{{policy.product}}</div>
+      <div class="col-1">{{policy.insuredCost}}</div>
+      <div class="col-1">{{policy.insuredSumValue}}</div>
+      <div class="col-1">{{policy.effectiveDate}}</div>
+      <div class="col-1">{{policy.policyState}}</div>
+      <div class="col-1"><a routerLink="/policy/edit/{{policy.objectId}}">编辑</a> <span appHighlight (click)="policyServ.delete(policy)">删除</span></div>

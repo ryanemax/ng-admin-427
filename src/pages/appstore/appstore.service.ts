@@ -15,10 +15,14 @@ import 'rxjs/add/operator/startWith';
 @Injectable()
 export class AppstoreService{
     isLogined:boolean = false;
-    appstores: Array < any >=[];
-    http:Http
-    constructor(http:Http,private location:Location){
-        this.http = http
+    // appstores: Array < any >=[];
+    appstores:any= {};
+    // http:Http
+    // constructor(http:Http,private location:Location){
+    //     this.http = http
+    //     console.log("this.http:"+this.http);
+    // }
+    constructor(private http:Http,private location:Location){
     }
     delete(obj){
         this.deleteAppstoreById(obj.objectId).subscribe(data=>{
@@ -41,7 +45,13 @@ export class AppstoreService{
         });
     }
     deleteChecked(){
+        console.log("this:");
+        console.log(this);
         let checkList = this.appstores.filter(item=>item.check==true)
+        console.log("checkList:");
+        console.log(checkList);
+        console.log("appstores:");
+        console.log(this.appstores);
         checkList.forEach(item=>{
             this.delete(item)
         })
@@ -50,6 +60,7 @@ export class AppstoreService{
     getAppstores():Observable<any[]>{
         // 1. 拼接HTTP请求所需的URL和Headers
         let serverURL = "http://host.qh-class.com:2337/parse"
+        // let serverURL = "http://localhost:1337/parse"
         let path = "/classes/"
         let className = "Appstore"
         let url = serverURL+path+className
@@ -69,10 +80,11 @@ export class AppstoreService{
     deleteAppstoreById(objectId):Observable<any>{
             // 1. 拼接HTTP请求所需的URL和Headers
             let serverURL = "http://host.qh-class.com:2337/parse"
+            // let serverURL = "http://localhost:1337/parse"
             let path = "/classes/"
             let className = "Appstore"
             let url = serverURL+path+className+"/"+objectId
-
+            console.log('url:' + url);
             let headers:Headers = new Headers({
                 "X-Parse-Application-Id":"dev",
                 "X-Parse-Master-Key":"angulardev",
@@ -87,6 +99,7 @@ export class AppstoreService{
     getAppstoreById(objectId):Observable<any>{
         // 1. 拼接HTTP请求所需的URL和Headers
         let serverURL = "http://host.qh-class.com:2337/parse"
+        // let serverURL = "http://localhost:1337/parse"
         let path = "/classes/"
         let className = "Appstore"
         let url = serverURL+path+className+"/"+objectId
@@ -106,6 +119,7 @@ export class AppstoreService{
     saveAppstore(body?):Observable<any[]>{
         // 1. 拼接HTTP请求所需的URL和Headers
         let serverURL = "http://host.qh-class.com:2337/parse"
+        // let serverURL = "http://localhost:1337/parse"
         let path = "/classes/"
         let className = "Appstore"
         let url = serverURL+path+className
@@ -118,6 +132,7 @@ export class AppstoreService{
         })
 
         // 2. 发起HTTP POST或PUT提交请求
+        console.log("*****************************log\n"+body);
         if(!body){
             body = {name:"MyAppstore",platform:"Android",review:"23333",rating:"5"}
         }
@@ -126,6 +141,7 @@ export class AppstoreService{
             url += "/"+body.objectId
             // body.objectId = undefined
             return this.http.put(url,{
+                // check:body.check,
                 name:body.name,
                 platform:body.platform,
                 review:body.review,
