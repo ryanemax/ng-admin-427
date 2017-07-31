@@ -1,11 +1,12 @@
 button {
   border: 1px solid #fff;
   border-radius: 5px;
-  padding: 8px 10px;
+  padding: 5px 8px;
   opacity: 0.6;
-  background: #8bc34a;
+  background: #0066CC;
   margin-right: 5px;
   outline: none;
+  
 }
 
 table {
@@ -25,4 +26,33 @@ table {
     flex: 1;
     text-align: center;
   }
+}
+.good-container {
+  width: 500px;
+}
+
+.md-mini-fab {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+/* Structure */
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  min-width: 300px;
+}
+
+.example-header {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  font-size: 20px;
+}
+
+.mat-table {
+  overflow: auto;
 }

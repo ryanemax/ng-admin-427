@@ -9,8 +9,7 @@ import {
 
 import { Http } from '@angular/http'
 
-import {Parse} from "../../../cloud/parse"
-
+import {Parse} from "../../../cloud/parse";
 import {GoodService} from "../good.service";
 @Component({
   selector: 'app-good-list',
@@ -94,7 +93,6 @@ export class GoodListComponent implements OnInit {
     ]);
     // end of SEO
   }
-
 
   ngOnInit() {}
 }

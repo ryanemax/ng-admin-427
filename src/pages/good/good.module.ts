@@ -12,7 +12,7 @@ import { GoodEditComponent } from './good-edit/good-edit.component';
 // Import Shared Module
 import { PipesModule } from '../../pipes/pipes.module'
 import { DirectivesModule } from '../../directives/directives.module'
-import {MdSelectModule,MdButtonModule} from '@angular/material';
+import {MdSelectModule,MdButtonModule,MdInputModule} from '@angular/material';
 
 
 // Providers
@@ -38,6 +38,7 @@ import { GoodService } from './good.service'
    GoodListComponent,
    GoodItemComponent, 
    GoodEditComponent
+
    ],
    providers:[GoodService]
 })

@@ -1,20 +1,19 @@
 <p appHighlight>已选择商品:{{selectGood.name}}</p>
 
 <p>已选择商品:{{selectGood.name}}</p>
-<div class="table-controls">
-    <div class="search-area" style="height:60px;">
-<input style="float:left;margin-top:14px;" 
-  [(ngModel)]="searchText"/>
-<button style="float:left;" (click)="search()">搜索</button>
-<button md-raised-button>Raised button</button>
 
+<div class="search-area" style="height:60px;">
+
+<input mdInput placeholder="Search name" value="Jake" [(ngModel)]="searchText">
+<button md-mini-fab (click)="search()"><md-icon>搜索</md-icon></button>
 </div>
-<button (click)="sortByAsccending()">正序</button>
-<button (click)="sortByDesccending()">倒序</button>
-<button (click)="sortByRadom()">随机</button>
-<button (click)="deleteLast()">删除</button>
-<button routerLink="/good/edit">新增</button>
-<button (click)="testTempUsers()">TEST</button>
+<div class="table-controls">
+<button md-raised-button (click)="sortByAsccending()">正序</button>
+<button md-raised-button (click)="sortByDesccending()">倒序</button>
+<button md-raised-button (click)="sortByRadom()">随机</button>
+<button md-raised-button (click)="deleteLast()">删除</button>
+<button md-raised-button routerLink="/good/edit">新增</button>
+<button md-raised-button (click)="testTempUsers()">TEST</button>
 </div>
 <div class="row table-header">
       <div class="col-1">选择 </div>
