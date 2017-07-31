@@ -18,11 +18,8 @@ export class AppComponent {
     {"path":"student","icon":"people","name":"学生管理"},
     {"path":"rxjs","icon":"android","name":"RXJS"},
     {"path":"werewolves","icon":"people","name":"狼人杀"},
-<<<<<<< HEAD
-=======
     {"path":"policy","icon":"people","name":"保单管理"},
     {"path":"mytest","icon":"home","name":"测试"},
->>>>>>> c691131bdfba5a381bc8fdabec1ca6cb4251b8c7
     {"path":"park","icon":"local_parking","name":"介里有车位"},
     {"path":"goods","icon":"store","name":"淘淘杂货铺"},
     {"path":"good","icon":"thumb_up","name":"库存管理"},
