@@ -1,3 +1,5 @@
+
+<div class="edit-text">
 <p>
   <span *ngIf="isNew">新增产品</span>
   <span *ngIf="!isNew">编辑产品:{{this.productId}}</span>
@@ -40,3 +42,5 @@
 </div>
 
 <button routerLink="/product" (click)="save()">提交</button>
+
+</div>

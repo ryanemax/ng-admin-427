@@ -21,7 +21,7 @@ import { ParkService } from './park.service';
     // Config Router
     RouterModule.forChild([
       { path: '', component: ParkListComponent, pathMatch: 'full' },
-      { path: 'park/edit/:id', component: ParkEditComponent, pathMatch: 'full' }
+      { path: 'edit/:id', component: ParkEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [ParkListComponent, ParkEditComponent, ParkItemComponent],

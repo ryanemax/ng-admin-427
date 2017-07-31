@@ -8,7 +8,7 @@ import { CustomerService } from '../customer.service'
   templateUrl: './customer-edit.component.html',
   styleUrls: ['./customer-edit.component.scss']
 })
-export class customerEditComponent implements OnInit,OnDestroy {
+export class CustomerEditComponent implements OnInit,OnDestroy {
   customerId:string="";
   customer:any={
     name:""

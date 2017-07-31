@@ -32,13 +32,13 @@ export class PlayerListComponent implements OnInit {
     console.log(ev);
   }
 
-  sortByAsccending(type = "id") {
+  sortByAsccending(type = "match") {
     // 参考MDN Array操作的API文档 Array相关方法方法
     this.players.sort((a, b) => {
       return a[type] - b[type];
     });
   }
-  sortByDesccending(type = "id") {
+  sortByDesccending(type = "match") {
     // 参考MDN Array操作的API文档 Array相关方法
     // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array
     this.players.sort((a, b) => {
@@ -56,7 +56,6 @@ export class PlayerListComponent implements OnInit {
   constructor(meta: Meta, title: Title, private http: Http, private playerServ: PlayerService) {
 
     let query = new Parse.Query("Player", http)
-    query.limit(2);
     query.find().subscribe(data => {
       console.log(data)
       this.players = data

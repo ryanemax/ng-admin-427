@@ -12,6 +12,11 @@ import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/startWith';
 
+
+// 加及初始化 数据接口封装库
+import { Parse } from '../../cloud/parse'
+Parse.initialize("dev","http://host.qh-class.com:2337/parse")
+
 @Injectable()
 export class GoodsService{
     // isLogined:boolean = false;
@@ -94,7 +99,7 @@ export class GoodsService{
     delete(obj){
         this.deleteGoodById(obj.objectId).subscribe(data=>{
             console.log(data);
-            this.location.go("/goods")
+            // this.location.go("/goods")
         })
 
         // this.goods.forEach((item,index,array)=>{

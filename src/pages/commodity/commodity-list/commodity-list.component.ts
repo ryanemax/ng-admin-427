@@ -3,6 +3,7 @@ import {Meta, Title} from '@angular/platform-browser';
 import {CommodityService} from '../commodity.service';
 import { Http } from '@angular/http';
 import {Parse} from '../../../cloud/parse';
+Parse.initialize("dev","http://host.qh-class.com:2337/parse");
 
 @Component({
   selector: 'app-commodity-login',
@@ -11,6 +12,7 @@ import {Parse} from '../../../cloud/parse';
 })
 
 export class CommodityListComponent implements OnInit {
+  
   searchText: string = "";
   searchType: string = "name";
   selectCommodity:any={
