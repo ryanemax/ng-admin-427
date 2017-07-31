@@ -30,18 +30,15 @@ const SSRroutes: Routes = [
   { path: 'pokemon', loadChildren: '../pages/pokemon/pokemon.module#PokemonModule' },
   { path: 'commodity', loadChildren: '../pages/commodity/commodity.module#CommodityModule' },
   { path: 'movie', loadChildren: '../pages/movie/movie.module#MovieModule' },
-<<<<<<< HEAD
   { path: 'campus', loadChildren: '../pages/campus/campus.module#CampusModule' },
    { path: 'fun', loadChildren: '../pages/fun/fun.module#FunModule' },
    { path: 'activity', loadChildren: '../pages/activity/activity.module#ActivityModule' },
    { path: 'insurant', loadChildren: '../pages/insurance/insurance.module#InsuranceModule' },
-=======
   { path: 'fun', loadChildren: '../pages/fun/fun.module#FunModule' },
   { path: 'activity', loadChildren: '../pages/activity/activity.module#ActivityModule' },
   { path: 'ballplayer', loadChildren: '../pages/ballplayer/ballplayer.module#BallPlayerModule' },
   { path: 'campus', loadChildren: '../pages/campus/campus.module#CampusModule' },
   { path: 'insurant', loadChildren: '../pages/insurance/insurance.module#InsuranceModule' },
->>>>>>> c691131bdfba5a381bc8fdabec1ca6cb4251b8c7
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
