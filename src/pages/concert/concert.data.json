@@ -1,0 +1,36 @@
+[{
+     "num": 1,
+     "name":"李易峰",
+     "sale":"在售",
+     "price":1280,
+     "location":"广州",
+    },
+{
+  "num": 2,
+     "name":"张学友",
+     "sale":"售罄",
+     "price":1280,
+     "location":"中山",
+    },
+{
+     "num": 3,
+     "name":"容祖儿",
+     "sale":"在售",
+     "price":880,
+     "location":"广州",
+    },
+{
+  "num": 4,
+     "name":"张杰",
+     "sale":"预售",
+     "price":1080,
+     "location":"佛山",
+    },
+{
+  "num": 5,
+     "name":"陈伟霆",
+     "sale":"在售",
+     "price":1280,
+     "location":"广州"
+    }
+]  

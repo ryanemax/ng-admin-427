@@ -32,6 +32,7 @@ export class AppComponent {
     {"path":"member","icon":"people","name":"程序员信息"},
     {"path":"appstore","icon":"menu","name":"appstore"},
     {"path":"program-main","icon":"people","name":"埃森哲之夜"},
+    {"path":"concert","icon":"home","name":"大麦网"},
     {"path":"fun","icon":"people","name":"基金管理"},
     {"path":"pokemon","icon":"people","name":"Pokemon"},
     {"path":"commodity","icon":"people","name":"商品管理"},

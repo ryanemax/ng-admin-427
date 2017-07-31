@@ -34,6 +34,7 @@ const SSRroutes: Routes = [
    { path: 'fun', loadChildren: '../pages/fun/fun.module#FunModule' },
    { path: 'activity', loadChildren: '../pages/activity/activity.module#ActivityModule' },
    { path: 'insurant', loadChildren: '../pages/insurance/insurance.module#InsuranceModule' },
+   { path: 'concert', loadChildren: '../pages/concert/concert.module#ConcertModule' },
   { path: 'fun', loadChildren: '../pages/fun/fun.module#FunModule' },
   { path: 'activity', loadChildren: '../pages/activity/activity.module#ActivityModule' },
   { path: 'ballplayer', loadChildren: '../pages/ballplayer/ballplayer.module#BallPlayerModule' },
