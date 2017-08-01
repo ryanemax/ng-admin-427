@@ -56,9 +56,7 @@ export class ActivityListComponent implements OnInit {
   constructor(meta: Meta, title: Title,private http:Http, public activityServ:ActivityService) {
 
     let query = new Parse.Query("Activity",http)
-    query.limit(2);
-    query.equalTo("place","GZ");
-    query.find().subscribe(data=>{
+     query.find().subscribe(data=>{
       console.log(data)
       this.activitys = data
     })

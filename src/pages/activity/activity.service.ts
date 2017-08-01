@@ -26,6 +26,7 @@ export class ActivityService{
      'organizer': '华影'
     },
     {
+     'id': 2,
      'name':'杨千嬅演唱会',
      'place':'深圳',
      'project':'http://damai.com',
@@ -35,6 +36,7 @@ export class ActivityService{
      'organizer': '华影'
     },
     {
+     'id': 3,
      'name':'黎明演唱会',
      'place':'深圳',
      'project':'http://damai.com',
@@ -44,6 +46,7 @@ export class ActivityService{
      'organizer': '星艺'
     },
     {
+     'id': 5,
      'name':'卫兰演唱会',
      'place':'深圳',
      'project':'http://damai.com',
