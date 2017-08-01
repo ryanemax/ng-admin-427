@@ -16,10 +16,7 @@ import 'rxjs/add/operator/startWith';
 export class ActivityService{
     isLogined:boolean = false;
     activitys: Array < any > = [{
-<<<<<<< HEAD
      'id': 1,
-=======
->>>>>>> c691131bdfba5a381bc8fdabec1ca6cb4251b8c7
      'name':'邓紫棋演唱会',
      'place':'广州',
      'project':'http://damai.com',
@@ -29,10 +26,7 @@ export class ActivityService{
      'organizer': '华影'
     },
     {
-<<<<<<< HEAD
      'id': 2,
-=======
->>>>>>> c691131bdfba5a381bc8fdabec1ca6cb4251b8c7
      'name':'杨千嬅演唱会',
      'place':'深圳',
      'project':'http://damai.com',
@@ -42,10 +36,7 @@ export class ActivityService{
      'organizer': '华影'
     },
     {
-<<<<<<< HEAD
      'id': 3,
-=======
->>>>>>> c691131bdfba5a381bc8fdabec1ca6cb4251b8c7
      'name':'黎明演唱会',
      'place':'深圳',
      'project':'http://damai.com',
@@ -55,10 +46,7 @@ export class ActivityService{
      'organizer': '星艺'
     },
     {
-<<<<<<< HEAD
      'id': 5,
-=======
->>>>>>> c691131bdfba5a381bc8fdabec1ca6cb4251b8c7
      'name':'卫兰演唱会',
      'place':'深圳',
      'project':'http://damai.com',
