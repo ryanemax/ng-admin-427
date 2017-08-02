@@ -4,6 +4,5 @@ export class BallPlayer {
     alias:string;
     height:number;
     weight:number;
-    isDeleted:boolean;
-    position:String;
+    position:string;
 }
