@@ -21,6 +21,9 @@ export class MovieCategoryPipe implements PipeTransform {
     if (value === 'Thriller') {
       return '惊悚';
     }
+    if (value === 'fantasy') {
+      return '科幻';
+    }
   }
 
 }

@@ -14,6 +14,7 @@ export class AppComponent {
   routes:Array<any>=[
     {"path":"home","icon":"home","name":"后台首页"},
     {"path":"about","icon":"home","name":"关于我们"},
+    {"path":"movie","icon":"flare","name":"SC的松鼠躁狂小屋"},
     {"path":"activity","icon":"people","name":"活动管理"},
     {"path":"student","icon":"people","name":"学生管理"},
     {"path":"rxjs","icon":"android","name":"RXJS"},

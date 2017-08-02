@@ -1,67 +1,62 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
-import { MovieService } from '../movie.service';
+import { MovieService } from '../movie.service'
 
 @Component({
   selector: 'app-movie-edit',
   templateUrl: './movie-edit.component.html',
   styleUrls: ['./movie-edit.component.scss']
 })
-export class MovieEditComponent implements OnInit, OnDestroy {
-  movieId: '';
-  movie: any = {
-    name: ''
+export class MovieEditComponent implements OnInit,OnDestroy {
+  movieId:string="";
+  movie:any={
+    name:""
   };
-    isNew:boolean = false;
+  isNew:boolean = false;
 
   // Subscribe Declaration
-  getMovieSubscribe: any;
-
+  getMovieSubscribe:any;
+  
   constructor(private route: ActivatedRoute,
-  private movieServ: MovieService,
+  private movieServ:MovieService,
   private location: Location) {
   }
-  back() {
+  back(){
     this.location.back();
   }
-  save() {
-    if (this.isNew) {
-      this.movieServ.movies.push(this.movie);
-    }
-    this.location.back();
+  save(){
+    this.movie.exam1 = Number(this.movie.exam1)
+    this.movie.exam2 = Number(this.movie.exam2)
+    this.movie.exam3 = Number(this.movie.exam3)
+    this.movieServ.saveMovie(this.movie).subscribe(data=>{
+      console.log(data)
+      this.location.back();
+    })
+    this.movieServ.saveMovie(this.movie).subscribe(data=>{
+      console.log(data)
+      this.location.back();        
+    })
   }
   ngOnInit() {
-    this.getMovieSubscribe = this.route.params.subscribe(params => {
-      this.getMovie(params['sid']).then(movie => {
-      console.log(movie);
-      this.movieId = movie.id;
-      this.movie = movie;
-    }).catch(err => {
-      console.log(err);
-    });
-    });
+        this.route.params.subscribe(params=>{
+          let id = params['id']
+          if(id=="new"){
+            let movie = {name:""}
+            this.isNew = true;
+            this.movie = movie
+          }else{
+            this.movieServ.getMovieById(id).subscribe(movie=>{
+            console.log(movie)
+            // this.movieId = movie.objectId;
+            this.movie = movie
+        })
+      }
+
+    })
   }
-  ngOnDestroy() {
-    this.getMovieSubscribe.unsubscribe();
+  ngOnDestroy(){
   }
 
-  getMovie(id: any): Promise<any> {
-
-    let p = new Promise((resolve, reject) => {
-      if (id == 'new' ) {
-        let movie = {name: ''};
-        this.isNew = true;
-        resolve(movie);
-      }
-      let movie = this.movieServ.movies.find(item => item.id == id);
-      if (movie) {
-        resolve(movie);
-      } else {
-        reject('movie not found');
-      }
-    });
-    return p;
-}
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
-import { Output, EventEmitter } from '@angular/core';
-import {MovieService} from '../movie.service';
+import { Output,EventEmitter } from '@angular/core';
+import {MovieService} from "../movie.service";
 
 @Component({
   selector: 'app-movie-item',
@@ -9,25 +9,25 @@ import {MovieService} from '../movie.service';
   styleUrls: ['./movie-item.component.scss']
 })
 export class MovieItemComponent implements OnInit {
-  @Input() movie: any;
+  @Input() movie:any
   @Output() movieClick = new EventEmitter<any>();
-  constructor(private movieServ: MovieService) {
+  constructor(public movieServ:MovieService) { 
   }
-  onMovieClick() {
-    this.movieClick.emit(this.movie);
+  onMovieClick(){
+    this.movieClick.emit(this.movie)
   }
-  check() {
-    if (this.movie.check && this.movie.check == true) {
+  check(){
+    if(this.movie.check&&this.movie.check==true){
       this.movie.check = false;
     }else{
-      this.movie.check = true;
+      this.movie.check = true
     }
   }
-  isChecked() {
-    if (this.movie.check && this.movie.check == true) {
-      return true;
-    } else {
-      return false;
+  isChecked(){
+    if(this.movie.check&&this.movie.check==true){
+      return true
+    }else{
+      return false
     }
   }
   ngOnInit() {
