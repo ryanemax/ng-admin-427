@@ -1,4 +1,9 @@
 <div id="main">
+<div><p><label> Name:</label>{{searchName}}</p></div>
+<div>
+  <input [(ngModel)]="searchName">
+  <button (click)="search()">搜索</button>
+</div>
 <button (click)="sortList('asc')">正序排列</button>
 <button (click)="sortList('desc')">倒序排列</button>
 <button (click)="sortList('radom')">随机打乱</button>

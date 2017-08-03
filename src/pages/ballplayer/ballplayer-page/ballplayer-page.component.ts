@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+
 import { BallPlayer } from '../ballplayer';
 
 @Component({
@@ -8,6 +9,7 @@ import { BallPlayer } from '../ballplayer';
   styleUrls: ['./ballplayer-page.component.scss']
 })
 export class BallPlayerPageComponent implements OnInit {
+  searchName: string = "6666";
   isDeletedList:Array<boolean>;
   ballplayers:Array<BallPlayer> = [
     {"no":5,
