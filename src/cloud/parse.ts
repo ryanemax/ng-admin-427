@@ -100,7 +100,8 @@ export namespace Parse {
             .catch(super.handleHttpError)
         }
         get(id):Observable<any[]>{
-            let url = ParseConfig.serverURL+"/classes/"+this.className+"/"+id
+            let url = ParseConfig.serverURL+"/classes/"+this.className+"/"+id;
+            console.log(url);
             return this.http.get(url,{
                 headers: ParseConfig.headers
             })

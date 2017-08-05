@@ -19,7 +19,8 @@ const SSRroutes: Routes = [
   { path: 'member', loadChildren: '../pages/member/member.module#MemberModule' },
   { path: 'goods', loadChildren: '../pages/goods/goods.module#GoodsModule' },
   { path: 'pokemon', loadChildren: '../pages/pokemon/pokemon.module#PokemonModule' },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: 'leave', loadChildren: '../pages/leave/leave.module#LeaveModule'},
+  //{ path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 // SPA模式路由，适合客户端打包
@@ -44,7 +45,7 @@ const SSRroutes: Routes = [
 const routes = SSRroutes;
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {enableTracing: false})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

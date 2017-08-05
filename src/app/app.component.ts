@@ -23,5 +23,6 @@ export class AppComponent {
     {"path":"member","icon":"people","name":"程序员信息"},
     {"path":"goods","icon":"store","name":"淘淘杂货铺"},
     {"path":"pokemon","icon":"people","name":"Pokemon"},
+    {"path":"leave","icon":"date_range","name":"员工休假管理"}
   ]
 }
