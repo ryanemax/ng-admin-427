@@ -1,0 +1,30 @@
+<p>
+  <span *ngIf="isNew">新增活动</span>
+  <span *ngIf="!isNew">编辑活动:{{this.activityId}}</span>
+  <button (click)="back()">返回</button>
+</p>
+
+<div>
+活动名称：
+<input type="text" [(ngModel)]="activity.name"/>
+</div>
+
+<div>
+地点：
+<select [(ngModel)]="activity.place">
+  <option value="GZ">广州</option>
+  <option value="SZ">深圳</option>
+</select>
+</div>
+
+<div>
+活动详情：
+<input type="text" [(ngModel)]="activity.project"/>
+</div>
+
+<div>
+时间：
+<input type="text" [(ngModel)]="activity.time"/>
+</div>
+
+<button routerLink="/activity" (click)="save()">提交</button>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { MaterialModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
@@ -21,13 +21,14 @@ import { MemberService } from './member.service'
      // Import Official Shared Module
     CommonModule,
     FormsModule,
+    MaterialModule,
     // Import Custom Shared Module
     PipesModule,
     DirectivesModule,
     // Config Router
     RouterModule.forChild([
       { path: '', component: MemberListComponent, pathMatch: 'full' },
-      { path: 'member/edit/:sid', component: MemberEditComponent, pathMatch: 'full' }
+      { path: 'edit/:sid', component: MemberEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [

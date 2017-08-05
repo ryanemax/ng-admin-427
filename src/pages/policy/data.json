@@ -1,0 +1,121 @@
+{
+        "policyNo": 10001,
+        "policyOwner": "chenlu",
+        "insuredPerson": "chenlu",
+        "product": "EGS",
+        "insuredCost": 3000,
+        "insuredSumValue": 200000,
+        "effectiveDate": "2016-01-01",
+        "policyState": "inforce"
+    },
+    {
+        "policyNo": 10002,
+        "policyOwner": "xiaowang",
+        "insuredPerson": "chenlu",
+        "product": "CCL",
+        "insuredCost": 1500,
+        "insuredSumValue": 230000,
+        "effectiveDate": "2015-01-01",
+        "policyState": "inforce"
+    },
+    {
+        "policyNo": 10003,
+        "policyOwner": "xiaohong",
+        "insuredPerson": "xiaohong",
+        "product": "CP",
+        "insuredCost": 3000,
+        "insuredSumValue": 200000,
+        "effectiveDate": "2016-01-01",
+        "policyState": "inforce"
+    },
+    {
+        "policyNo": 10004,
+        "policyOwner": "mike",
+        "insuredPerson": "mike",
+        "product": "EGS2",
+        "insuredCost": 5000,
+        "insuredSumValue": 690000,
+        "effectiveDate": "2016-01-01",
+        "policyState": "inforce"
+    },
+    {
+        "policyNo": 10005,
+        "policyOwner": "xiaoming",
+        "insuredPerson": "xiaoming",
+        "product": "DL",
+        "insuredCost": 1000,
+        "insuredSumValue": 160000,
+        "effectiveDate": "2016-01-01",
+        "policyState": "inforce"
+    },
+    {
+        "policyNo": 10006,
+        "policyOwner": "harry",
+        "insuredPerson": "harry",
+        "product": "CCL3",
+        "insuredCost": 3000,
+        "insuredSumValue": 800000,
+        "effectiveDate": "2016-01-01",
+        "policyState": "inforce"
+    },
+    {
+        "policyNo": 10007,
+        "policyOwner": "zhaochun",
+        "insuredPerson": "zhaochun",
+        "product": "PL",
+        "insuredCost": 300,
+        "insuredSumValue": 29000,
+        "effectiveDate": "2016-01-01",
+        "policyState": "inforce"
+    },
+    {
+        "policyNo": 10008,
+        "policyOwner": "xiaolan",
+        "insuredPerson": "xiaolan",
+        "product": "PWIH",
+        "insuredCost": 6000,
+        "insuredSumValue": 2900000,
+        "effectiveDate": "2016-01-01",
+        "policyState": "inforce"
+    }
+    ,
+    {
+        "policyNo": 10009,
+        "policyOwner": "han",
+        "insuredPerson": "han",
+        "product": "P8WB",
+        "insuredCost": 230,
+        "insuredSumValue": 18000,
+        "effectiveDate": "2016-01-01",
+        "policyState": "inforce"
+    },
+    {
+        "policyNo": 10010,
+        "policyOwner": "chunhua",
+        "insuredPerson": "xiaohua",
+        "product": "EGS2",
+        "insuredCost": 3000,
+        "insuredSumValue": 2000000,
+        "effectiveDate": "2016-01-01",
+        "policyState": "inforce"
+    },
+    {
+        "policyNo": 10011,
+        "policyOwner": "chenhong",
+        "insuredPerson": "chenlu",
+        "product": "CCL",
+        "insuredCost": 3000,
+        "insuredSumValue": 200000,
+        "effectiveDate": "2016-01-01",
+        "policyState": "inforce"
+    },
+    {
+        "policyNo": 10012,
+        "policyOwner": "chenping",
+        "insuredPerson": "chenping",
+        "product": "CP",
+        "insuredCost": 300,
+        "insuredSumValue": 60000,
+        "effectiveDate": "2016-01-01",
+        "policyState": "inforce"
+    }

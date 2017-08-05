@@ -7,6 +7,23 @@ button,input,select {
   margin-right: 5px;
   outline: none;
 }
+.table-header{
+ float: left;
+ border-bottom: 1px solid #000;
+ width: 100%;
+
+}
+.row {
+  float: left;
+   width: 100%;
+    // border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    .col-1{
+      // float: left;
+      // border-left: 1px solid #000;
+      // border-right: 1px solid #000;
+    }
+}
 
 table {
   border-collapse: collapse;

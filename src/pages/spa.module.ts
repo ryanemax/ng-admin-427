@@ -10,6 +10,8 @@ import { AboutModule } from './about/about.module';
 import { StudentModule } from './student/student.module';
 import { RxjsModule } from './rxjs/rxjs.module';
 import { WerewolvesModule } from './werewolves/werewolves.module';
+import { PolicyModule } from './policy/policy.module';
+import { ProgramMainModule } from './program-main/program-main.module';
 
 @NgModule({
   imports: [
@@ -19,7 +21,9 @@ import { WerewolvesModule } from './werewolves/werewolves.module';
     AboutModule,
     StudentModule,
     RxjsModule,
-    WerewolvesModule
+    WerewolvesModule,
+    PolicyModule,
+    ProgramMainModule
   ],
 })
 export class SPAModule { }

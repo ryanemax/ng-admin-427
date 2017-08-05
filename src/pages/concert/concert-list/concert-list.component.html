@@ -1,0 +1,33 @@
+<body>
+<div style="color:palevioletred">
+  <p>麦出第一步，从一张票开始!</p>
+</div>
+<div>
+    <div class="search-area" style="height:60px;">
+      <select [(ngModel)]="searchType">
+        <option value="name">歌手</option>
+        <option value="location">地点</option>
+      </select>
+<input [(ngModel)]="searchText"/>
+<button (click)="concertServ.search(searchType,searchText)">查找</button>
+
+</div>
+<button routerLink="/concert/edit/new">演唱会添加</button>
+<button (click)="concertServ.deleteChecked()">批量删除</button>
+</div>
+<div>
+      <div class="col-1">selected </div>
+      <div class="col-2" (click)="sortByAsccending('num')">ID </div>
+      <div class="col-1" (click)="sortByAsccending('name')">歌手 </div>
+      <div class="col-2" (click)="sortByAsccending('sale')">售票状态 </div>
+      <div class="col-1" (click)="sortByAsccending('price')">价格 </div>
+      <div class="col-2" (click)="sortByDesccending('location')">地点 </div>
+      <div class="col-">Operate </div>
+</div>
+<div class="row table-row" *ngFor="let concert of searchResult">
+  <app-concert-item [concert]="concert" (concertClick)="selectConcert = $event"></app-concert-item>
+</div>
+<div class="row table-row" *ngFor="let concert of concerts">
+  <app-concert-item [concert]="concert" (concertClick)="selectConcert = $event"></app-concert-item>
+</div>
+</body>

@@ -1,0 +1,35 @@
+<div id="main">
+<div><p><label> Name:</label>{{searchName}}</p></div>
+<div>
+  <input [(ngModel)]="searchName">
+  <button (click)="search()">搜索</button>
+</div>
+<div>
+<button (click)="sortByRadom()">随机打乱</button>
+<button (click)="saveNewBallPlayer()">新增一个</button>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th width="60" (click)="sortBallPlayers('no')"><a class="sortable">号码</a></th>
+      <th width="150">姓名 </th>
+      <th (click)="sortBallPlayers('height')"><a class="sortable">身高(cm)</a></th>
+      <th (click)="sortBallPlayers('weight')"><a class="sortable">体重(kg)</a></th>
+      <th width="100" >位置 </th>
+      <th width="50%" >外号 </th>
+      <th style="width:20;border:0" > </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ballplayer of ballplayers">
+      <td>{{ballplayer.no}}</td>
+      <td>{{ballplayer.name}}</td>
+      <td>{{ballplayer.height}} </td>
+      <td>{{ballplayer.weight}}</td>
+      <td>{{ballplayer.position}}</td>
+      <td>{{ballplayer.alias}}</td>
+      <td class="no-border"><button class="delete" (click)="delete(ballplayer)">X</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>

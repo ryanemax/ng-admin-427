@@ -11,15 +11,16 @@
 <button style="float:left;" (click)="wbsServ.search(searchType,searchText)">搜索</button>
 
 </div>
-
-<button (click)="sortByAsccending()">正序</button>
+<div>
+<!--<button (click)="sortByAsccending()">正序</button>
 <button (click)="sortByDesccending()">倒序</button>
 <button (click)="sortByRadom()">随机</button>
-<button (click)="deleteLast()">删除</button>
+<button (click)="deleteLast()">删除</button>-->
 <button routerLink="/wbs/edit/new">新增WBS</button>
 </div>
+</div>
 
-<div class="row table-header">
+<div class="row table-header" style="margin-top:30px;">
       <div class="col-1" (click)="sortByAsccending('id')">Eid</div>
       <div class="col-1" (click)="sortByAsccending('name')">Name</div>
       <div class="col-1" (click)="sortByAsccending('taskId')">TaskId</div>

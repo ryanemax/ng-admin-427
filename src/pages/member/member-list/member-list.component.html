@@ -1,7 +1,7 @@
 <!--<p appHighlight>已选择用户:{{selectUser.name}}</p>
 
 <p>已选择用户:{{selectUser.name}}</p>-->
-<div class="table-controls">
+<!--<div class="table-controls">
     <div class="search-area" style="height:60px;">
 <input style="float:left;margin-top:14px;" 
   [(ngModel)]="searchText"/>
@@ -14,7 +14,36 @@
 <button (click)="deleteLast()">删除</button>
 <button routerLink="/member/edit/new">新增</button>
 <button (click)="testTempUsers()">TEST</button>
-</div>
+</div>-->
+
+
+<md-toolbar class="shadowbar" color="secondary">
+  <span>程序员列表</span>
+  <span style="width:10px;"></span>
+  <!--<md-icon class="example-icon">favorite</md-icon>-->
+  <!--<md-icon class="example-icon">delete</md-icon>-->
+
+
+  <div class="table-controls">
+    <!--<div class="search-area">
+      <select [(ngModel)]="searchType">
+        <option value="name">姓名</option>
+        <option value="年龄">项目</option>
+      </select>
+      <input [(ngModel)]="searchText" />
+      <button (click)="studentServ.search(searchType,searchText)">搜索</button>
+    </div>-->
+    
+
+    <button routerLink="/member/edit/new">新增</button>
+    <!--<button (click)="studentServ.deleteChecked()">批量删除</button>-->
+    <button (click)="sortByAsccending()">正序</button>
+    <button (click)="sortByDesccending()">倒序</button>
+    <button (click)="sortByRadom()">随机</button>
+  </div>
+
+</md-toolbar>
+
 <div class="row table-header">
       <div class="col-1">选择 </div>
       <div class="col-1" (click)="sortByAsccending('name')">姓名 </div>

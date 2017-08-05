@@ -1,0 +1,9 @@
+      <div class="col-1" (click)="onGoodClick()">[ ]</div>
+      <div class="col-1" (click)="onGoodClick()">{{good.index}}</div>
+      <div class="col-2">{{good.name | uppercase | lowercase}}</div>
+      <div class="col-1">{{good.spec}}</div>
+       <div class="col-1">{{good.price}}</div>   
+      <div class="col-1">{{good.num}}</div>
+      <div class="col-1">{{good.Place}}</div>
+      <div class="col-1">{{good.timelimit}}</div>
+      <div class="col-2"><a routerLink="/good/edit/{{good.index}}">编辑</a> <span appHighlight (click)="delete()">删除</span></div>

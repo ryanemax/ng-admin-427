@@ -1,0 +1,80 @@
+<div class="testa">
+<md-toolbar class="shadowbar" color="secondary">
+  <span>movie > movielist</span>
+  <span style="width:10px;"></span>
+  <div class="table-controls">
+    <div class="search-area">
+    <button (click)="refresh()">刷新</button>
+      
+      <select [(ngModel)]="searchType">
+        <option value="name">片名</option>
+        <option value="adirnew">导演</option>
+      </select>
+      <input [(ngModel)]="searchText" />
+      <button (click)="search(searchType,searchText)">搜索</button>
+    </div>
+    
+    <button routerLink="/movie/edit/new">新增影片</button>
+    <button (click)="movieServ.deleteChecked()">批量删除</button>
+    <button (click)="sortByAsccending()">正序</button>
+    <button (click)="sortByDesccending()">倒序</button>
+    <button (click)="sortByRadom()">随机</button>
+  </div>
+
+</md-toolbar>
+
+
+
+<div class="datatable-container">
+  <md-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <ng-container cdkColumnDef="name">
+      <md-header-cell *cdkHeaderCellDef> Name </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.name}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="category">
+      <md-header-cell *cdkHeaderCellDef> Category </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.category | movieCategorName}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="adirnew">
+      <md-header-cell *cdkHeaderCellDef> adirnew </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.adirnew}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="performer">
+      <md-header-cell *cdkHeaderCellDef>performer</md-header-cell>
+      <md-cell *cdkCellDef="let row" [style.color]="'red'"> {{row.performer}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="country">
+      <md-header-cell *cdkHeaderCellDef>country</md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.country}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="year">
+      <md-header-cell *cdkHeaderCellDef>year</md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.year}} </md-cell>
+    </ng-container>
+
+    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
+</div>
+  <video autoplay loop id="bgvid">
+    <source src="/assets/movie/beyond.webm" type="video/webm">
+    <source src="/assets/movie/beyond.mp4" type="video/mp4">
+  </video>
+  <audio autoplay loop="loop">
+    <source src="/assets/movie/beyond.mp3" type="audio/mp3">
+    <source src="/assets/movie/beyond.ogg" type="audio/ogg">
+  </audio>
+  <audio id="soundtrack" autoplay loop="loop" preload="none" volume="20">
+    <source src="/assets/movie/soundtrack.mp3" type="audio/mp3">
+    <source src="/assets/movie/soundtrack.ogg" type="audio/ogg">
+  </audio>
+</div>

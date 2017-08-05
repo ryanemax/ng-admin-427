@@ -42,6 +42,14 @@ getGoodSubscribe:any;
   back(){
     this.location.back();
   }
+  delete(){
+    // this.goodServ.goods.push(this.good)
+    // this.location.back();
+    this.goodServ.delete(this.good);
+    this.location.back();
+    alert("删除成功。");
+  }
+
   save(){
     // this.goodServ.goods.push(this.good)
     // this.location.back();
@@ -53,6 +61,7 @@ getGoodSubscribe:any;
     this.goodServ.saveGood(this.good).subscribe(data=>{
       console.log(data)
       this.location.back();
+      alert("保存成功。");
     })
   }
 

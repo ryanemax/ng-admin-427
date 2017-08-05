@@ -23,29 +23,27 @@ export class PokemonInfoComponent implements OnInit {
 
   getStudentSubscribe:any;
 
-  getPokemon(id: any): Promise<any> {      
-      let p = new Promise((resolve,reject)=>{ 
-       this.infoPokemon = id;
-       let pokemon = this.poService.pokemonList.find(item=>item.id == id) 
-       if(pokemon){ 
-         resolve(pokemon) 
-       }else{ 
-         reject("student not found") 
-       } 
-     }) 
+//   getPokemon(id: any): Promise<any> {      
+//       let p = new Promise((resolve,reject)=>{ 
+//        this.infoPokemon = id;
+//        let pokemon = this.poService.pokemonList.find(item=>item.id == id) 
+//        if(pokemon){ 
+//          resolve(pokemon) 
+//        }else{ 
+//          reject("student not found") 
+//        } 
+//      }) 
 
-     console.log(p);
-     return p 
+//      console.log(p);
+//      return p 
 
- }
+//  }
 
  ngOnInit() { 
      this.getStudentSubscribe = this.route.params.subscribe(params=>{ 
        this.infoPokemon = params['id'];
 
        this.poService.getPokemonbyIndex(this.infoPokemon).subscribe(data=>{
-          console.log('*********');
-          console.log(data);
           this.pokemonInfo = data;
         });
      })

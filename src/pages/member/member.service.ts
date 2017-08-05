@@ -8,6 +8,11 @@ import 'rxjs/add/observable/zip';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/startWith';
+// 加及初始化 数据接口封装库
+import { Parse } from '../../cloud/parse';
+
+// Parse.initialize("dev","http://host.qh-class.com:2337/parse")
+Parse.initialize("dev","http://localhost:1337/parse")
 
 @Injectable()
 export class MemberService{
@@ -50,7 +55,7 @@ export class MemberService{
             // 1. 拼接HTTP请求所需的URL和Headers
             let serverURL = "http://localhost:1337/parse"
             let path = "/classes/"
-            let className = "member"
+            let className = "Member"
             let url = serverURL+path+className+"/"+objectId
 
             let headers:Headers = new Headers({
@@ -69,7 +74,7 @@ export class MemberService{
         // 1. 拼接HTTP请求所需的URL和Headers
         let serverURL = "http://localhost:1337/parse"
         let path = "/classes/"
-        let className = "member"
+        let className = "Member"
         let url = serverURL+path+className+"/"+objectId
         console.log(url)
         let headers:Headers = new Headers({
@@ -88,7 +93,7 @@ export class MemberService{
         // 1. 拼接HTTP请求所需的URL和Headers
         let serverURL = "http://localhost:1337/parse"
         let path = "/classes/"
-        let className = "member"
+        let className = "Member"
         let url = serverURL+path+className
 
         let headers:Headers = new Headers({
@@ -106,8 +111,14 @@ export class MemberService{
         if(body.objectId){
             url += "/"+body.objectId
             // body.objectId = undefined
+              console.log(body)
             return this.http.put(url,{
                 name:body.name,
+                sex:body.sex,
+                skill:body.skill,
+                age:body.age,
+                expect:body.expect,
+                homepage:body.homepage,
                 //  name:body.name,
                 // exam1:body.exam1,
                 // exam2:body.exam2,

@@ -21,48 +21,61 @@ export class PokemonEditComponent implements OnInit {
 
   getStudentSubscribe:any;
 
-  attributesList:any;
+  attributesList:Array<any>;
+
+  attachedAttributesList:any;
 
   attribute:any;
 
-  getPokemon(id: any): Promise<any> {      
-      let p = new Promise((resolve,reject)=>{ 
-       this.infoPokemon = id;
-       let pokemon = this.poService.pokemonList.find(item=>item.id == id) 
-       if(pokemon){ 
-         resolve(pokemon) 
-       }else{ 
-         reject("student not found") 
-       } 
-     }) 
+  attachedbute:any;
 
-     console.log(p);
-     return p 
+  addattribute:any;
 
- }
+//   getPokemon(id: any): Promise<any> {      
+//       let p = new Promise((resolve,reject)=>{ 
+//        this.infoPokemon = id;
+//        let pokemon = this.poService.pokemonList.find(item=>item.id == id) 
+//        if(pokemon){ 
+//          resolve(pokemon) 
+//        }else{ 
+//          reject("student not found") 
+//        } 
+//      }) 
+
+//      console.log(p);
+//      return p 
+
+//  }
 
  updatePokemon(){
-   console.log("updatePokemon")
-   console.log(this.pokemonInfo)
+
    if(this.infoPokemon == "new"){
      this.pokemonInfo.attributes = [this.attribute];
    }else{
-     this.pokemonInfo.attributes.push(this.attribute);
+     console.log(this.attribute);
+     if(this.attribute != null){
+       this.pokemonInfo.attributes.shift();
+       this.pokemonInfo.attributes.unshift(this.attribute);
+     }
    }
-   
-   console.log(this.pokemonInfo.attribute);
+
+   if(this.addattribute != null){
+     this.pokemonInfo.attributes.push(this.addattribute);
+   }
 
    this.poService.savePokemon(this.pokemonInfo).subscribe(data=>{ 
-       console.log(data) 
        this.location.back(); 
      }) 
 
  }
 
+ backPokemon(){
+   this.location.back();
+ }
+
  ngOnInit() { 
      this.getStudentSubscribe = this.route.params.subscribe(params=>{ 
        this.infoPokemon = params['id'];
-       console.log(params);
 
        if(this.infoPokemon == "new"){
          this.poService.getPokemonsbyUrl().subscribe(data=>{
@@ -73,12 +86,31 @@ export class PokemonEditComponent implements OnInit {
                 "attributes": null
               }
           });
+
+          this.poService.getPokemonAttributesListbyUrl().subscribe(data=>{
+            this.attributesList = data;
+            this.attachedAttributesList = data;
+          })
        }else {
          this.poService.getPokemonbyIndex(this.infoPokemon).subscribe(data=>{
-          console.log('*********');
-          console.log(data);
           this.pokemonInfo = data;
-          this.pokemonInfo.attributes = [];
+          this.poService.getPokemonAttributesListbyUrl().subscribe(data=>{
+            this.attributesList = data;
+            this.attributesList.forEach(item=>{
+              if(item.attribute == this.pokemonInfo.attributes[0]){
+                this.attributesList.splice(this.attributesList.indexOf(item),1);
+              }
+            })
+
+            this.attachedAttributesList = data;
+            this.attachedAttributesList.forEach(item=>{
+              this.pokemonInfo.attributes.forEach(temp=>{
+                if(item.attribute == temp){
+                  this.attributesList.splice(this.attributesList.indexOf(item),1);
+                }
+              })
+            })
+          })
         });
        }
      })
@@ -87,11 +119,9 @@ export class PokemonEditComponent implements OnInit {
 
   constructor(private poService: PokemonService, private route: ActivatedRoute, 
               private location: Location ) { 
-
-      this.attributesList = poService.getattributesList();
     
-  } }
+  }
 
-
+}
 
 

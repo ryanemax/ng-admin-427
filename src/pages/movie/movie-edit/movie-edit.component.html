@@ -1,0 +1,75 @@
+<div class="testa mtest">
+  <table>
+    <tbody>
+      <tr>
+        <th>
+          <span *ngIf="isNew">新增影片</span>
+          <span *ngIf="!isNew">编辑影片:{{this.movieId}}</span>
+        </th>
+        <td>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <tbody>
+      <tr>
+        <th>
+          影片名：
+        </th>
+        <td>
+          <input class="inputweidth" type="text" [(ngModel)]="movie.name" />
+        </td>
+      </tr>
+      <tr>
+        <th>
+          类型：
+        </th>
+        <td>
+          <select [(ngModel)]="movie.categor" class="inputweidth" >
+            <option value="Drama">剧情</option>
+            <option value="Comedy">喜剧</option>
+            <option value="Romance">爱情</option>
+            <option value="Action">动作</option>
+            <option value="Thriller">惊悚</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          国家地区：
+        </th>
+        <td>
+          <input type="text" [(ngModel)]="movie.country" class="inputweidth" />
+        </td>
+      </tr>
+      <tr>
+      <tr>
+        <th>
+          年份：
+        </th>
+        <td>
+          <input type="text" [(ngModel)]="movie.year" class="inputweidth" />
+        </td>
+      </tr>
+      <tr>
+    </tbody>
+  </table>
+
+  <button (click)="back()" class="button">返回</button>
+  <button routerLink="/movie" (click)="save()">提交</button>
+  <video autoplay loop id="bgvid">
+    <source src="/assets/movie/beyond.webm" type="video/webm">
+    <source src="/assets/movie/beyond.mp4" type="video/mp4">
+  </video>
+  <audio autoplay loop="loop">
+    <source src="/assets/movie/beyond.mp3" type="audio/mp3">
+    <source src="/assets/movie/beyond.ogg" type="audio/ogg">
+  </audio>
+  <audio id="soundtrack" autoplay loop="loop" preload="none" volume="20">
+    <source src="/assets/movie/soundtrack.mp3" type="audio/mp3">
+    <source src="/assets/movie/soundtrack.ogg" type="audio/ogg">
+  </audio>
+</div>
