@@ -13,7 +13,8 @@ import { SortStatus} from '../sort-status';
 
 
 export class BallPlayerPageComponent implements OnInit {
-  searchName: string = "6666";
+  searchValue:string;
+  searchType:string;
   selectedBallPlayer: BallPlayer;
   sortStatusList:Array<SortStatus> = [];
   ballplayers:Array<BallPlayer> = [
@@ -55,6 +56,17 @@ export class BallPlayerPageComponent implements OnInit {
       "position":"得分后卫"},
   ]
 
+  onSelect(ballPlayer: BallPlayer): void{
+    this.selectedBallPlayer = ballPlayer;
+  }
+
+  search() {
+    alert("i'm in");
+    if(!this.searchType){
+      this.searchType="no";
+    }
+  }
+
   delete(player: BallPlayer): void{
     this.selectedBallPlayer = player;
     this.ballplayers = this.ballplayers.filter(ballPlayer=>ballPlayer.no!==this.selectedBallPlayer.no);
@@ -63,18 +75,18 @@ export class BallPlayerPageComponent implements OnInit {
   code = 'A'
   index = 15
 
-saveNewBallPlayer(){
-  this.ballplayers.push({
-     "no":this.index,
-      "name":"新人" + this.code,
-      "alias":"神秘男子" + this.code,
-      "height":180,
-      "weight":70,
-      "position":"中锋"
-  })
-  this.code=String.fromCharCode(this.code.charCodeAt(0)+1)
-  this.index+=1
-}
+  saveNewBallPlayer(){
+    this.ballplayers.push({
+      "no":this.index,
+        "name":"新人" + this.code,
+        "alias":"神秘男子" + this.code,
+        "height":180,
+        "weight":70,
+        "position":"中锋"
+    })
+    this.code=String.fromCharCode(this.code.charCodeAt(0)+1)
+    this.index+=1
+  }
 
   sortBallPlayers(field: string): void {
     let sortSts = this.sortStatusList.find(SortStatus => SortStatus.field === field);
@@ -103,6 +115,7 @@ saveNewBallPlayer(){
       }
     }
   }
+
   constructor(meta: Meta, title: Title) {
     title.setTitle('My Home Page');
 
