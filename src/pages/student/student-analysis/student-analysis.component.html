@@ -58,18 +58,18 @@
 
 <md-card style="width:100%;">
   <md-card-header>
-    <md-card-title>学员比例</md-card-title>
-    <md-card-subtitle>区域 3</md-card-subtitle>
+    <md-card-title>得分情况</md-card-title>
+    <md-card-subtitle>总人数 {{students.length}}</md-card-subtitle>
   </md-card-header>
   <md-card-content>
-    <div id="studentBar" style="height:500px" (window:resize)="showBar()"></div>
+    <div id="studentBar" style="height:700px" (window:resize)="showBar()"></div>
   </md-card-content>
 </md-card>
 
 <md-card style="width:100%;">
   <md-card-header>
-    <md-card-title>得分情况</md-card-title>
-    <md-card-subtitle>总人数 {{students.length}}</md-card-subtitle>
+    <md-card-title>分布区域</md-card-title>
+    <md-card-subtitle>区域 3</md-card-subtitle>
   </md-card-header>
   <md-card-content>
     <div id="studentPie" style="height:500px" (window:resize)="showPie()"></div>
