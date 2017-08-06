@@ -12,129 +12,27 @@ import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/startWith';
 
+// DataTable
+import {DataSource} from '@angular/cdk';
+import 'rxjs/add/observable/merge';
+import 'rxjs/add/observable/from';
+// End of DataTable
+
 import { Parse } from '../../cloud/parse';
 
 @Injectable()
 export class StudentService{
     isLogined:boolean = false;
-    students: Array < any > = [{
-      'id': 1,
-     'name':'chenlu',
-     'sex':'M',
-     'project':'chenlu28/chenlu-exam',
-     'desc':'insurace,保险',
-     'exam1': 55, // 10 10 5 5 20 5
-     'exam2': 0,
-     'exam3': 0
-    },
-    {
-     'id': 2,
-     'name':'f58xxy',
-     'sex':'F',
-     'project':'f58xxy/ng-admin',
-     decs: '生命保险系统',
-     'exam1': 85, // 10 10 5 20 20 20 原始数据加分：修改了函数变量命名
-     'exam2': 0,
-     'exam3': 0
-    },
-    {
-     'id': 19,
-     'name':'文化利',
-     'sex':'M',
-     'project':'whl1979/wenhuali-admin',
-     desc:'大连市中学排名',
-     'exam1': 80, // 10 10 5 20 20 15
-     'exam2': 0,
-     'exam3': 0
-    },
-    {
-     'id': 3,
-     'name':'kalezhang',
-     'sex':'M',
-     'project':'kalezhang/ng-admin',
-     'exam1': 75, // 5 10 5 15 20 20 未修改README.md
-     'exam2': 0,
-     'exam3': 0
-    },
-    {
-     'id': 4,
-     'name':'JansenGao',
-     'sex':'M',
-     'project':'JansenGao/angular',
-     'exam1': 50, // 5 5 5 15 15 15 未修改readme，版本提交非项目根目录
-     'exam2': 0,
-     'exam3': 0
-    },
-    {
-     'id': 5,
-     'name':'ChengJiqiang',
-     'sex':'M',
-     'project':'ChengJiqiang/ChengJiQiang-ng-app',
-     desc:'汽车品牌一览',
-     'exam1': 75, // 10 10 5 15 15 20
-     'exam2': 0,
-     'exam3': 0
-    },
-    {
-     'id': 6,
-     'name':'Serenashan',
-     'sex':'M',
-     'project':'Serenashan/serena-admin',
-     desc: '淘淘杂货铺',
-     'exam1': 75, // 10 10 10 15 20 10
-     'exam2': 0,
-     'exam3': 0
-    },
-    {
-     'id': 7,
-     'name':'gudeyi',
-     'sex':'M',
-     'project':'gudeyi/admin',
-     'exam1': 40, // 5 10 5 5 10 5 未修改readme
-     'exam2': 0,
-     'exam3': 0
-    }
-    ,
-    {
-     'id': 8,
-     'name':'willwangyue',
-     'sex':'M',
-     'project':'willwangyue/will-ng-admin',
-     desc: '狼人杀',
-     'exam1': 85, // 10 10 5 20 20 20
-     'exam2': 0,
-     'exam3': 0
-    },
-    {
-     'id': 9,
-     'name':'郭兆青',
-     'desc':'游戏管理系统',
-     'sex':'M',
-     'project':'PotStove/GuoZhaoqing-ng-app',
-     'exam1': 75, // 10 10 5 15 20 15
-     'exam2': 0,
-     'exam3': 0
-    },
-    {
-     'id': 10,
-     'name':'willwangyue',
-     'sex':'M',
-     'project':'willwangyue/will-ng-admin',
-     'exam1': 85, // 10 10 5 20 20 20
-     'exam2': 0,
-     'exam3': 0
-    },
-    {
-     'id': 11,
-     'name':'willwangyue',
-     'sex':'M',
-     'project':'willwangyue/will-ng-admin',
-     'exam1': 85, // 10 10 5 20 20 20
-     'exam2': 0,
-     'exam3': 0
-    }
-  ];
+    // DataTable
+    parseDatabase = new ParseDatabase(this.http);
+    dataSource: ParseDataSource | null;
+    // end of DataTable
+    students: Array<any> = [];
     constructor(private http:Http,private location:Location){
+        this.dataSource = new ParseDataSource(this.parseDatabase);
+        this.dataSource.connect().subscribe(data=>{
+            this.students = data
+        })
     }
     delete(obj){
         this.deleteStudentById(obj.objectId).subscribe(data=>{
@@ -267,3 +165,69 @@ export class StudentService{
 
 }
 
+export interface Student {
+  objectId: string;
+  createdId: Date;
+  updatedId: Date;
+  name: string;
+  sex: string;
+  project: string;
+  exam1: number;
+  exam2: number;
+  exam3: number;
+}
+
+import { StudentData } from './student.data'
+/** An example database that the data source uses to retrieve data for the table. */
+export class ParseDatabase {
+  
+  /** Stream that emits whenever the data has been modified. */
+  dataChange: BehaviorSubject<Student[]> = new BehaviorSubject<Student[]>([]);
+  get data(): Student[] { return this.dataChange.value; }
+  http:Http;
+  mockData:any = StudentData
+  sourceType:string = "mock" // 设置数据源方式，mock本地本地模拟数据，parse微服务接口数据
+  constructor(http:Http) {
+    this.http = http
+    this.refresh()
+
+  }
+  refresh(){
+      this.getStudents().subscribe(data=>{
+          console.log(data)
+        this.dataChange.next(data);
+      })
+  }
+  getStudents():Observable<Student[]>{
+    if(this.sourceType=="parse"){
+        let query = new Parse.Query("Student",this.http);
+        return query.find()
+    }else{
+        return Observable.from([this.mockData.students])
+    }
+  }
+
+  
+}
+
+/**
+ * Data source to provide what data should be rendered in the table. Note that the data source
+ * can retrieve its data in any way. In this case, the data source is provided a reference
+ * to a common data base, ParseDatabase. It is not the data source's responsibility to manage
+ * the underlying data. Instead, it only needs to take the data and send the table exactly what
+ * should be rendered.
+ */
+export class ParseDataSource extends DataSource<any> {
+  constructor(private _parseDatabase: ParseDatabase) {
+    super();
+  }
+
+  /** Connect function called by the table to retrieve one stream containing the data to render. */
+  connect(): Observable<Student[]> {
+    return this._parseDatabase.dataChange;
+  }
+  refresh(){
+    this._parseDatabase.refresh()
+  }
+  disconnect() {}
+}

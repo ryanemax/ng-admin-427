@@ -36,6 +36,7 @@ export class AppComponent {
     {"path":"concert","icon":"home","name":"大麦网"},
     {"path":"fun","icon":"people","name":"基金管理"},
     {"path":"pokemon","icon":"people","name":"Pokemon"},
+    {"path":"leave","icon":"date_range","name":"员工休假管理"},
     {"path":"commodity","icon":"people","name":"商品管理"},
     {"path":"ballplayer","icon":"people","name":"队员管理"},
     {"path":"campus","icon":"people","name":"学校管理"},

@@ -1,2 +1,72 @@
-<div id="studentPie" style="height:500px" (window:resize)="showPie()"></div>
-<div id="studentBar" style="height:500px" (window:resize)="showBar()"></div>
+<md-card style="width:100%;">
+  <md-card-header>
+    <md-card-title>培训概况统计</md-card-title>
+    <md-card-subtitle>总人数 {{students.length}}</md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+
+<md-tab-group>
+  <md-tab label="Day 1 >= 80">
+      <md-card style="width:100%;padding:7px;">
+        <md-card-header>
+            <md-card-title>Day 1 >= 80</md-card-title>
+            <md-card-subtitle *ngFor="let p of getGood('exam1')">{{p.name}} {{p.exam1}}</md-card-subtitle>
+        </md-card-header>
+        </md-card>
+  </md-tab>
+  <md-tab label="Day 1 >= 80">
+      <md-card style="width:100%;padding:7px;">
+        <md-card-header>
+            <md-card-title>Day 1 >= 80</md-card-title>
+            <md-card-subtitle *ngFor="let p of getGood('exam1')">{{p.name}} {{p.exam1}}</md-card-subtitle>
+        </md-card-header>
+        </md-card>
+  </md-tab>
+  <md-tab label="Day 2 >= 80">
+      <md-card style="width:100%;padding:7px;">
+        <md-card-header>
+            <md-card-title>Day 2 >= 80</md-card-title>
+            <md-card-subtitle *ngFor="let p of getGood('exam2')">{{p.name}} {{p.exam2}}</md-card-subtitle>
+        </md-card-header>
+        </md-card>
+  </md-tab>
+    <md-tab label="Day 3 >= 80">
+      <md-card style="width:100%;padding:7px;">
+        <md-card-header>
+            <md-card-title>Day 3 >= 80</md-card-title>
+            <md-card-subtitle *ngFor="let p of getGood('exam3')">{{p.name}} {{p.exam3}}</md-card-subtitle>
+        </md-card-header>
+        </md-card>
+  </md-tab>
+    <md-tab label="Day 4 >= 80">
+      <md-card style="width:100%;padding:7px;">
+        <md-card-header>
+            <md-card-title>Day 4 >= 80</md-card-title>
+            <md-card-subtitle *ngFor="let p of getGood('exam4')">{{p.name}} {{p.exam4}}</md-card-subtitle>
+        </md-card-header>
+        </md-card>
+  </md-tab>
+</md-tab-group>
+        
+  </md-card-content>
+</md-card>
+
+<md-card style="width:100%;">
+  <md-card-header>
+    <md-card-title>学员比例</md-card-title>
+    <md-card-subtitle>区域 3</md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+    <div id="studentBar" style="height:500px" (window:resize)="showBar()"></div>
+  </md-card-content>
+</md-card>
+
+<md-card style="width:100%;">
+  <md-card-header>
+    <md-card-title>得分情况</md-card-title>
+    <md-card-subtitle>总人数 {{students.length}}</md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+    <div id="studentPie" style="height:500px" (window:resize)="showPie()"></div>
+  </md-card-content>
+</md-card>

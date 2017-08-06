@@ -28,6 +28,8 @@ const SSRroutes: Routes = [
   { path: 'program-main', loadChildren: '../pages/program-main/program-main.module#ProgramMainModule' },
   { path: 'goods', loadChildren: '../pages/goods/goods.module#GoodsModule' },
   { path: 'pokemon', loadChildren: '../pages/pokemon/pokemon.module#PokemonModule' },
+  { path: 'leave', loadChildren: '../pages/leave/leave.module#LeaveModule'},
+  //{ path: '**', redirectTo: '', pathMatch: 'full' },
   { path: 'commodity', loadChildren: '../pages/commodity/commodity.module#CommodityModule' },
   { path: 'movie', loadChildren: '../pages/movie/movie.module#MovieModule' },
   { path: 'campus', loadChildren: '../pages/campus/campus.module#CampusModule' },
@@ -65,7 +67,7 @@ const SSRroutes: Routes = [
 const routes = SSRroutes;
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {enableTracing: false})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
