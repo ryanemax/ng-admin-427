@@ -6,7 +6,7 @@ function makeStudents(){
      'project':'chenlu28/chenlu-exam',
      'desc':'insurace,保险',
      'exam1': 55, // 10 10 5 5 20 5
-     'exam2': 0,
+     'exam2': 75, // 5 10 20 15 15 10
      'exam3': 0,
      'exam4': 0
     },
@@ -16,7 +16,7 @@ function makeStudents(){
      'project':'f58xxy/ng-admin',
      'desc': '生命保险系统',
      'exam1': 85, // 10 10 5 20 20 20 原始数据加分：修改了函数变量命名
-     'exam2': 0,
+     'exam2': 80, // 5 10 20 15 15 15
      'exam3': 0,
      'exam4': 0
     },
@@ -26,7 +26,7 @@ function makeStudents(){
      'project':'whl1979/wenhuali-admin',
      'desc':'大连市中学排名',
      'exam1': 80, // 10 10 5 20 20 15
-     'exam2': 0,
+     'exam2': 80, // 10 10 20 15 15 10
      'exam3': 0,
      'exam4': 0
     },
@@ -35,7 +35,7 @@ function makeStudents(){
      'sex':'M',
      'project':'kalezhang/ng-admin',
      'exam1': 75, // 5 10 5 15 20 20 未修改README.md
-     'exam2': 0,
+     'exam2': 85, // 10 10 20 15 15 15 未修改README.md
      'exam3': 0,
      'exam4': 0
     },
@@ -54,7 +54,7 @@ function makeStudents(){
      'project':'ChengJiqiang/ChengJiQiang-ng-app',
      'desc':'汽车品牌一览',
      'exam1': 75, // 10 10 5 15 15 20
-     'exam2': 0,
+     'exam2': 80, // 10 10 20 15 10 15
      'exam3': 0,
      'exam4': 0
     },
@@ -64,7 +64,7 @@ function makeStudents(){
      'project':'Serenashan/serena-admin',
      'desc': '淘淘杂货铺',
      'exam1': 75, // 10 10 10 15 20 10
-     'exam2': 0,
+     'exam2': 80, // 10 10 20 15 15 10
      'exam3': 0,
      'exam4': 0
     },
@@ -84,7 +84,7 @@ function makeStudents(){
      'project':'willwangyue/will-ng-admin',
      'desc': '狼人杀',
      'exam1': 85, // 10 10 5 20 20 20
-     'exam2': 0,
+     'exam2': 85, // 10 10 20 15 15 15
      'exam3': 0,
      'exam4': 0
     },
@@ -145,10 +145,10 @@ function makeStudents(){
     },
     {
      'name':'bohong',
-     'sex':'M',
+     'sex':'F',
      'project':'bohongberyl/bohong_exam',
-     'exam1': 80, // 10 10 15 15 20 10
-     'exam2': 0,
+     'exam1': 80, // 5 10 15 15 20 10
+     'exam2': 80, // 10 10 20 15 15 10
      'exam3': 0,
      'exam4': 0
     },
@@ -157,7 +157,7 @@ function makeStudents(){
      'sex':'M',
      'project':'rickyming/ricky_ng_app',
      'exam1': 80, // 10 10 10 20 15 15
-     'exam2': 0,
+     'exam2': 85, // 10 10 20 15 15 15
      'exam3': 0,
      'exam4': 0
     },
@@ -166,7 +166,7 @@ function makeStudents(){
      'sex':'M',
      'project':'kingsir25/ng-wangjian',
      'exam1': 80, // 10 10 10 20 15 15
-     'exam2': 0,
+     'exam2': 80, // 10 10 20 15 15 10
      'exam3': 0,
      'exam4': 0
     },
@@ -175,7 +175,7 @@ function makeStudents(){
      'sex':'M',
      'project':'dlpanzhiwen/insurance',
      'exam1': 65, // 10 10 5 10 15 15
-     'exam2': 0,
+     'exam2': 85, // 10 10 20 15 15 15
      'exam3': 0,
      'exam4': 0
     },
@@ -193,7 +193,7 @@ function makeStudents(){
      'sex':'M',
      'project':'fspuzhang/zhangyong-exam',
      'exam1': 80, // 10 10 10 20 15 15
-     'exam2': 0,
+     'exam2': 85, // 10 10 20 15 15 15
      'exam3': 0,
      'exam4': 0
     },
@@ -202,7 +202,7 @@ function makeStudents(){
      'sex':'M',
      'project':'GaryHuang2333/appStore',
      'exam1': 75, // 10 10 5 20 15 15
-     'exam2': 0,
+     'exam2': 80, // 10 10 20 15 15 10
      'exam3': 0,
      'exam4': 0
     },
@@ -220,7 +220,7 @@ function makeStudents(){
      'sex':'M',
      'project':'HughYeah/helloworld',
      'exam1': 60, // 5 10 5 15 15 10
-     'exam2': 0,
+     'exam2': 80, // 10 10 20 15 15 10
      'exam3': 0,
      'exam4': 0
     },
@@ -230,6 +230,33 @@ function makeStudents(){
      'project':'MMM123HAHA/lina-admin',
      'exam1': 80, // 10 10 5 20 15 20
      'exam2': 0,
+     'exam3': 0,
+     'exam4': 0
+    },
+    {
+     'name':'yingsi.zhang',
+     'sex':'M',
+     'project':'carriewindzy/yingsi.zhang-exam',
+     'exam1': 70, // 5 10 10 20 10 15
+     'exam2': 80, // 10 10 20 15 15 10
+     'exam3': 0,
+     'exam4': 0
+    },
+    {
+     'name':'林树春',
+     'sex':'M',
+     'project':'springShuchunLin/springAdminTraining',
+     'exam1': 85, // 5 10 20 20 15 15
+     'exam2': 85, // 10 10 20 15 15 15
+     'exam3': 0,
+     'exam4': 0
+    },
+    {
+     'name':'王越',
+     'sex':'M',
+     'project':'WangYue1012/da-mai-master',
+     'exam1': 70, // 5 10 5 20 15 15
+     'exam2': 85, // 10 10 20 15 15 15
      'exam3': 0,
      'exam4': 0
     }

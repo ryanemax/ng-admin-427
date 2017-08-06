@@ -24,6 +24,19 @@ export class StudentAnalysisComponent implements OnInit {
    getGrade(student){
        return student.exam1*0.1+student.exam2*0.2+student.exam3*0.3+student.exam4*0.4
    }
+
+    getGradeList(type){
+        let weight = {
+            exam1:0.1,
+            exam2:0.2,
+            exam3:0.3,
+            exam4:0.4,
+        }
+       return this.students.map(item=>item[type]*weight[type])
+   }
+   getStudentNameList(){
+       return this.students.map(item=>item.name)
+   }
   showBar(){
         // 通过dom获取指定id的内容显示区域
         let el = document.getElementById("studentBar");
@@ -39,7 +52,7 @@ export class StudentAnalysisComponent implements OnInit {
         }
     },
     legend: {
-        data: ['直接访问', '邮件营销','联盟广告','视频广告','搜索引擎']
+        data: ['Day1', 'Day2','Day3','Day4']
     },
     grid: {
         left: '3%',
@@ -52,11 +65,11 @@ export class StudentAnalysisComponent implements OnInit {
     },
     yAxis: {
         type: 'category',
-        data: ['周一','周二','周三','周四','周五','周六','周日']
+        data: this.getStudentNameList()
     },
     series: [
         {
-            name: '直接访问',
+            name: 'Day1',
             type: 'bar',
             stack: '总量',
             label: {
@@ -65,10 +78,10 @@ export class StudentAnalysisComponent implements OnInit {
                     position: 'insideRight'
                 }
             },
-            data: [320, 302, 301, 334, 390, 330, 320]
+            data: this.getGradeList('exam1')
         },
         {
-            name: '邮件营销',
+            name: 'Day2',
             type: 'bar',
             stack: '总量',
             label: {
@@ -77,10 +90,10 @@ export class StudentAnalysisComponent implements OnInit {
                     position: 'insideRight'
                 }
             },
-            data: [120, 132, 101, 134, 90, 230, 210]
+            data: this.getGradeList('exam2')
         },
         {
-            name: '联盟广告',
+            name: 'Day3',
             type: 'bar',
             stack: '总量',
             label: {
@@ -89,10 +102,10 @@ export class StudentAnalysisComponent implements OnInit {
                     position: 'insideRight'
                 }
             },
-            data: [220, 182, 191, 234, 290, 330, 310]
+            data: this.getGradeList('exam3')
         },
         {
-            name: '视频广告',
+            name: 'Day4',
             type: 'bar',
             stack: '总量',
             label: {
@@ -101,19 +114,7 @@ export class StudentAnalysisComponent implements OnInit {
                     position: 'insideRight'
                 }
             },
-            data: [150, 212, 201, 154, 190, 330, 410]
-        },
-        {
-            name: '搜索引擎',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [820, 832, 901, 934, 1290, 1330, 1320]
+            data: this.getGradeList('exam4')
         }
     ]
 };
@@ -129,8 +130,8 @@ export class StudentAnalysisComponent implements OnInit {
         // 设置echarts所需配置项option
         let option = {
     title : {
-        text: '某站点用户访问来源',
-        subtext: '纯属虚构',
+        text: '学员区域分布',
+        subtext: '2017-07-30',
         x:'center'
     },
     tooltip : {
@@ -140,20 +141,19 @@ export class StudentAnalysisComponent implements OnInit {
     legend: {
         orient: 'vertical',
         left: 'left',
-        data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+        data: ['大连','上海','广州']
     },
     series : [
         {
-            name: '访问来源',
+            name: '区域分布',
             type: 'pie',
             radius : '55%',
             center: ['50%', '60%'],
             data:[
-                {value:335, name:'直接访问'},
-                {value:310, name:'邮件营销'},
-                {value:234, name:'联盟广告'},
-                {value:135, name:'视频广告'},
-                {value:1548, name:'搜索引擎'}
+                {value:20, name:'大连'},
+                {value:8, name:'上海'},
+                {value:2, name:'广州'},
+
             ],
             itemStyle: {
                 emphasis: {
