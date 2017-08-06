@@ -1,16 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
-import { BallPlayer } from '../ballplayer';
+import { BallPlayer} from '../ballplayer';
+import { SortStatus} from '../sort-status';
 
 @Component({
   selector: 'app-ballplayer-page',
   templateUrl: './ballplayer-page.component.html',
   styleUrls: ['./ballplayer-page.component.scss']
 })
+
+
+
 export class BallPlayerPageComponent implements OnInit {
   searchName: string = "6666";
-  isDeletedList:Array<boolean>;
+  selectedBallPlayer: BallPlayer;
+  sortStatusList:Array<SortStatus> = [];
   ballplayers:Array<BallPlayer> = [
     {"no":5,
     "name":"木暮公延",
@@ -49,15 +54,14 @@ export class BallPlayerPageComponent implements OnInit {
       "weight":70,
       "position":"得分后卫"},
   ]
-deletePlayer(){
-  // let deletePlayerList = this.users.filter(users=>users.isDeleted=true)
-  // console.log(this.isDeletedList);
-  alert(this.isDeletedList);
-  // this.users.pop()
-}
 
-code = 'A'
-index = 15
+  delete(player: BallPlayer): void{
+    this.selectedBallPlayer = player;
+    this.ballplayers = this.ballplayers.filter(ballPlayer=>ballPlayer.no!==this.selectedBallPlayer.no);
+  }
+
+  code = 'A'
+  index = 15
 
 saveNewBallPlayer(){
   this.ballplayers.push({
@@ -72,43 +76,20 @@ saveNewBallPlayer(){
   this.index+=1
 }
 
-  sortList(type){
-    if(type == "asc") {
-      this.sortByAsccending();
-    } else if(type == "desc") {
-      this.sortByDesccending();
-    } else {
-      this.sortByRadom();
+  sortBallPlayers(field: string): void {
+    let sortSts = this.sortStatusList.find(SortStatus => SortStatus.field === field);
+    if(sortSts.type === true){
+      this.ballplayers.sort((a, b) => {
+        return a[field]-b[field];
+      })
+    } else{
+      this.ballplayers.sort((a, b) => {
+        return b[field]-a[field];
+      })
     }
+    sortSts.type = !sortSts.type;
   }
 
-  sortByAsccending(){
-    // 参考MDN Array操作的API文档 Array相关方法方法
-    this.ballplayers.sort(function(a, b) {
-  if (a.no < b.no) {
-    return -1;
-  }
-  if (a.no > b.no) {
-    return 1;
-  }
-  // a must be equal to b
-  return 0;
-});
-  }
-  sortByDesccending(){
-    // 参考MDN Array操作的API文档 Array相关方法
-    // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array
-        this.ballplayers.sort(function(a, b) {
-  if (a.no < b.no) {
-    return 1;
-  }
-  if (a.no > b.no) {
-    return -1;
-  }
-  // a must be equal to b
-  return 0;
-});
-  }
   sortByRadom(){
     let radom, tmp, len = this.ballplayers.length;
     // 参考MDN Array操作的API文档 Math相关方法
@@ -139,6 +120,10 @@ saveNewBallPlayer(){
   }
 
   ngOnInit() {
+    this.sortStatusList = [
+      {"field": "no", "type": true},
+      {"field": "height", "type": true},
+      {"field": "weight", "type": true}
+    ]
   }
-
 }
