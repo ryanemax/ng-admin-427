@@ -21,6 +21,10 @@ th, td{
     border: 0;
 }
 
+.no-background {
+    background-color: white;
+}
+
 button.delete {
     float: right;
     margin-top: 2px;
@@ -37,4 +41,17 @@ a.sortable {
 
 a.sortable:hover {
     color: blue;
+}
+
+.selected {
+    background-color: #CFD8DC !important;
+    color: white;
+}
+
+select.drop-down{
+    height: 30px;
+}
+
+#result{
+    margin-top: 50px
 }
