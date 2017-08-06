@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {StudentService, ParseDataSource, Student} from "../student.service";
+
+import { Observable } from 'rxjs/Observable'
 
 @Component({
   selector: 'app-student-analysis',
@@ -6,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-analysis.component.scss']
 })
 export class StudentAnalysisComponent implements OnInit {
-
-  constructor() { }
+    //   dataSource:ParseDataSource | null;
+        students:Observable<Student[]>;
+  constructor(private studentServ:StudentService) {
+        this.students = this.studentServ.dataSource.connect()
+   }
   showBar(){
         // 通过dom获取指定id的内容显示区域
         let myChart = echarts.init(document.getElementById("studentBar"));
