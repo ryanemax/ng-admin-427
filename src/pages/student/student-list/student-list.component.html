@@ -9,7 +9,7 @@
       
       <select [(ngModel)]="searchType">
         <option value="name">姓名</option>
-        <option value="project">项目</option>
+        <option value="github">Github</option>
       </select>
       <input [(ngModel)]="searchText" />
       <button (click)="search(searchType,searchText)">搜索</button>
@@ -41,9 +41,9 @@
       <md-cell *cdkCellDef="let row"> {{row.sex | sexName}} </md-cell>
     </ng-container>
 
-    <ng-container cdkColumnDef="project">
+    <ng-container cdkColumnDef="github">
       <md-header-cell *cdkHeaderCellDef> Project </md-header-cell>
-      <md-cell *cdkCellDef="let row"> {{row.project}} </md-cell>
+      <md-cell *cdkCellDef="let row"> {{row.github}} </md-cell>
     </ng-container>
 
     <ng-container cdkColumnDef="exam1">
@@ -87,7 +87,7 @@
   <div class="col-1">选择 </div>
   <div class="col-2" (click)="sortByAsccending('name')">姓名 </div>
   <div class="col-1" (click)="sortByAsccending('sex')">性别 </div>
-  <div class="col-2" (click)="sortByAsccending('project')">project </div>
+  <div class="col-2" (click)="sortByAsccending('github')">github </div>
   <div class="col-1" (click)="sortByDesccending('exam1')">exam1 </div>
   <div class="col-1" (click)="sortByDesccending('exam2')">exam2 </div>
   <div class="col-1" (click)="sortByDesccending('exam3')">exam3 </div>

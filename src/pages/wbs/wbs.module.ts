@@ -13,7 +13,7 @@ import { WbsService } from './wbs.service';
     FormsModule, 
     RouterModule.forChild([
       { path: '', component: WbsListComponent, pathMatch: 'full' },
-      { path: 'wbs/edit/:id', component: WbsEditComponent, pathMatch: 'full' },
+      { path: 'edit/:id', component: WbsEditComponent, pathMatch: 'full' },
       { path: 'item', component: WbsItemComponent, pathMatch: 'full' }
     ])
   ],

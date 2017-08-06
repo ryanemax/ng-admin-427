@@ -28,7 +28,7 @@ export class StudentListComponent implements OnInit {
   students:Array<any>=[];
   // Data Table
   dataSource:ParseDataSource | null;
-  displayedColumns = ['name', 'sex', 'project', 'exam1', 'exam2', 'exam3'];
+  displayedColumns = ['name', 'sex', 'github', 'exam1', 'exam2', 'exam3'];
   // end of data table
   getUserClick(ev){
     this.selectStudent = ev

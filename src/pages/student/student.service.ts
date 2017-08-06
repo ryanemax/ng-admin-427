@@ -171,7 +171,7 @@ export interface Student {
   updatedId: Date;
   name: string;
   sex: string;
-  project: string;
+  github: string;
   exam1: number;
   exam2: number;
   exam3: number;

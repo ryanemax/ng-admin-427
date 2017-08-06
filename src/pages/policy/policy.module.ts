@@ -29,7 +29,7 @@ import { PolicyService } from './policy.service'
     // Config Router
     RouterModule.forChild([
       { path: '', component: PolicyListComponent, pathMatch: 'full' },
-      { path: 'policy/edit/:id', component: PolicyEditComponent, pathMatch: 'full' }
+      { path: 'edit/:id', component: PolicyEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [

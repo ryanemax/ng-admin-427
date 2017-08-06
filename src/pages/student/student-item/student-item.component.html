@@ -2,7 +2,7 @@
       <div class="col-1" *ngIf="!isChecked()" (click)="check()">[&nbsp;&nbsp;]</div>
       <div class="col-2">{{student.name | uppercase | lowercase}}</div>
       <div class="col-1">{{student.sex | sexName}}</div>
-      <div class="col-2"><a target="_blank" href="http://github.com/{{student.project}}">{{student.project}}</a></div>
+      <div class="col-2"><a target="_blank" href="http://github.com/{{student.github}}">{{student.github}}</a></div>
       <div class="col-1">{{student.exam1}}</div>
       <div class="col-1">{{student.exam2}}</div>
       <div class="col-1">{{student.exam3}}</div>
