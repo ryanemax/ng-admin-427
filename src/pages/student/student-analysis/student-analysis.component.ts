@@ -10,13 +10,25 @@ import { Observable } from 'rxjs/Observable'
 })
 export class StudentAnalysisComponent implements OnInit {
     //   dataSource:ParseDataSource | null;
-        students:Observable<Student[]>;
+        students:Student[];
   constructor(private studentServ:StudentService) {
-        this.students = this.studentServ.dataSource.connect()
+        this.students = this.studentServ.students
+   }
+   getGood(type?){
+       if(type){
+           return this.students.filter(item=>item[type]>=80)
+       }else{
+           return this.students.filter(item=>this.getGrade(item)>=80)
+       }        
+   }
+   getGrade(student){
+       return student.exam1*0.1+student.exam2*0.2+student.exam3*0.3+student.exam4*0.4
    }
   showBar(){
         // 通过dom获取指定id的内容显示区域
-        let myChart = echarts.init(document.getElementById("studentBar"));
+        let el = document.getElementById("studentBar");
+        if(!el){return}        
+        let myChart = echarts.init(el);
         // 设置echarts所需配置项option
         myChart.title = "堆叠条形图";
         let option = {
@@ -111,7 +123,9 @@ export class StudentAnalysisComponent implements OnInit {
 
   showPie(){
         // 通过dom获取指定id的内容显示区域
-        let myChart = echarts.init(document.getElementById("studentPie"));
+        let el = document.getElementById("studentPie");
+        if(!el){return}
+        let myChart = echarts.init(el);
         // 设置echarts所需配置项option
         let option = {
     title : {
