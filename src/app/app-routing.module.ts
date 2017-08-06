@@ -3,10 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Lazyload模式路由，适合服务端渲染
 const SSRroutes: Routes = [
-  {
-    path: '',
-    children: []
-  },
+  // {
+  //   path: '',
+  //   children: []
+  // },
+  { path: '',    redirectTo: '/student', pathMatch: 'full'  },
   { path: 'rxjs', loadChildren: '../pages/rxjs/rxjs.module#RxjsModule' },  
   { path: 'home', loadChildren: '../pages/home/home.module#HomeModule' },
   { path: 'about', loadChildren: '../pages/about/about.module#AboutModule' },
@@ -40,6 +41,7 @@ const SSRroutes: Routes = [
   { path: 'activity', loadChildren: '../pages/activity/activity.module#ActivityModule' },
   { path: 'ballplayer', loadChildren: '../pages/ballplayer/ballplayer.module#BallPlayerModule' },
   { path: 'campus', loadChildren: '../pages/campus/campus.module#CampusModule' },
+  // 设置默认导航至学员管理
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

@@ -12,11 +12,11 @@ export class AppComponent {
 
   // 路由列表设置，icon名称参考地址：https://material.io/icons/
   routes:Array<any>=[
+    {"path":"student","icon":"people","name":"学员管理"},    
     {"path":"home","icon":"home","name":"后台首页"},
     {"path":"about","icon":"home","name":"关于我们"},
     {"path":"movie","icon":"flare","name":"SC的松鼠躁狂小屋"},
     {"path":"activity","icon":"people","name":"活动管理"},
-    {"path":"student","icon":"people","name":"学生管理"},
     {"path":"rxjs","icon":"android","name":"RXJS"},
     {"path":"werewolves","icon":"people","name":"狼人杀"},
     {"path":"policy","icon":"people","name":"保单管理"},
