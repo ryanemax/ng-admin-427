@@ -9,7 +9,6 @@ import { PipesModule } from '../../pipes/pipes.module'
 import { DirectivesModule } from '../../directives/directives.module'
 
 import { LeavePageComponent } from './leave-page/leave-page.component';
-import { EmployeeComponent } from './employee/employee.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
 import { LeaveService } from './leave.service';
 

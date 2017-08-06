@@ -9,7 +9,7 @@ function makeStudents(){
      'exam1': 55, // 10 10 5 5 20 5
      'exam2': 75, // 5 10 20 15 15 10
      'exam3': 0,
-     'exam4': 0
+     'exam4': 85 // 10 30 20 15 10
     },
     {
      'name':'f58xxy',
@@ -29,25 +29,25 @@ function makeStudents(){
      'exam1': 80, // 10 10 5 20 20 15
      'exam2': 80, // 10 10 20 15 15 10
      'exam3': 75, // 10 10 10 25 20
-     'exam4': 0
+     'exam4': 85 // 10 25 20 20 10
     },
     {
-     'name':'kalezhang',
+     'name':'张金友',
      'sex':'M',
      'project':'kalezhang/ng-admin',
      'exam1': 75, // 5 10 5 15 20 20 未修改README.md
      'exam2': 85, // 10 10 20 15 15 15 未修改README.md
      'exam3': 80, // 10 10 15 25 20
-     'exam4': 0
+     'exam4': 90 // 10 35 20 20 10 // UI部分使用自定义管道、界面布局美观、使用动画效果加分
     },
     {
-     'name':'JansenGao',
+     'name':'高健翔',
      'sex':'M',
      'project':'JansenGao/angular',
      'exam1': 50, // 5 5 5 15 15 15 未修改readme，版本提交非项目根目录
      'exam2': 0,
      'exam3': 0,
-     'exam4': 0
+     'exam4': 75 // 10 15 20 20 10 
     },
     {
      'name':'ChengJiqiang',
@@ -100,13 +100,13 @@ function makeStudents(){
      'exam4': 0
     },
     {
-     'name':'haiguang.lin',
+     'name':'林海广',
      'sex':'M',
      'project':'sakuraki777/haiguanglin-exam',
      'exam1': 70, // 10 10 5 15 15 15
      'exam2': 0,
      'exam3': 0,
-     'exam4': 0
+     'exam4': 50 // 10 20 5 5 10
     },
     {
      'name':'方含',
@@ -169,7 +169,7 @@ function makeStudents(){
      'exam1': 80, // 10 10 10 20 15 15
      'exam2': 80, // 10 10 20 15 15 10
      'exam3': 75, // 10 10 10 25 20
-     'exam4': 0
+     'exam4': 65 // 10 20 10 20 10
     },
     {
      'name':'潘志文',
@@ -178,7 +178,7 @@ function makeStudents(){
      'exam1': 65, // 10 10 5 10 15 15
      'exam2': 85, // 10 10 20 15 15 15
      'exam3': 80, // 10 10 15 25 20
-     'exam4': 0
+     'exam4': 75 // 10 25 20 10 10
     },
     {
      'name':'shengnanpeng',
@@ -187,7 +187,7 @@ function makeStudents(){
      'exam1': 60, // 5 10 5 10 20 10
      'exam2': 80,
      'exam3': 75, // 10 10 10 25 20 
-     'exam4': 0
+     'exam4': 80 // 10 20 20 20 10
     },
     {
      'name':'张勇',
@@ -205,7 +205,7 @@ function makeStudents(){
      'exam1': 75, // 10 10 5 20 15 15
      'exam2': 80, // 10 10 20 15 15 10
      'exam3': 75, // 10 10 10 25 20 
-     'exam4': 0
+     'exam4': 80 // 10 25 15 20 10
     },
     {
      'name':'wuqiong',
@@ -232,7 +232,7 @@ function makeStudents(){
      'exam1': 80, // 10 10 5 20 15 20
      'exam2': 0,
      'exam3': 0,
-     'exam4': 0
+     'exam4': 70 // 10 25 15 10 10
     },
     {
      'name':'yingsi.zhang',
@@ -241,7 +241,7 @@ function makeStudents(){
      'exam1': 70, // 5 10 10 20 10 15
      'exam2': 80, // 10 10 20 15 15 10
      'exam3': 0,
-     'exam4': 0
+     'exam4': 65 // 10 25 10 10 10
     },
     {
      'name':'林树春',
@@ -250,7 +250,7 @@ function makeStudents(){
      'exam1': 85, // 5 10 20 20 15 15
      'exam2': 85, // 10 10 20 15 15 15
      'exam3': 0,
-     'exam4': 0
+     'exam4': 85 // 10 40 10 15 10
     },
     {
      'name':'王越',
@@ -259,7 +259,16 @@ function makeStudents(){
      'exam1': 70, // 5 10 5 20 15 15
      'exam2': 85, // 10 10 20 15 15 15
      'exam3': 0,
-     'exam4': 0
+     'exam4': 75 // 10 30 15 10 10
+    },
+    {
+     'name':'zhiming.ye',
+     'sex':'M',
+     'project':'fun',
+     'exam1': 0,
+     'exam2': 0,
+     'exam3': 0,
+     'exam4': 80 // 10 20 20 20 10
     }
   ];
 }

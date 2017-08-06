@@ -14,7 +14,6 @@ const SSRroutes: Routes = [
   { path: 'student', loadChildren: '../pages/student/student.module#StudentModule' },
   { path: 'werewolves', loadChildren: '../pages/werewolves/werewolves.module#WerewolvesModule' },
   { path: 'policy', loadChildren: '../pages/policy/policy.module#PolicyModule' },
-  { path: 'mytest', loadChildren: '../pages/mytest/mytest.module#MytestModule' },
   { path: 'good', loadChildren: '../pages/good/good.module#GoodModule' },
   { path: 'player', loadChildren: '../pages/player/player.module#PlayerModule' },
   { path: 'park', loadChildren: '../pages/park/park.module#ParkModule' },
@@ -29,7 +28,7 @@ const SSRroutes: Routes = [
   { path: 'goods', loadChildren: '../pages/goods/goods.module#GoodsModule' },
   { path: 'pokemon', loadChildren: '../pages/pokemon/pokemon.module#PokemonModule' },
   { path: 'leave', loadChildren: '../pages/leave/leave.module#LeaveModule'},
-  //{ path: '**', redirectTo: '', pathMatch: 'full' },
+  // { path: '**', redirectTo: '', pathMatch: 'full' },
   { path: 'commodity', loadChildren: '../pages/commodity/commodity.module#CommodityModule' },
   { path: 'movie', loadChildren: '../pages/movie/movie.module#MovieModule' },
   { path: 'campus', loadChildren: '../pages/campus/campus.module#CampusModule' },
@@ -41,7 +40,6 @@ const SSRroutes: Routes = [
   { path: 'activity', loadChildren: '../pages/activity/activity.module#ActivityModule' },
   { path: 'ballplayer', loadChildren: '../pages/ballplayer/ballplayer.module#BallPlayerModule' },
   { path: 'campus', loadChildren: '../pages/campus/campus.module#CampusModule' },
-  { path: 'insurant', loadChildren: '../pages/insurance/insurance.module#InsuranceModule' },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

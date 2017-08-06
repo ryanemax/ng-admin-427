@@ -87,7 +87,7 @@ export class ActivityService{
 
     getActivitys():Observable<any[]>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "Activity"
         let url = serverURL+path+className
@@ -106,7 +106,7 @@ export class ActivityService{
     }
     deleteActivityById(objectId):Observable<any>{
             // 1. 拼接HTTP请求所需的URL和Headers
-            let serverURL = "http://localhost:1337/parse"
+            let serverURL = "http://host.qh-class.com:2337/parse"
             let path = "/classes/"
             let className = "Activity"
             let url = serverURL+path+className+"/"+objectId
@@ -124,7 +124,7 @@ export class ActivityService{
         }
     getActivityById(objectId):Observable<any>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "Activity"
         let url = serverURL+path+className+"/"+objectId
@@ -143,7 +143,7 @@ export class ActivityService{
 
     saveActivity(body?):Observable<any[]>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "Activity"
         let url = serverURL+path+className

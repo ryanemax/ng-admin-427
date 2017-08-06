@@ -47,7 +47,7 @@ export class FunService{
 
     getFuns():Observable<any[]>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "Fun"
         let url = serverURL+path+className
@@ -66,7 +66,7 @@ export class FunService{
     }
     deleteFunById(objectId):Observable<any>{
             // 1. 拼接HTTP请求所需的URL和Headers
-            let serverURL = "http://localhost:1337/parse"
+            let serverURL = "http://host.qh-class.com:2337/parse"
             let path = "/classes/"
             let className = "Fun"
             let url = serverURL+path+className+"/"+objectId
@@ -83,7 +83,7 @@ export class FunService{
         }
     getFunById(objectId):Observable<any>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "Fun"
         let url = serverURL+path+className+"/"+objectId
@@ -101,7 +101,7 @@ export class FunService{
 
     saveFun(body?):Observable<any[]>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "Fun"
         let url = serverURL+path+className

@@ -31,7 +31,7 @@ import { GoodService } from './good.service'
     // Config Router
     RouterModule.forChild([
       { path: '', component: GoodListComponent, pathMatch: 'full' },
-      { path: 'good/edit/:sid', component: GoodEditComponent, pathMatch: 'full' }
+      { path: 'edit/:sid', component: GoodEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [

@@ -158,7 +158,7 @@ export class PolicyService{
 
     getPolicies():Observable<any[]>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "policy"
         let url = serverURL+path+className
@@ -177,7 +177,7 @@ export class PolicyService{
     }
     deletePolicyById(objectId):Observable<any>{
             // 1. 拼接HTTP请求所需的URL和Headers
-            let serverURL = "http://localhost:1337/parse"
+            let serverURL = "http://host.qh-class.com:2337/parse"
             let path = "/classes/"
             let className = "policy"
             let url = serverURL+path+className+"/"+objectId
@@ -195,7 +195,7 @@ export class PolicyService{
     }
     getPolicyById(objectId):Observable<any>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "policy"
         let url = serverURL+path+className+"/"+objectId
@@ -214,7 +214,7 @@ export class PolicyService{
 
     savePolicy(body?):Observable<any[]>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "policy"
         let url = serverURL+path+className

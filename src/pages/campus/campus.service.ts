@@ -14,7 +14,7 @@ import 'rxjs/add/operator/startWith';
 // 加及初始化 数据接口封装库
 import { Parse } from '../../cloud/parse'
 // Parse.initialize("dev","http://host.qh-class.com:2337/parse")
-Parse.initialize("dev","http://localhost:1337/parse")
+Parse.initialize("dev","http://host.qh-class.com:2337/parse")
 
 @Injectable()
 export class CampusService{
@@ -72,7 +72,7 @@ export class CampusService{
 const 
     getCampuses():Observable<any[]>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "campus"
         let url = serverURL+path+className
@@ -91,7 +91,7 @@ const
     }
     deleteCampusById(objectId):Observable<any>{
             // 1. 拼接HTTP请求所需的URL和Headers
-            let serverURL = "http://localhost:1337/parse"
+            let serverURL = "http://host.qh-class.com:2337/parse"
             let path = "/classes/"
             let className = "Campus"
             let url = serverURL+path+className+"/"+objectId
@@ -109,7 +109,7 @@ const
         }
     getCampusById(objectId):Observable<any>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "Campus"
         let url = serverURL+path+className+"/"+objectId
@@ -128,7 +128,7 @@ const
 
     saveCampus(body?):Observable<any[]>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "Campus"
         let url = serverURL+path+className

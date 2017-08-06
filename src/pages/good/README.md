@@ -37,6 +37,6 @@ cnpm i -g parse-dashboard
 
 # 第四步、启动管理后台
 - 访问本地测试环境
-parse-dashboard --appId dev --masterKey angulardev --serverURL http://localhost:1337/parse
+parse-dashboard --appId dev --masterKey angulardev --serverURL http://host.qh-class.com:2337/parse
 
 注意：每次重新开命令行

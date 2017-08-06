@@ -167,7 +167,7 @@ export class EmployeeService{
     getEmployees():Observable<any[]>{
         // 1. 拼接HTTP请求所需的URL和Headers
         //let serverURL = "http://host.qh-class.com:2337/parse"
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "Employees"
         let url = serverURL+path+className
@@ -187,7 +187,7 @@ export class EmployeeService{
     deleteEmployeeById(objectId):Observable<any>{
             // 1. 拼接HTTP请求所需的URL和Headers
             //let serverURL = "http://host.qh-class.com:2337/parse"
-            let serverURL = "http://localhost:1337/parse"
+            let serverURL = "http://host.qh-class.com:2337/parse"
             let path = "/classes/"
             let className = "Employees"
             let url = serverURL+path+className+"/"+objectId
@@ -206,7 +206,7 @@ export class EmployeeService{
     getEmployeeById(objectId):Observable<any>{
         // 1. 拼接HTTP请求所需的URL和Headers
         //let serverURL = "http://host.qh-class.com:2337/parse"
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "Employees"
         let url = serverURL+path+className+"/"+objectId
@@ -226,7 +226,7 @@ export class EmployeeService{
     saveEmployee(body?):Observable<any[]>{
         // 1. 拼接HTTP请求所需的URL和Headers
         //let serverURL = "http://host.qh-class.com:2337/parse"
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "Employees"
         let url = serverURL+path+className

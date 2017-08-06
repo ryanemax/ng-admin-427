@@ -34,7 +34,7 @@ export class ConcertService{
 
     getConcerts():Observable<any[]>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://host.qh-class.com:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "Concert"
         let url = serverURL+path+className
@@ -53,7 +53,7 @@ export class ConcertService{
     }
     deleteConcertById(objectId):Observable<any>{
             // 1. 拼接HTTP请求所需的URL和Headers
-            let serverURL = "http://host.qh-class.com:1337/parse"
+            let serverURL = "http://host.qh-class.com:2337/parse"
             let path = "/classes/"
             let className = "Concert"
             let url = serverURL+path+className+"/"+objectId
@@ -71,7 +71,7 @@ export class ConcertService{
         }
     getConcertById(objectId):Observable<any>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://host.qh-class.com:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "Concert"
         let url = serverURL+path+className+"/"+objectId
@@ -90,7 +90,7 @@ export class ConcertService{
 
     saveConcert(body?):Observable<any[]>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://host.qh-class.com:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "Concert"
         let url = serverURL+path+className

@@ -29,7 +29,7 @@ import { ActivityService } from './activity.service'
     // Config Router
     RouterModule.forChild([
       { path: '', component: ActivityListComponent, pathMatch: 'full' },
-      { path: 'activity/edit/:id', component: ActivityEditComponent, pathMatch: 'full' }
+      { path: 'edit/:id', component: ActivityEditComponent, pathMatch: 'full' }
     ])
   ],
   declarations: [

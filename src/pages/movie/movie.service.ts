@@ -66,7 +66,7 @@ export class MovieService{
 
     getMovies():Observable<any[]>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "movielist"
         let url = serverURL+path+className
@@ -85,7 +85,7 @@ export class MovieService{
     }
     deleteMovieById(objectId):Observable<any>{
             // 1. 拼接HTTP请求所需的URL和Headers
-            let serverURL = "http://localhost:1337/parse"
+            let serverURL = "http://host.qh-class.com:2337/parse"
             let path = "/classes/"
             let className = "movielist"
             let url = serverURL+path+className+"/"+objectId
@@ -103,7 +103,7 @@ export class MovieService{
         }
     getMovieById(objectId):Observable<any>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "movielist"
         let url = serverURL+path+className+"/"+objectId
@@ -122,7 +122,7 @@ export class MovieService{
 
     saveMovie(body?):Observable<any[]>{
         // 1. 拼接HTTP请求所需的URL和Headers
-        let serverURL = "http://localhost:1337/parse"
+        let serverURL = "http://host.qh-class.com:2337/parse"
         let path = "/classes/"
         let className = "movielist"
         let url = serverURL+path+className

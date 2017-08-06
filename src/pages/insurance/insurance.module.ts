@@ -17,7 +17,7 @@ import { DirectivesModule } from '../../directives/directives.module'
 // Providers
 import { InsuranceService } from './insurance.service'
 import { Parse } from '../../cloud/parse'
-Parse.initialize("dev","http://localhost:1337/parse")
+Parse.initialize("dev","http://host.qh-class.com:2337/parse")
 
 @NgModule({
   imports: [

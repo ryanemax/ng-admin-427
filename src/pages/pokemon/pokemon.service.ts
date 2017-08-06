@@ -56,7 +56,7 @@ export class PokemonService {
  
      getPokemonsbyUrl():Observable<any[]>{ 
          // . 拼接HTTP请求所需的URL和Headers 
-         let serverURL = "http://localhost:1337/parse" 
+         let serverURL = "http://host.qh-class.com:2337/parse" 
          let path = "/classes/" 
          let className = "Pokemon" 
          let url = serverURL+path+className 
@@ -77,7 +77,7 @@ export class PokemonService {
 
      getPokemonAttributesListbyUrl():Observable<any[]>{ 
          // . 拼接HTTP请求所需的URL和Headers 
-         let serverURL = "http://localhost:1337/parse" 
+         let serverURL = "http://host.qh-class.com:2337/parse" 
          let path = "/classes/" 
          let className = "PokemonAttributesList" 
          let url = serverURL+path+className 
@@ -98,7 +98,7 @@ export class PokemonService {
 
      getPokemonbyIndex(objectId):Observable<any>{
        // . 拼接HTTP请求所需的URL和Headers 
-         let serverURL = "http://localhost:1337/parse" 
+         let serverURL = "http://host.qh-class.com:2337/parse" 
          let path = "/classes/" 
          let className = "Pokemon/" 
         let url = serverURL+path+className+objectId
@@ -117,7 +117,7 @@ export class PokemonService {
      }
      deletePokemonById(objectId):Observable<any>{ 
              // . 拼接HTTP请求所需的URL和Headers 
-             let serverURL = "http://localhost:1337/parse" 
+             let serverURL = "http://host.qh-class.com:2337/parse" 
              let path = "/classes/" 
              let className = "Pokemon" 
              let url = serverURL+path+className+"/"+objectId 
@@ -139,7 +139,7 @@ export class PokemonService {
  
      savePokemon(body?):Observable<any[]>{ 
          // . 拼接HTTP请求所需的URL和Headers 
-         let serverURL = "http://localhost:1337/parse" 
+         let serverURL = "http://host.qh-class.com:2337/parse" 
          let path = "/classes/" 
          let className = "Pokemon" 
          let url = serverURL+path+className 
