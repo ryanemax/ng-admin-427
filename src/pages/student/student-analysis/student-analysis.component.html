@@ -1,16 +1,33 @@
+<md-toolbar class="shadowbar" color="secondary">
+  <span>学员管理 > 数据统计 <span routerLink="/student">[返回]</span></span>
+</md-toolbar>
+
 <md-card style="width:100%;">
   <md-card-header>
-    <md-card-title>培训概况统计</md-card-title>
+    <md-card-title>得分情况</md-card-title>
     <md-card-subtitle>总人数 {{students.length}}</md-card-subtitle>
-    <md-card-subtitle>Day1 按时 22 补交 6</md-card-subtitle>
-    <md-card-subtitle>Day2 按时 12 补交 2</md-card-subtitle>
-    <md-card-subtitle>Day3 按时 7 补交 3</md-card-subtitle>
-    <md-card-subtitle>Day4 按时 30</md-card-subtitle>
-    <!-- Day4 32-5  -->
   </md-card-header>
   <md-card-content>
+    <div id="studentBar" style="height:700px" (window:resize)="showBar()"></div>
+  </md-card-content>
+</md-card>
 
+<md-card style="width:100%;">
+<md-card-content>
 <md-tab-group>
+  <md-tab label="概况统计">
+      <md-card style="width:100%;padding:7px;">
+        <md-card-header>
+          <md-card-title>培训概况统计</md-card-title>
+          <md-card-subtitle>总人数 {{students.length}}</md-card-subtitle>
+          <md-card-subtitle>Day1 按时 22 补交 6</md-card-subtitle>
+          <md-card-subtitle>Day2 按时 12 补交 2</md-card-subtitle>
+          <md-card-subtitle>Day3 按时 7 补交 3</md-card-subtitle>
+          <md-card-subtitle>Day4 按时 25</md-card-subtitle>
+          <!-- Day4 32-5  -->
+        </md-card-header>
+        </md-card>
+  </md-tab>
   <md-tab label="Day 1 >= 80">
       <md-card style="width:100%;padding:7px;">
         <md-card-header>
@@ -52,19 +69,9 @@
         </md-card>
   </md-tab>
 </md-tab-group>
-        
-  </md-card-content>
+</md-card-content>
 </md-card>
 
-<md-card style="width:100%;">
-  <md-card-header>
-    <md-card-title>得分情况</md-card-title>
-    <md-card-subtitle>总人数 {{students.length}}</md-card-subtitle>
-  </md-card-header>
-  <md-card-content>
-    <div id="studentBar" style="height:700px" (window:resize)="showBar()"></div>
-  </md-card-content>
-</md-card>
 
 <md-card style="width:100%;">
   <md-card-header>

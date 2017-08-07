@@ -216,7 +216,7 @@ function makeStudents(){
      'exam4': 0
     },
     {
-     'name':'胡志明',
+     'name':'叶智铭',
      'sex':'M',
      'github':'HughYeah/helloworld',
      'exam1': 60, // 5 10 5 15 15 10
