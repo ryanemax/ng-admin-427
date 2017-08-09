@@ -36,11 +36,12 @@ export class StudentListComponent implements OnInit {
   }
 
     search(type,value){
-        let query = new Parse.Query("Student",this.http)
-        query.equalTo(type,value)
-        query.find().subscribe(data=>{
-          this.students = data
-        })
+        // let query = new Parse.Query("Student",this.http)
+        // query.equalTo(type,value)
+        // query.find().subscribe(data=>{
+        //   this.students = data
+        // })
+        this.dataSource.search(type,value)
     }
   
   sortByAsccending(type="id") {
@@ -66,7 +67,7 @@ export class StudentListComponent implements OnInit {
   }
   constructor(meta: Meta, title: Title,private http:Http, public studentServ:StudentService) {
     // Set SEO
-    title.setTitle('My Home Page');
+    title.setTitle('学员成绩');
 
     meta.addTags([{
         name: 'author',

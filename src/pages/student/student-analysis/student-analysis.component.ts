@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {StudentService, ParseDataSource, Student} from "../student.service";
 
+import {  Meta, Title } from '@angular/platform-browser';
+
 import { Observable } from 'rxjs/Observable'
 
 @Component({
@@ -11,8 +13,25 @@ import { Observable } from 'rxjs/Observable'
 export class StudentAnalysisComponent implements OnInit {
     //   dataSource:ParseDataSource | null;
         students:Student[];
-  constructor(private studentServ:StudentService) {
+  constructor(meta: Meta, title: Title, private studentServ:StudentService) {
         this.students = this.studentServ.students
+        // Set SEO
+    title.setTitle('统计分析');
+
+    meta.addTags([{
+        name: 'author',
+        content: 'eddic'
+      },
+      {
+        name: 'keywords',
+        content: 'angular 4 tutorial, angular seo'
+      },
+      {
+        name: 'description',
+        content: 'This is my great description.'
+      },
+    ]);
+    // end of SEO
    }
    getGood(type?){
        if(type){

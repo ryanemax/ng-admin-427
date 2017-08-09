@@ -72,6 +72,7 @@ li{
 
 
 // Table Style
+// Table Style
 .table-controls{
     display: inline;
     .search-area{
@@ -85,5 +86,20 @@ li{
         background: #8bc34a;
         margin-right: 5px;
         outline: none;
+    }
+}
+
+
+.md-table-controls{
+
+        md-select{
+            float: left;    
+            margin-top: 36px;
+        }
+    
+    .mat-mini-fab{
+        margin-left:5px;
+        margin-right:5px;
+        margin-top:24px;
     }
 }

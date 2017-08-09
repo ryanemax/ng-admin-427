@@ -1,20 +1,23 @@
 <md-toolbar class="shadowbar" color="secondary">
-  <span>学员管理 > 学员列表<span routerLink="/student/analysis">[数据统计]</span></span>
+  <span>学员管理 > 学员列表 <button md-raised-button routerLink="/student/analysis">统计分析</button></span>
   <span style="width:10px;"></span>
   <!--<md-icon class="example-icon">favorite</md-icon>-->
   <!--<md-icon class="example-icon">delete</md-icon>-->
-  <div class="table-controls">
-    <div class="search-area">      
-      <select [(ngModel)]="searchType">
-        <option value="name">姓名</option>
-        <option value="github">Github</option>
-      </select>
-      <input [(ngModel)]="searchText" />
-      <button (click)="search(searchType,searchText)">搜索</button>
-    </div>
-    <button routerLink="/student/edit/new">新增学员</button>
-    <button (click)="deleteChecked()">批量删除</button>
-    <button (click)="refresh()">刷新</button>
+    <!-- <button md-raised-button routerLink="/student/edit/new">新增学员</button> -->
+    <!-- <button md-raised-button (click)="deleteChecked()">批量删除</button> -->
+  <span style="width:10px;"></span>
+    
+  <div class="md-table-controls">
+    <md-select placeholder="搜索范围" [(ngModel)]="searchType" name="searchType">
+      <md-option value="name">姓名</md-option>
+      <md-option value="github">Github</md-option>
+    </md-select>
+    <md-input-container>
+      <input [(ngModel)]="searchText" mdInput placeholder="请输入要搜索的内容">
+    </md-input-container>
+    <button style="float:right;" color="light" md-mini-fab (click)="refresh()"><md-icon>sync</md-icon></button>
+    <button style="float:right;" color="light" md-mini-fab (click)="search(searchType,searchText)"><md-icon>search</md-icon></button>
+    
     <!-- <button (click)="sortByAsccending()">正序</button>
     <button (click)="sortByDesccending()">倒序</button>
     <button (click)="sortByRadom()">随机</button> -->
@@ -44,17 +47,17 @@
 
     <ng-container cdkColumnDef="exam1">
       <md-header-cell *cdkHeaderCellDef>Exam1</md-header-cell>
-      <md-cell *cdkCellDef="let row" [style.color]="'red'"> {{row.exam1}} </md-cell>
+      <md-cell *cdkCellDef="let row" [style.color]="row.exam1>=80?'red':'black'"> {{row.exam1}} </md-cell>
     </ng-container>
 
     <ng-container cdkColumnDef="exam2">
       <md-header-cell *cdkHeaderCellDef>Exam2</md-header-cell>
-      <md-cell *cdkCellDef="let row"> {{row.exam2}} </md-cell>
+      <md-cell *cdkCellDef="let row" [style.color]="row.exam2>=80?'red':'black'"> {{row.exam2}} </md-cell>
     </ng-container>
 
     <ng-container cdkColumnDef="exam3">
       <md-header-cell *cdkHeaderCellDef>Exam3</md-header-cell>
-      <md-cell *cdkCellDef="let row"> {{row.exam3}} </md-cell>
+      <md-cell *cdkCellDef="let row" [style.color]="row.exam3>=80?'red':'black'"> {{row.exam3}} </md-cell>
     </ng-container>
 
     <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>

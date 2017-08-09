@@ -187,6 +187,8 @@ export class ParseDatabase {
   http:Http;
   mockData:any = StudentData
   sourceType:string = "mock" // 设置数据源方式，mock本地本地模拟数据，parse微服务接口数据
+  searchType:string
+  searchText:string
   constructor(http:Http) {
     this.http = http
     this.refresh()
@@ -195,15 +197,33 @@ export class ParseDatabase {
   refresh(){
       this.getStudents().subscribe(data=>{
           console.log(data)
-        this.dataChange.next(data);
+          this.dataChange.next(data);
       })
   }
   getStudents():Observable<Student[]>{
+      console.log(this.searchType,this.searchText)
+      
     if(this.sourceType=="parse"){
         let query = new Parse.Query("Student",this.http);
+        // Parse数据 搜索方法 [todo 需要使用contains替换]
+        if(this.searchType&&this.searchText){
+            query.equalTo(this.searchType,this.searchText)
+        }
         return query.find()
     }else{
-        return Observable.from([this.mockData.students])
+        let students = this.mockData.students
+        // 模拟数据 搜索方法
+        if(this.searchType&&this.searchText){
+                students = students.filter(item=>{
+                    let result = String(item[this.searchType]).match(this.searchText)
+                    if(result){
+                        return true
+                    }else{
+                        return false
+                    }
+                })
+        }
+        return Observable.from([students])
     }
   }
 
@@ -227,6 +247,13 @@ export class ParseDataSource extends DataSource<any> {
     return this._parseDatabase.dataChange;
   }
   refresh(){
+    this._parseDatabase.searchType = undefined
+    this._parseDatabase.searchText = undefined
+    this._parseDatabase.refresh()
+  }
+  search(type,value){
+    this._parseDatabase.searchType = type
+    this._parseDatabase.searchText = value
     this._parseDatabase.refresh()
   }
   disconnect() {}
